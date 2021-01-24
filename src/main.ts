@@ -1,15 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import anime from "@/animejs.install"
+import Vue from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import anime from "@/animejs.install";
+import VueAwesomeSwiper from "vue-awesome-swiper";
 import "@/css/global.less";
+import "swiper/css/swiper.min.css";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Vue.prototype.$anime = anime;
+Vue.use(anime);
+Vue.use(VueAwesomeSwiper);
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
