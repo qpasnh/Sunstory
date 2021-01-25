@@ -132,11 +132,6 @@ export default Vue.extend({
           duration: 500,
         });
     },
-  },
-  watch: {
-    '$route'(x) {
-      console.log(x);
-    }
   }
 });
 </script>
