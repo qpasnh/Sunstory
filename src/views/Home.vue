@@ -9,7 +9,12 @@
     <div class="container">
       <div class="card-container">
         <div class="card-row" v-for="(x, i) in cards" :key="i">
-          <card :style="'width: ' + y.width + '%'" v-for="(y, i) in x" :bg="y.bg" :key="i">
+          <card
+            :style="'width: ' + y.width + '%'"
+            v-for="(y, i) in x"
+            :bg="y.bg"
+            :key="i"
+          >
             <template #title>{{ y.title }}</template>
             <template #subtitle>{{ y.subtitle }}</template>
             <template #text>{{ y.text }}</template>
@@ -37,7 +42,7 @@ export default Vue.extend({
             text:
               "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
-            width: 35
+            width: 35,
           },
           {
             title: "测试一下呢",
@@ -45,7 +50,7 @@ export default Vue.extend({
             text:
               "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
-            width: 55
+            width: 55,
           },
         ],
         [
@@ -55,7 +60,7 @@ export default Vue.extend({
             text:
               "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
-            width: 55
+            width: 55,
           },
           {
             title: "测试一下呢",
@@ -63,7 +68,7 @@ export default Vue.extend({
             text:
               "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
-            width: 35
+            width: 35,
           },
         ],
       ],
@@ -72,7 +77,7 @@ export default Vue.extend({
   components: {
     Banner,
     Card,
-    SectionTitle
+    SectionTitle,
   },
 });
 </script>
@@ -87,8 +92,15 @@ export default Vue.extend({
     .card-row {
       display: flex;
       align-items: center;
-      flex-wrap: nowrap;
       position: relative;
+
+      @media screen and (min-width: 690px) {
+        flex-wrap: nowrap;
+      }
+
+      @media screen and (max-width: 690px) {
+        flex-wrap: wrap;
+      }
 
       > * {
         flex: 1 1 auto;
@@ -96,6 +108,11 @@ export default Vue.extend({
         margin-right: 8px;
         margin-top: 8px;
         margin-bottom: 8px;
+
+        @media screen and (max-width: 690px) {
+          width: 100% !important;
+          margin: 8px 0 8px 0;
+        }
 
         &:first-child {
           margin-left: 0;

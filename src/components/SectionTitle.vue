@@ -22,9 +22,16 @@
 
     .section-header {
        .font-header;
-       font-size: 4rem;
        font-weight: bold; 
-       display: block;;
+       display: block;
+
+       @media screen and (min-width: 690px) {
+           font-size: 4rem;
+       }
+
+       @media screen and (max-width: 690px) {
+           font-size: 2.5rem;
+       }
     }
 
     .section-description {
