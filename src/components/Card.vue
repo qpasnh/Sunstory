@@ -30,9 +30,6 @@ export default Vue.extend({
   data() {
     return {
       alpha: 0.3,
-      updating: false,
-      currentAction: -1,
-      ignored: -1,
       id: "",
       showTitle: true,
       showText: false,
@@ -40,25 +37,7 @@ export default Vue.extend({
   },
   methods: {
     updateStyles(action: number) {
-      // filter for too-fast cursors
-      if (this.updating === true) {
-        this.ignored = action;
-        return;
-      }
-      if (this.currentAction === action) return;
-      this.currentAction = action;
-      this.updating = true;
       this.alpha = action === 1 ? 0.7 : 0.3;
-      let timeline = this.$anime.timeline({
-        loop: false,
-        complete: () => {
-          this.updating = false;
-        },
-        changeBegin: () => {
-          this.showTitle = !!!action;
-          this.showText = !!action;
-        },
-      });
       let titleOut = {
         targets: ".title-" + this.id,
         translateY: [0, 100],
@@ -88,17 +67,15 @@ export default Vue.extend({
         duration: 350,
       };
       if (action === 1) {
-        timeline.add(titleOut).add(textIn);
+        this.$anime(titleOut);
+        this.showTitle = false;
+        this.showText = true;
+        this.$anime(textIn);
       } else {
-        timeline.add(textOut).add(titleIn);
-      }
-    },
-  },
-  watch: {
-    updating(v) {
-      if (v === false && [0, 1].includes(this.ignored)) {
-        this.updateStyles(this.ignored);
-        this.ignored = -1;
+        this.$anime(textOut);
+        this.showText = false;
+        this.showTitle = true;
+        this.$anime(titleIn);
       }
     },
   },
@@ -123,7 +100,6 @@ export default Vue.extend({
   align-items: center;
   justify-content: center;
   z-index: -100;
-
 
   .overlay {
     position: absolute;
