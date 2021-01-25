@@ -1,17 +1,24 @@
 <template>
   <div
+    class="card-box"
     @mouseover="updateStyles(1)"
     @mouseleave="updateStyles(0)"
-    class="card"
-    :style="'background-image: url(' + bg + ');'"
   >
-    <div class="overlay" :style="'opacity:' + alpha"></div>
-    <div :class="'title-' + id" :style="'display:' + (showTitle ? 'initial': 'none')">
-      <span class="primary-title"><slot name="title"></slot></span>
-      <span class="secondary-title"><slot name="subtitle"></slot></span>
-    </div>
-    <div :class="'text-' + id" :style="'opacity: 0; display:' + (showText ? 'initial' : 'none')">
-      <slot name="text"></slot>
+    <div class="card" :style="'background-image: url(' + bg + ');'">
+      <div class="overlay" :style="'opacity:' + alpha"></div>
+      <div
+        :class="'title-' + id"
+        :style="'display:' + (showTitle ? 'initial' : 'none')"
+      >
+        <span class="primary-title"><slot name="title"></slot></span>
+        <span class="secondary-title"><slot name="subtitle"></slot></span>
+      </div>
+      <div
+        :class="'text-' + id"
+        :style="'opacity: 0; display:' + (showText ? 'initial' : 'none')"
+      >
+        <slot name="text"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -115,6 +122,8 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -100;
+
 
   .overlay {
     position: absolute;
@@ -124,7 +133,7 @@ export default Vue.extend({
     bottom: 0;
     background: #000;
     transition: all 0.2s ease;
-    z-index: 0;
+    z-index: -1;
   }
 
   /** todo: fix not aligned */
