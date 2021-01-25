@@ -154,7 +154,7 @@ export default Vue.extend({
       font-weight: bold;
       display: block;
       font-size: 12px;
-      color: #fcd307;
+      color: @primary;
       letter-spacing: 4px;
     }
   }
