@@ -1,6 +1,11 @@
 <template>
   <div class="home">
     <banner />
+    <section-title>
+      <template #subtitle>特色内容预览</template>
+      <template #title>Features</template>
+      <template #desc>在这里，我们展示了一些服务器内的特色内容。</template>
+    </section-title>
     <div class="container">
       <div class="card-container">
         <div class="card-row" v-for="(x, i) in cards" :key="i">
@@ -19,6 +24,7 @@
 import Vue from "vue";
 import Banner from "@/components/Banner.vue";
 import Card from "@/components/Card.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default Vue.extend({
   data() {
@@ -66,6 +72,7 @@ export default Vue.extend({
   components: {
     Banner,
     Card,
+    SectionTitle
   },
 });
 </script>
