@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@mdi/font": "^5.9.55",
     "animejs": "^3.2.1",
     "core-js": "^3.6.5",
     "nprogress": "^0.2.0",
