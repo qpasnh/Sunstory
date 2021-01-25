@@ -46,6 +46,8 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { isMobile } from "@/functions"
+
 export default Vue.extend({
   mounted() {
     this.$anime.timeline({ loop: false }).add({
@@ -64,7 +66,7 @@ export default Vue.extend({
     }).add({
       targets: ".search-icon",
       translateY: [0, 0],
-      opacity: [0, 1],
+      opacity: isMobile() ? [1, 1] :[0, 1],
       easing: "easeOutExpo",
       duration: 750
     });
