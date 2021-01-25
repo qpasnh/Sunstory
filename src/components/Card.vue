@@ -6,11 +6,11 @@
     :style="'background-image: url(' + bg + ');'"
   >
     <div class="overlay" :style="'opacity:' + alpha"></div>
-    <div class="title">
+    <div :class="'title-' + id">
       <span class="primary-title"><slot name="title"></slot></span>
       <span class="secondary-title"><slot name="subtitle"></slot></span>
     </div>
-    <div class="text" style="opacity: 0">
+    <div :class="'text-' + id" style="opacity: 0">
       <slot name="text"></slot>
     </div>
   </div>
@@ -26,6 +26,7 @@ export default Vue.extend({
       updating: false,
       currentAction: -1,
       ignored: -1,
+      id: "",
     };
   },
   methods: {
@@ -46,28 +47,28 @@ export default Vue.extend({
         },
       });
       let titleOut = {
-        targets: ".title",
+        targets: ".title-" + this.id,
         translateY: [0, 100],
         opacity: [1, 0],
         easing: "easeOutExpo",
         duration: 350,
       };
       let textIn = {
-        targets: ".text",
+        targets: ".text-" + this.id,
         translateY: [-100, 0],
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 500,
       };
       let titleIn = {
-        targets: ".title",
+        targets: ".title-" + this.id,
         translateY: [100, 0],
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 500,
       };
       let textOut = {
-        targets: ".text",
+        targets: ".text-" + this.id,
         translateY: [0, -100],
         opacity: [1, 0],
         easing: "easeOutExpo",
@@ -88,6 +89,9 @@ export default Vue.extend({
       }
     },
   },
+  mounted() {
+    this.id = Math.random().toString(36).slice(-8);
+  }
 });
 </script>
 
@@ -116,12 +120,12 @@ export default Vue.extend({
   }
 
 /** todo: fix not aligned */
-  .text {
+  [class^='text'] {
     font-size: 18px;
     color: white;
   }
 
-  .title {
+  [class^='title'] {
     .primary-title {
       font-weight: bold;
       display: block;
