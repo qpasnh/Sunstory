@@ -6,11 +6,11 @@
     :style="'background-image: url(' + bg + ');'"
   >
     <div class="overlay" :style="'opacity:' + alpha"></div>
-    <div :class="'title-' + id">
+    <div :class="'title-' + id" :style="'display:' + (showTitle ? 'initial': 'none')">
       <span class="primary-title"><slot name="title"></slot></span>
       <span class="secondary-title"><slot name="subtitle"></slot></span>
     </div>
-    <div :class="'text-' + id" style="opacity: 0">
+    <div :class="'text-' + id" :style="'opacity: 0; display:' + (showText ? 'initial' : 'none')">
       <slot name="text"></slot>
     </div>
   </div>
@@ -27,6 +27,8 @@ export default Vue.extend({
       currentAction: -1,
       ignored: -1,
       id: "",
+      showTitle: true,
+      showText: false,
     };
   },
   methods: {
@@ -44,6 +46,10 @@ export default Vue.extend({
         loop: false,
         complete: () => {
           this.updating = false;
+        },
+        changeBegin: () => {
+          this.showTitle = !!!action;
+          this.showText = !!action;
         },
       });
       let titleOut = {
@@ -90,23 +96,25 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.id = Math.random().toString(36).slice(-8);
-  }
+    this.id = Math.random()
+      .toString(36)
+      .slice(-8);
+  },
 });
 </script>
 
 <style lang="less" scoped>
 .card {
-  display: inline-block;
   padding: 16px;
-  border-radius: 2px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 10rem;
   position: relative;
   text-align: center;
-  max-width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .overlay {
     position: absolute;
@@ -119,13 +127,13 @@ export default Vue.extend({
     z-index: 0;
   }
 
-/** todo: fix not aligned */
-  [class^='text'] {
+  /** todo: fix not aligned */
+  [class^="text"] {
     font-size: 18px;
     color: white;
   }
 
-  [class^='title'] {
+  [class^="title"] {
     .primary-title {
       font-weight: bold;
       display: block;
