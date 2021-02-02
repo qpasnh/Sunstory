@@ -51,7 +51,7 @@ export default Vue.extend({
 
 <style lang="less" scoped>
 .sotap-feature {
-  background: rgba(0, 0, 0, 0.95);
+  background: @bggray;
   width: 100%;
 
   .feature-row {
