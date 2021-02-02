@@ -2,6 +2,9 @@
   <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
     <swiper-slide v-for="(x, i) in bannerList" :key="i"
       ><div class="swiper-item" :style="'background-image: url(' + x + ')'"></div></swiper-slide>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </swiper>
 </template>
 
@@ -18,6 +21,13 @@ export default Vue.extend({
           delay: 3000,
           disableOnInteraction: false,
         },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+          el: ".swiper-pagination"
+        }
       },
       bannerList: [
         "https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png",
@@ -48,5 +58,40 @@ export default Vue.extend({
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgba(255, 255, 255, .4);
+  background: rgba(0, 0, 0, .21);
+  padding: 10px;
+  border-radius: 4px;
+  transition: color .2s ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 0;
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 0;
+}
+
+.swiper-pagination {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 16px;
+  background: rgba(0, 0, 0, .21);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+  padding: 0 8px 2px 8px;
+  border-radius: 10px;
 }
 </style>

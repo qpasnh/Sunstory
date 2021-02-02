@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Banner from "@/components/Banner.vue";
+import Banner from "@/layouts/Banner.vue";
 import Card from "@/components/Card.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 
