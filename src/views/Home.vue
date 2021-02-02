@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <banner />
+    <feature />
     <section-title>
       <template #subtitle>特色内容预览</template>
       <template #title>Features</template>
@@ -28,6 +29,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Banner from "@/layouts/Banner.vue";
+import Feature from "@/layouts/Feature.vue";
 import Card from "@/components/Card.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 
@@ -78,6 +80,7 @@ export default Vue.extend({
     Banner,
     Card,
     SectionTitle,
+    Feature,
   },
 });
 </script>
