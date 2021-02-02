@@ -326,11 +326,11 @@ export default Vue.extend({
       color: #aaa;
       cursor: pointer;
       display: block;
-      margin: 0 8px 0 8px;
+      margin: 0 12px 0 12px;
       transition: all 0.2s ease;
       height: 100%;
       width: 2rem;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       z-index: 10000;
 
       &:hover {
@@ -359,6 +359,7 @@ export default Vue.extend({
       &:hover {
         color: #fff;
         background: rgba(0, 0, 0, 1);
+        border-left: 3px solid @primary;
       }
     }
   }
