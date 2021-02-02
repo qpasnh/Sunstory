@@ -3,7 +3,7 @@
     <section-title>
       <template #subtitle>服务器掠影</template>
       <template #title>Gallery</template>
-      <template #desc>这里，包含了 SoTap 数位玩家拍摄的服务器内美景。<br><small>p.s. {{ isMobile ? "轻按图片" : "将鼠标移动至图片上"}}可查看作者信息和原图哦</small></template>
+      <template #desc>这里，包含了 SoTap 数位玩家拍摄的服务器内美景。<br><small>p.s. {{ isMobile() ? "轻按图片" : "将鼠标移动至图片上"}}可查看作者信息和原图</small></template>
     </section-title>
     <div class="container">
       <div class="gallery-container">
