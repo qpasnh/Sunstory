@@ -172,7 +172,7 @@ export default Vue.extend({
   margin: auto;
   z-index: 1000;
   height: 72px;
-  max-width: 1440px;
+  max-width: 1920px;
 
   .toolbar {
     margin: auto;
