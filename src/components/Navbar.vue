@@ -111,28 +111,25 @@ export default Vue.extend({
         window.open(url);
       }
     },
-    toggleDropdown() {
-      this.$anime
-        .timeline({
-          loop: false,
-          changeBegin: () => {
-            if (this.hamburgerOpen) {
-              (this.$refs.dropdown as HTMLDivElement).style.display = "";
+    toggleDropdown(target: string, directOption?: boolean) {
+      let obj: HTMLDivElement = this.$refs[target] as HTMLDivElement;
+      // p => positive option; n => negative option.
+      let p = directOption !== undefined ? directOption : obj.style.display === "none" || (this.hamburgerOpen && target === "dropdown");
+      let n = directOption !== undefined ? !directOption : obj.style.display === "" || (!this.hamburgerOpen && target === "dropdown");
+      if (p) {
+        obj.style.display = "";
+        obj.style.pointerEvents = "auto";
             }
-          },
-          changeComplete: () => {
-            if (!this.hamburgerOpen) {
-              (this.$refs.dropdown as HTMLDivElement).style.display = "none";
-            }
-          },
-        })
-        .add({
-          targets: ".dropdown",
-          translateY: this.hamburgerOpen ? [-100, 0] : [0, -100],
-          opacity: this.hamburgerOpen ? [0, 1] : [1, 0],
+      this.$anime({
+        targets: "." + target,
+        translateY: p ? [-100, 0] : [0, -100],
+        opacity: p ? [0, 1] : [1, 0],
           easing: "easeOutExpo",
           duration: 500,
         });
+      if (n) {
+        obj.style.pointerEvents = "none";
+      }
     },
   }
 });
