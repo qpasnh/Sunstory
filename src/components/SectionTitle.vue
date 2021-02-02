@@ -35,7 +35,12 @@
     }
 
     .section-description {
-        color: rgba(0, 0, 0, .7);
+        color: @textgray;
+        line-height: 1.8;
+
+        small {
+            color: #aaa;
+        }
     }
 }
 </style>
