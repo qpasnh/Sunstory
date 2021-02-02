@@ -33,6 +33,11 @@
       <span class="dropdown-item" v-for="(x, i) in navItems" :key="i" @click="openURL(x.to, x.href); hamburgerOpen = false; toggleDropdown('dropdown')" :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''">
         {{ x.name }}
       </span>
+      <div class="external" v-if="isMobile()">
+        <span class="dropdown-item" v-for="(x, i) in moreItems" :key="i + navItems.length + 1" @click="openURL(x.to, x.href); hamburgerOpen = false; toggleDropdown('dropdown')" :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''">
+          {{ x.name }}
+        </span>
+      </div>
     </div>
   </nav>
 </template>
@@ -145,6 +150,7 @@ export default Vue.extend({
         obj.style.pointerEvents = "auto";
       }
     },
+    isMobile
   },
   components: {
     IconGroup,
@@ -152,8 +158,8 @@ export default Vue.extend({
   computed: {
     console() {
       return window.console;
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -336,6 +342,12 @@ export default Vue.extend({
       &:hover {
         color: #fff;
       }
+    }
+  }
+
+  .more-icon {
+    @media screen and (max-width: 690px) {
+      display: none;
     }
   }
 
