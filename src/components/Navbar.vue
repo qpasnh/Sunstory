@@ -1,14 +1,10 @@
 <template>
   <nav class="sotap-nav">
     <div class="toolbar">
-      <div
-        class="hamburger"
-        :class="hamburgerOpen ? 'open' : ''"
-        @click="
+      <div class="hamburger" :class="hamburgerOpen ? 'open' : ''" @click="
           hamburgerOpen = !hamburgerOpen;
-          toggleDropdown();
-        "
-      >
+          toggleDropdown('dropdown');
+        ">
         <span class="hamburger__top-bun"></span>
         <span class="hamburger__bottom-bun"></span>
       </div>
@@ -17,27 +13,24 @@
         <span class="logo-text">SoTap</span>
       </div>
       <div class="nav-items">
-        <span
-          class="nav-item"
-          v-for="(x, i) in navItems"
-          :key="i"
-          @click="openURL(x.to, x.href)"
-          :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''"
-        >
+        <span class="nav-item" v-for="(x, i) in navItems" :key="i" @click="openURL(x.to, x.href)" :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''">
           {{ x.name }}
         </span>
       </div>
       <div class="nav-spacer"></div>
-      <span class="mdi mdi-magnify search-icon"></span>
+      <icon-group>
+        <div class="mdi mdi-dots-horizontal-circle-outline more-icon" @mouseenter="toggleDropdown('more-dropdown', true)" @mouseover="$refs['more-dropdown'].style.display=''" @mouseleave="toggleDropdown('more-dropdown', false)">
+          <div ref="more-dropdown" class="more-dropdown" style="display: none;">
+            <span class="more-item" v-for="(x, i) in moreItems" :key="i" @click="openURL(x.to, x.href); toggleDropdown('more-dropdown', false)" :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''">
+              {{ x.name }}
+            </span>
+          </div>
+        </div>
+        <span class="mdi mdi-magnify search-icon"></span>
+      </icon-group>
     </div>
-    <div ref="dropdown" class="dropdown" style="opacity: 0">
-      <span
-        class="dropdown-item"
-        v-for="(x, i) in navItems"
-        :key="i"
-        @click="openURL(x.to, x.href); hamburgerOpen = false; toggleDropdown()"
-        :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''"
-      >
+    <div ref="dropdown" class="dropdown" style="display: none;">
+      <span class="dropdown-item" v-for="(x, i) in navItems" :key="i" @click="openURL(x.to, x.href); hamburgerOpen = false; toggleDropdown('dropdown')" :class="x.hasOwnProperty('to') ? ($route.path === x.to ? 'link-active' : 'link-inactive') : ''">
         {{ x.name }}
       </span>
     </div>
@@ -46,30 +39,42 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { isMobile } from "@/functions"
+import { isMobile } from "@/functions";
+import IconGroup from "./IconGroup.vue";
 
 export default Vue.extend({
   mounted() {
-    this.$anime.timeline({ loop: false }).add({
-      targets: ".sotap-nav",
-      translateY: [-100, 0],
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 750,
-    }).add({
-      targets: ".nav-item",
-      translateY: [0, 0],
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 500,
-      delay: (e, i) => 100 * i,
-    }).add({
-      targets: ".search-icon",
-      translateY: [0, 0],
-      opacity: isMobile() ? [1, 1] :[0, 1],
-      easing: "easeOutExpo",
-      duration: 750
-    });
+    this.$anime
+      .timeline({ loop: false })
+      .add({
+        targets: ".sotap-nav",
+        translateY: [-100, 0],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 750,
+      })
+      .add({
+        targets: ".nav-item",
+        translateY: [0, 0],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 500,
+        delay: (e, i) => 100 * i,
+      })
+      .add({
+        targets: ".more-icon",
+        translateY: [0, 0],
+        opacity: isMobile() ? [1, 1] : [0, 1],
+        easing: "easeOutExpo",
+        duration: 500,
+      })
+      .add({
+        targets: ".search-icon",
+        translateY: [0, 0],
+        opacity: isMobile() ? [1, 1] : [0, 1],
+        easing: "easeOutExpo",
+        duration: 100,
+      });
   },
   data() {
     return {
@@ -86,20 +91,26 @@ export default Vue.extend({
           name: "Rules",
           to: "/rules",
         },
+      ],
+      moreItems: [
+        {
+          name: "Wiki",
+          href: "https://wiki.sotap.org",
+        },
         {
           name: "BBS",
           href: "https://g.sotap.org",
         },
         {
-          name: "Blog",
-          href: "https://blog.sotap.org",
+          name: "Stats",
+          href: "https://stats.sotap.org",
         },
         {
-          name: "Wiki",
-          href: "https://wiki.sotap.org",
+          name: "GitHub",
+          href: "https://github.com/sotapmc",
         },
       ],
-      hamburgerOpen: false
+      hamburgerOpen: false,
     };
   },
   methods: {
@@ -112,25 +123,36 @@ export default Vue.extend({
       }
     },
     toggleDropdown(target: string, directOption?: boolean) {
+      console.log(target, directOption);
       let obj: HTMLDivElement = this.$refs[target] as HTMLDivElement;
       // p => positive option; n => negative option.
       let p = directOption !== undefined ? directOption : obj.style.display === "none" || (this.hamburgerOpen && target === "dropdown");
       let n = directOption !== undefined ? !directOption : obj.style.display === "" || (!this.hamburgerOpen && target === "dropdown");
       if (p) {
         obj.style.display = "";
-        obj.style.pointerEvents = "auto";
-            }
+      }
       this.$anime({
         targets: "." + target,
-        translateY: p ? [-100, 0] : [0, -100],
+        translateY: p ? [-50, 0] : [0, -50],
         opacity: p ? [0, 1] : [1, 0],
-          easing: "easeOutExpo",
-          duration: 500,
-        });
+        easing: "easeOutExpo",
+        duration: 500,
+      });
       if (n) {
         obj.style.pointerEvents = "none";
       }
+      if (p) {
+        obj.style.pointerEvents = "auto";
+      }
     },
+  },
+  components: {
+    IconGroup,
+  },
+  computed: {
+    console() {
+      return window.console;
+    }
   }
 });
 </script>
@@ -142,6 +164,7 @@ export default Vue.extend({
   left: 0;
   right: 0;
   z-index: 1000;
+  height: 72px;
 
   .toolbar {
     margin: auto;
@@ -222,20 +245,6 @@ export default Vue.extend({
       flex-grow: 1;
     }
 
-    .search-icon {
-      color: #aaa;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      width: 2rem;
-      height: 2rem;
-      z-index: 10000;
-
-      &:hover {
-        color: #fff;
-      }
-    }
-
     /* Hamburger from https://apple.com */
 
     .hamburger {
@@ -265,7 +274,7 @@ export default Vue.extend({
       position: absolute;
       left: 15px;
       width: 18px;
-      height: 2px;
+      height: 2.2px;
       background: #aaa;
       transform: rotate(0);
       transition: all 0.25s;
@@ -308,6 +317,48 @@ export default Vue.extend({
 
       &:hover {
         color: #fff;
+      }
+    }
+  }
+
+  .icon-group {
+    > * {
+      color: #aaa;
+      cursor: pointer;
+      display: block;
+      margin: 0 8px 0 8px;
+      transition: all 0.2s ease;
+      height: 100%;
+      width: 2rem;
+      font-size: 1.5rem;
+      z-index: 10000;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .more-dropdown {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    top: 100%;
+    font-size: 16px;
+    min-width: 100px;
+    right: 0;
+    /* to be continued */
+    padding-top: 20px;
+
+    .more-item {
+      display: block;
+      text-align: left;
+      padding: 8px;
+      color: #aaa;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #fff;
+        background: rgba(0, 0, 0, 1);
       }
     }
   }
