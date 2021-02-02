@@ -61,6 +61,10 @@ export default Vue.extend({
 }
 
 .swiper-button-next, .swiper-button-prev {
+  @media screen and (max-width: 690px) {
+    display: none;
+  }
+
   color: rgba(255, 255, 255, .4);
   background: rgba(0, 0, 0, .21);
   padding: 10px;
