@@ -1,10 +1,10 @@
 <template>
   <div
-    class="card-box"
+    class="gallery-card-box"
     @mouseover="updateStyles(1)"
     @mouseleave="updateStyles(0)"
   >
-    <div class="card" :style="'background-image: url(' + bg + ');'">
+    <div class="gallery-card" :style="'background-image: url(' + bg + ');'">
       <div class="overlay" :style="'opacity:' + alpha"></div>
       <div
         :class="'title-' + id"
@@ -88,12 +88,12 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
-.card {
+.gallery-card {
   padding: 16px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 10rem;
+  min-height: 20rem;
   position: relative;
   text-align: center;
   display: flex;

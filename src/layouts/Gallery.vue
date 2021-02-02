@@ -65,12 +65,21 @@ export default Vue.extend({
             width: 35,
           },
         ],
+        [
+          {
+            title: "测试一下呢",
+            subtitle: "测试一下副标题呢",
+            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
+            width: 100,
+          },
+        ],
       ],
     };
   },
   methods: {
-      isMobile
-  }
+    isMobile,
+  },
 });
 </script>
 
