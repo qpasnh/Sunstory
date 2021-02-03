@@ -211,13 +211,13 @@ export default Vue.extend({
         &::before {
           content: "「";
           position: absolute;
-          left: -0.5em;
+          left: .75em;
         }
 
         &::after {
           content: "」";
           position: absolute;
-          right: -0.5em;
+          right: .75em;
         }
       }
     }
