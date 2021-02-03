@@ -1,10 +1,11 @@
 <template>
   <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
-    <swiper-slide v-for="(x, i) in bannerList" :key="i"
-      ><div class="swiper-item" :style="'background-image: url(' + x + ')'"></div></swiper-slide>
+    <swiper-slide v-for="(x, i) in bannerList" :key="i">
+      <div class="swiper-item" :style="'background-image: url(' + x + ')'"></div>
+    </swiper-slide>
     <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next banner-swiper-button"></div>
+    <div class="swiper-button-prev banner-swiper-button"></div>
   </swiper>
 </template>
 
@@ -22,20 +23,14 @@ export default Vue.extend({
           disableOnInteraction: false,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          nextEl: ".swiper-button-next.banner-swiper-button",
+          prevEl: ".swiper-button-prev.banner-swiper-button",
         },
         pagination: {
-          el: ".swiper-pagination"
-        }
+          el: ".swiper-pagination",
+        },
       },
-      bannerList: [
-        "https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png",
-        "https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png",
-        "https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png",
-        "https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png",
-        "https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png",
-      ],
+      bannerList: ["https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png", "https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png", "https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png", "https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png", "https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png"],
     };
   },
 });
@@ -45,31 +40,32 @@ export default Vue.extend({
 .banner-swiper {
   width: 100%;
   @media screen and (min-width: 690px) {
-      height: 40rem;
+    height: 40rem;
   }
   @media screen and (max-width: 690px) {
-      height: 20rem;
+    height: 20rem;
   }
 }
 
 .swiper-item {
-    height: 100%;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   @media screen and (max-width: 690px) {
     display: none;
   }
 
-  color: rgba(255, 255, 255, .4);
-  background: rgba(0, 0, 0, .21);
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.21);
   padding: 10px;
   border-radius: 4px;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 
   &:hover {
     color: white;
@@ -91,7 +87,7 @@ export default Vue.extend({
   right: 0;
   left: 0;
   bottom: 16px;
-  background: rgba(0, 0, 0, .21);
+  background: rgba(0, 0, 0, 0.21);
   margin-left: auto;
   margin-right: auto;
   max-width: fit-content;
