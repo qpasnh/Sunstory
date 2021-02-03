@@ -1,22 +1,16 @@
 <template>
-  <div
-    class="gallery-card-box"
-    @mouseover="updateStyles(1)"
-    @mouseleave="updateStyles(0)"
-  >
+  <div class="gallery-card-box" @mouseover="updateStyles(1)" @mouseleave="updateStyles(0)" @click="go(bg)">
     <div class="gallery-card" :style="'background-image: url(' + bg + ');'">
       <div class="overlay" :style="'opacity:' + alpha"></div>
-      <div
-        :class="'title-' + id"
-        :style="'display:' + (showTitle ? 'initial' : 'none')"
-      >
-        <span class="primary-title"><slot name="title"></slot></span>
-        <span class="secondary-title"><slot name="subtitle"></slot></span>
+      <div v-if="!imageOnly" :class="'title-' + id" :style="'display:' + (showTitle ? 'initial' : 'none')">
+        <span class="primary-title">
+          <slot name="title"></slot>
+        </span>
+        <span class="secondary-title">
+          <slot name="subtitle"></slot>
+        </span>
       </div>
-      <div
-        :class="'text-' + id"
-        :style="'opacity: 0; display:' + (showText ? 'initial' : 'none')"
-      >
+      <div :class="'text-' + id" :style="'opacity: 0; display:' + (showText ? 'initial' : 'none')">
         <slot name="text"></slot>
       </div>
     </div>
@@ -26,10 +20,18 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  props: ["bg"],
+  props: {
+    imageOnly: {
+      type: Boolean,
+      default: false,
+    },
+    bg: {
+      type: String,
+    },
+  },
   data() {
     return {
-      alpha: 0.3,
+      alpha: this.imageOnly ? 0 : 0.3,
       id: "",
       showTitle: true,
       showText: false,
@@ -37,7 +39,7 @@ export default Vue.extend({
   },
   methods: {
     updateStyles(action: number) {
-      this.alpha = action === 1 ? 0.7 : 0.3;
+      this.alpha = action === 1 ? 0.7 : this.imageOnly ? 0 : 0.3;
       let titleOut = {
         targets: ".title-" + this.id,
         translateY: [0, 100],
@@ -47,7 +49,7 @@ export default Vue.extend({
       };
       let textIn = {
         targets: ".text-" + this.id,
-        translateY: [-100, 0],
+        translateY: this.imageOnly ? [100, 0] : [-100, 0],
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 500,
@@ -61,7 +63,7 @@ export default Vue.extend({
       };
       let textOut = {
         targets: ".text-" + this.id,
-        translateY: [0, -100],
+        translateY: this.imageOnly ? [0, 100] : [0, -100],
         opacity: [1, 0],
         easing: "easeOutExpo",
         duration: 350,
@@ -78,16 +80,21 @@ export default Vue.extend({
         this.$anime(titleIn);
       }
     },
+    go(url: string) {
+      window.open(url);
+    },
   },
   mounted() {
-    this.id = Math.random()
-      .toString(36)
-      .slice(-8);
+    this.id = Math.random().toString(36).slice(-8);
   },
 });
 </script>
 
 <style lang="less" scoped>
+.gallery-card-box {
+  cursor: pointer;
+}
+
 .gallery-card {
   padding: 16px;
   background-size: cover;

@@ -8,10 +8,24 @@
     <div class="container">
       <div class="gallery-container">
         <div class="gallery-row" v-for="(x, i) in gallery" :key="i">
-          <gallery-card :style="'width: ' + y.width + '%'" v-for="(y, i) in x" :bg="y.bg" :key="i">
-            <template #title>{{ y.title }}</template>
-            <template #subtitle>{{ y.subtitle }}</template>
-            <template #text>{{ y.text }}</template>
+          <gallery-card :imageOnly="true" :style="'width: ' + y.width + '%'" v-for="(y, i) in x" :bg="y.bg" :key="i">
+            <template #text>
+              <span class="description">{{ y.desc }}</span>
+              <div class="meta">
+                <div class="meta-item">
+                  <span class="meta-title">provided by</span>
+                  <div class="image-author">
+                    <img :src="'https://crafatar.com/avatars/' + y.uuid" />
+                    <span class="author-name">{{ y.author }}</span>
+                  </div>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-title">at</span>
+                  <span class="location">{{ y.loc }}</span>
+                </div>
+              </div>
+              <span class="date">{{ y.date }}</span>
+            </template>
           </gallery-card>
         </div>
       </div>
@@ -35,41 +49,51 @@ export default Vue.extend({
       gallery: [
         [
           {
-            title: "测试一下呢",
-            subtitle: "测试一下副标题呢",
-            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            author: "Subilan",
+            uuid: "5c94fc153e60447ab642431e8815f41d",
+            date: "2021/02/03",
+            desc: "空中的雪山",
+            loc: "某地",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
             width: 35,
           },
           {
-            title: "测试一下呢",
-            subtitle: "测试一下副标题呢",
-            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            author: "Subilan",
+            uuid: "5c94fc153e60447ab642431e8815f41d",
+            date: "2021/02/03",
+            desc: "空中的雪山",
+            loc: "某地",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
             width: 55,
           },
         ],
         [
           {
-            title: "测试一下呢",
-            subtitle: "测试一下副标题呢",
-            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            author: "Subilan",
+            uuid: "5c94fc153e60447ab642431e8815f41d",
+            date: "2021/02/03",
+            desc: "空中的雪山",
+            loc: "某地",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
             width: 55,
           },
           {
-            title: "测试一下呢",
-            subtitle: "测试一下副标题呢",
-            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            author: "Subilan",
+            uuid: "5c94fc153e60447ab642431e8815f41d",
+            date: "2021/02/03",
+            desc: "空中的雪山",
+            loc: "某地",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
             width: 35,
           },
         ],
         [
           {
-            title: "测试一下呢",
-            subtitle: "测试一下副标题呢",
-            text: "这里是详细的介绍噢噢噢噢噢噢噢噢哦哦为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么为什么",
+            author: "Subilan",
+            uuid: "5c94fc153e60447ab642431e8815f41d",
+            date: "2021/02/03",
+            desc: "空中的雪山",
+            loc: "某地",
             bg: "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png",
             width: 100,
           },
@@ -79,6 +103,9 @@ export default Vue.extend({
   },
   methods: {
     isMobile,
+    go(url: string) {
+      window.open(url);
+    },
   },
 });
 </script>
@@ -120,6 +147,77 @@ export default Vue.extend({
 
         &:last-child {
           margin-right: 0;
+        }
+      }
+
+      .date {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .meta {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .meta-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          &:not(&:last-child)::after {
+            content: "·";
+            font-weight: 900;
+            margin-left: 8px;
+            margin-right: 8px;
+            color: rgba(255, 255, 255, .4);
+          }
+
+          .meta-title {
+            font-style: italic;
+            .logo-text;
+            font-size: 14px;
+            margin-right: .5em;
+            color: rgba(255, 255, 255, 0.6);
+          }
+
+          .image-author {
+            img {
+              width: 16px;
+              margin-right: 8px;
+            }
+
+            .author-name {
+              .logo-text;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .description {
+        display: block;
+        font-size: 28px;
+        margin-bottom: 8px;
+
+        &::before,
+        &::after {
+          font-weight: 900;
+          color: @primary;
+        }
+
+        &::before {
+          content: "「";
+          position: absolute;
+          left: -0.5em;
+        }
+
+        &::after {
+          content: "」";
+          position: absolute;
+          right: -0.5em;
         }
       }
     }
