@@ -7,6 +7,7 @@ import VueAwesomeSwiper from "vue-awesome-swiper";
 import "@/css/global.less";
 import "swiper/css/swiper.min.css";
 import "@mdi/font/css/materialdesignicons.min.css";
+import "./interface";
 
 Vue.config.productionTip = false;
 
