@@ -4,6 +4,7 @@
     <feature />
     <divider />
     <gallery />
+    <blog />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Banner from "@/layouts/Banner.vue";
 import Feature from "@/layouts/Feature.vue";
 import Divider from "@/layouts/Divider.vue";
 import Gallery from "@/layouts/Gallery.vue";
+import Blog from "@/layouts/Blog.vue";
 
 export default Vue.extend({
   data() {
@@ -25,6 +27,7 @@ export default Vue.extend({
     Feature,
     Divider,
     Gallery,
+    Blog
   },
 });
 </script>
