@@ -53,6 +53,10 @@ export default Vue.extend({
     box-sizing: border-box;
     transition: all 0.2s ease;
 
+    .card-title {
+      font-size: 28px;
+    }
+
     .card-text {
       color: @textgray;
       transition: all 0.2s ease;

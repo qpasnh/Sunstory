@@ -1,5 +1,10 @@
 <template>
   <div class="sotap-blog">
+    <section-title>
+      <template #title>Blog</template>
+      <template #subtitle>博文博览</template>
+      <template #desc>我们会在 SoTap Blog 上更新时事，下面是最近的几篇博文</template>
+    </section-title>
     <swiper class="blog-swiper" ref="blogSwiper" :options="swiperOptions">
       <swiper-slide v-for="(y, k) in blogs" :key="k">
         <blog-card :href="y.permalink" class="blog-post" :ref="'post-' + (k + 1)" :class="'post-' + (k + 1)" :key="2 * k + 1" :bg="y.bg">
@@ -20,6 +25,7 @@ import Vue from "vue";
 import axios from "axios";
 import BlogCard from "@/components/BlogCard.vue";
 import removeMd from "remove-markdown";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default Vue.extend({
   data() {
@@ -61,7 +67,8 @@ export default Vue.extend({
     this.getBlogPosts();
   },
   components: {
-    BlogCard
+    BlogCard,
+    SectionTitle
   },
 });
 </script>
@@ -71,13 +78,16 @@ export default Vue.extend({
   width: 100%;
   margin-top: 32px;
 
+  .blog-swiper {
+    max-width: 1200px;
+  }
+
   .blog-posts {
     display: inline-flex;
     align-items: flex-start;
     justify-content: center;
 
     .blog-post {
-      width: 33.3333%;
       margin-left: 16px;
       margin-bottom: 16px;
 
