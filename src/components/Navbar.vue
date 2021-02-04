@@ -17,7 +17,7 @@
           {{ x.name }}
         </span>
       </div>
-      <div class="nav-spacer"></div>
+      <div class="flex-spacer"></div>
       <icon-group>
         <div class="mdi mdi-dots-horizontal-circle-outline more-icon" @mouseenter="toggleDropdown('more-dropdown', true)" @mouseover="$refs['more-dropdown'].style.display=''" @mouseleave="toggleDropdown('more-dropdown', false)">
           <div ref="more-dropdown" class="more-dropdown" style="display: none;">
@@ -247,10 +247,6 @@ export default Vue.extend({
           color: #fff;
         }
       }
-    }
-
-    .nav-spacer {
-      flex-grow: 1;
     }
 
     /* Hamburger from https://apple.com */
