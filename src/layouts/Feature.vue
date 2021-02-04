@@ -44,14 +44,13 @@ import FeatureItem from "@/components/FeatureItem.vue";
 
 export default Vue.extend({
   components: {
-    FeatureItem,
+    FeatureItem
   },
 });
 </script>
 
 <style lang="less" scoped>
 .sotap-feature {
-  background: @bggray;
   width: 100%;
 
   .feature-row {
