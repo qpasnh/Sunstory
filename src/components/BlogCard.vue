@@ -49,6 +49,7 @@ export default Vue.extend({
     position: relative;
     width: 80%;
     margin: -10em auto 20px;
+    margin-bottom: 64px;
     box-sizing: border-box;
     transition: all 0.2s ease;
 
