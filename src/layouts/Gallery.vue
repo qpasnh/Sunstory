@@ -201,6 +201,7 @@ export default Vue.extend({
         display: block;
         font-size: 28px;
         margin-bottom: 8px;
+        font-weight: bold;
 
         &::before,
         &::after {
