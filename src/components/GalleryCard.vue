@@ -119,7 +119,6 @@ export default Vue.extend({
     z-index: -1;
   }
 
-  /** todo: fix not aligned */
   [class^="text"] {
     font-size: 18px;
     color: white;
