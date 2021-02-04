@@ -1,7 +1,7 @@
 <template>
-  <div ref="block" class="header" :class="headerCssClass" :style="blockElementHeight">
-    <div ref="headerBg" class="header__bg" :class="bgCssClass"></div>
-    <slot ref="parallaxContent" name="content" :class="contentCssClass" />
+  <div :ref="'block-' + id" class="header" :class="headerCssClass" :style="blockElementHeight">
+    <div :ref="'headerBg-' + id" class="header__bg" :class="bgCssClass"></div>
+    <slot :ref="'parallaxContent-' + id" name="content" :class="contentCssClass" />
   </div>
 </template>
 
@@ -102,7 +102,11 @@ export default {
       return {
         parallax: this.isScrollEvent,
         header: !this.isScrollEvent,
+        ["header-" + this.id]: true,
       };
+    },
+    id: function () {
+      return Math.random().toString().substr(8);
     },
   },
 
@@ -110,7 +114,7 @@ export default {
     const el = this.getTargetElement();
     const vm = this;
 
-    this.bgElement = this.$refs.headerBg;
+    this.bgElement = this.$refs["headerBg-" + this.id];
 
     this.setBgImageProperty();
 
@@ -129,7 +133,7 @@ export default {
 
   methods: {
     getTargetElement() {
-      return this.isScrollEvent ? window : document.querySelector(".header");
+      return this.isScrollEvent ? window : document.querySelector(".header-" + this.id);
     },
 
     handlerMouseMove(e) {
@@ -156,8 +160,8 @@ export default {
     },
 
     animateElement() {
-      const parentHeight = this.$refs.block.offsetHeight;
-      const parallaxHeight = this.$refs.headerBg.offsetHeight;
+      const parentHeight = this.$refs["block-" + this.id].offsetHeight;
+      const parallaxHeight = this.$refs["headerBg-" + this.id].offsetHeight;
       const availableOffset = parallaxHeight - parentHeight;
       let animationValue = window.pageYOffset * this.speedFactor;
       if (animationValue <= availableOffset && animationValue >= 0) {
