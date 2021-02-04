@@ -9,8 +9,8 @@
 <style lang="less" scoped>
 .section-title {
     text-align: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 72px;
+    margin-bottom: 72px;
 
     .section-subtitle {
         font-size: 12px;
