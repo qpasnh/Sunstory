@@ -102,6 +102,34 @@ h6 {
     }
 }
 
+.swiper-next,
+.swiper-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: black;
+    color: white;
+    position: absolute;
+    bottom: 50%;
+    transition: all 0.2s ease;
+    z-index: 200;
+
+    @media screen and (max-width: 690px) {
+        display: none;
+    }
+
+    .mdi {
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        background: @primary;
+        cursor: pointer;
+    }
+}
+
 @primary: #fcd307;
 @textgray: rgba(0, 0, 0, .6);
 @textgrayl: rgba(255, 255, 255, .6);

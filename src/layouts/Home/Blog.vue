@@ -6,8 +6,8 @@
             <template #desc>我们会在 SoTap Blog 上更新时事，下面是最近的几篇博文</template>
         </section-title>
         <div class="swiper-box">
-            <div @click="slide(0)" class="post-prev"><span class="mdi mdi-arrow-left"></span></div>
-            <div @click="slide(1)" class="post-next"><span class="mdi mdi-arrow-right"></span></div>
+            <div @click="slide(0)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span></div>
+            <div @click="slide(1)" class="swiper-next"><span class="mdi mdi-arrow-right"></span></div>
             <swiper class="blog-swiper" ref="blogSwiper" :options="swiperOptions">
                 <swiper-slide v-for="(y, k) in blogs" :key="k">
                     <blog-card :href="y.permalink" class="blog-post" :ref="'post-' + (k + 1)"
@@ -101,43 +101,6 @@ export default Vue.extend({
         margin: auto;
         position: relative;
         max-width: 1200px;
-
-        .post-next,
-        .post-prev {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: black;
-            color: white;
-            position: absolute;
-            bottom: 50%;
-            transition: all 0.2s ease;
-            z-index: 200;
-
-            @media screen and (max-width: 690px) {
-                display: none;
-            }
-
-            .mdi {
-                font-size: 1.5rem;
-            }
-
-            &:hover {
-                background: @primary;
-                cursor: pointer;
-            }
-        }
-
-        .post-next {
-            right: calc(-48px - 16px);
-        }
-
-        .post-prev {
-            left: calc(-48px - 16px);
-        }
     }
 
     .blog-posts {
@@ -160,5 +123,13 @@ export default Vue.extend({
             }
         }
     }
+}
+
+.swiper-next {
+    right: calc(-48px - 16px);
+}
+
+.swiper-prev {
+    left: calc(-48px - 16px);
 }
 </style>
