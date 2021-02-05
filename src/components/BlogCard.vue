@@ -52,6 +52,7 @@ export default Vue.extend({
     margin-bottom: 64px;
     box-sizing: border-box;
     transition: all 0.2s ease;
+    box-shadow: @mdui-shadow-2;
 
     .card-title {
       font-size: 28px;
