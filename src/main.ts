@@ -8,11 +8,14 @@ import "@/css/global.less";
 import "swiper/css/swiper.min.css";
 import "@mdi/font/css/materialdesignicons.min.css";
 import "./interface";
+// @ts-ignore
+import VueCheckView from "vue-check-view";
 
 Vue.config.productionTip = false;
 
 Vue.use(anime);
 Vue.use(VueAwesomeSwiper);
+Vue.use(VueCheckView);
 
 new Vue({
   router,
