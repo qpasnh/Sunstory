@@ -51,6 +51,17 @@ export class Animation {
     });
   }
 
+  public static scale(inst: Vue, inORout: "in" | "out", scale: number = 1, sel: string, duration: number = 750, delay: number = 0) {
+    inst.$anime({
+      targets: sel,
+      scale: [0, scale],
+      opacity: inORout === "in" ? [0, 1] : [1, 0],
+      easing: "easeOutExpo",
+      duration,
+      delay
+    })
+  }
+
   public static setEndPoint(p: number) {
     this.endPoint = p;
   }
