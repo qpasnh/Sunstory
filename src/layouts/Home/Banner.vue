@@ -2,7 +2,7 @@
   <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
     <swiper-slide v-for="(x, i) in bannerList" :key="i">
       <div class="swiper-item" :style="'background-image: url(' + x.bg + ')'">
-        <div class="text-box">
+        <div class="banner-text-box">
           <h1>{{ x.title }}</h1>
           <p>{{ x.text }}</p>
         </div>
@@ -51,10 +51,10 @@ export default Vue.extend({
 .banner-swiper {
   width: 100%;
   @media screen and (min-width: 690px) {
-    height: 50rem;
+    height: @bannerheight-d;
   }
   @media screen and (max-width: 690px) {
-    height: 20rem;
+    height: @bannerheight-m;
   }
 }
 
@@ -66,29 +66,6 @@ export default Vue.extend({
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-
-  .text-box {
-    position: absolute;
-    left: 128px;
-    top: 20rem;
-    color: white;
-    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
-    max-width: 1200px;
-
-    h1 {
-      width: 100%;
-      font-size: 4rem;
-      margin-top: 0;
-      margin-bottom: 32px;
-      .font-header;
-    }
-
-    p {
-      width: 100%;
-      font-size: 1.2rem;
-      .font-text;
-    }
-  }
 }
 
 .swiper-button-next,
