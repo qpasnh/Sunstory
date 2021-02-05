@@ -1,7 +1,12 @@
 <template>
   <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
     <swiper-slide v-for="(x, i) in bannerList" :key="i">
-      <div class="swiper-item" :style="'background-image: url(' + x + ')'"></div>
+      <div class="swiper-item" :style="'background-image: url(' + x.bg + ')'">
+        <div class="text-box">
+          <h1>{{ x.title }}</h1>
+          <p>{{ x.text }}</p>
+        </div>
+      </div>
     </swiper-slide>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next banner-swiper-button"></div>
@@ -30,7 +35,13 @@ export default Vue.extend({
           el: ".swiper-pagination",
         },
       },
-      bannerList: ["https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png", "https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png", "https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png", "https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png", "https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png"],
+      bannerList: [
+        { title: "测试标题", text: "测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文", bg: "https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png" },
+        { title: "测试标题", text: "测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文", bg: "https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png" },
+        { title: "测试标题", text: "测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文", bg: "https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png" },
+        { title: "测试标题", text: "测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文", bg: "https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png" },
+        { title: "测试标题", text: "测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文", bg: "https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png" },
+      ],
     };
   },
 });
@@ -40,7 +51,7 @@ export default Vue.extend({
 .banner-swiper {
   width: 100%;
   @media screen and (min-width: 690px) {
-    height: 40rem;
+    height: 50rem;
   }
   @media screen and (max-width: 690px) {
     height: 20rem;
@@ -53,6 +64,31 @@ export default Vue.extend({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+
+  .text-box {
+    position: absolute;
+    left: 128px;
+    top: 20rem;
+    color: white;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+    max-width: 1200px;
+
+    h1 {
+      width: 100%;
+      font-size: 4rem;
+      margin-top: 0;
+      margin-bottom: 32px;
+      .font-header;
+    }
+
+    p {
+      width: 100%;
+      font-size: 1.2rem;
+      .font-text;
+    }
+  }
 }
 
 .swiper-button-next,

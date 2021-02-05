@@ -1,6 +1,6 @@
 <template>
   <div class="sotap-divider">
-    <parallax-background :bg-img="img" :speedFactor="0.5" event-type="scroll" direction="up">
+    <parallax-background :bg-img="img" :speedFactor="0.7" event-type="scroll" direction="up">
       <template #content>
         <div class="divider-row">
           <slot></slot>
