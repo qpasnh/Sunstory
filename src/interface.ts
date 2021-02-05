@@ -13,7 +13,7 @@ interface Dictionary {
     [prop: string]: any
 }
 
-interface GalleryItem {
+interface GalleryItem extends Dictionary {
     author: string,
     uuid: string,
     date: string,
