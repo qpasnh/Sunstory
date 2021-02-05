@@ -1,43 +1,44 @@
 <template>
-  <div class="sotap-divider">
-    <parallax-background :gradients="gradients" :bg-img="img" :speedFactor="0.7" event-type="scroll" direction="up">
-      <template #content>
-        <div class="divider-row">
-          <slot></slot>
-        </div>
-      </template>
-    </parallax-background>
-  </div>
+    <div class="sotap-divider">
+        <parallax-background :gradients="gradients" :bg-img="img" :speedFactor="0.7"
+            event-type="scroll" direction="up">
+            <template #content>
+                <div class="divider-row">
+                    <slot></slot>
+                </div>
+            </template>
+        </parallax-background>
+    </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import ParallaxBackground from "@/components/parallax-background.vue";
+import Vue from 'vue';
+import ParallaxBackground from '@/components/parallax-background.vue';
 
 export default Vue.extend({
-  components: {
-    ParallaxBackground,
-  },
-  props: {
-    img: {
-      type: String
+    components: {
+        ParallaxBackground
     },
-    gradients: {
-      type: Array,
-      default: []
+    props: {
+        img: {
+            type: String
+        },
+        gradients: {
+            type: Array,
+            default: []
+        }
     }
-  }
 });
 </script>
 
 <style lang="less" scoped>
 .sotap-divider {
-  .divider-row {
-    padding-top: 16px;
-    padding-bottom: 32px;
-    margin: auto;
-    max-width: 1200px;
-    position: relative;
-  }
+    .divider-row {
+        padding-top: 16px;
+        padding-bottom: 32px;
+        margin: auto;
+        max-width: 1200px;
+        position: relative;
+    }
 }
 </style>

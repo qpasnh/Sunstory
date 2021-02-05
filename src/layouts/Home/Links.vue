@@ -1,55 +1,55 @@
 <template>
-  <div class="sotap-links">
-      links友链部分回炉重做中，勿cue
-  </div>
+    <div class="sotap-links">
+        links友链部分回炉重做中，勿cue
+    </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import SectionTitle from "@/components/SectionTitle.vue";
+import Vue from 'vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 export default Vue.extend({
-  components: {
-    SectionTitle,
-  },
-  data() {
-    return {
-      links: [
-        {
-          href: "https://eumc.cc",
-          img: "https://sotap.org/images/server-logos/eumc.png",
-        },
-        {
-          href: "https://www.yinwurealm.org/",
-          img: "https://sotap.oss-cn-qingdao.aliyuncs.com/logo-mini.png",
-        },
-        {
-          href: "https://www.9sakura.com/",
-          img: "https://sotap.org/images/server-logos/sakura.png",
-        },
-        {
-          href: "https://mgate.club/",
-          img: "https://sotap.org/images/marble_gate.png",
-        },
-        {
-          href: "https://www.mcmod.cn/",
-          img: "https://cdn.fghrsh.net/azcdn/img/mcmod.gif",
-        },
-        {
-          href: "https://www.aizecraft.cn/",
-          img: "https://cdn.fghrsh.net/azcdn/img/aizecraft.gif",
-        },
-        {
-          href: "https://www.lhteam.top/",
-          img: "https://sotap.org/images/server-logos/lhteam.jpg",
-        },
-        {
-          href: "https://cnxfans.com/",
-          img: "https://sotap.org/images/cnxfans.png",
-        },
-      ],
-    };
-  },
+    components: {
+        SectionTitle
+    },
+    data() {
+        return {
+            links: [
+                {
+                    href: 'https://eumc.cc',
+                    img: 'https://sotap.org/images/server-logos/eumc.png'
+                },
+                {
+                    href: 'https://www.yinwurealm.org/',
+                    img: 'https://sotap.oss-cn-qingdao.aliyuncs.com/logo-mini.png'
+                },
+                {
+                    href: 'https://www.9sakura.com/',
+                    img: 'https://sotap.org/images/server-logos/sakura.png'
+                },
+                {
+                    href: 'https://mgate.club/',
+                    img: 'https://sotap.org/images/marble_gate.png'
+                },
+                {
+                    href: 'https://www.mcmod.cn/',
+                    img: 'https://cdn.fghrsh.net/azcdn/img/mcmod.gif'
+                },
+                {
+                    href: 'https://www.aizecraft.cn/',
+                    img: 'https://cdn.fghrsh.net/azcdn/img/aizecraft.gif'
+                },
+                {
+                    href: 'https://www.lhteam.top/',
+                    img: 'https://sotap.org/images/server-logos/lhteam.jpg'
+                },
+                {
+                    href: 'https://cnxfans.com/',
+                    img: 'https://sotap.org/images/cnxfans.png'
+                }
+            ]
+        };
+    }
 });
 </script>
 
