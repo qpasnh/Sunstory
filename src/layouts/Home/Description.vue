@@ -6,11 +6,11 @@
       官网
     </h1>
     <h2>我们重新彻底编写了我们的网站，带来了许多新的特性，也简化了一些冗余之处<br>无论你是从前 SoTap 的老玩家，还是人生中第一次打开此网站，我们都有许多新东西带给你</h2>
-    <a class="outlined" target="_blank" href="https://wiki.sotap.org">
+    <a class="outlined btn-outlined" target="_blank" href="https://wiki.sotap.org">
       <span class="mdi mdi-book-outline"></span>
       阅读 Wiki
     </a>
-    <router-link class="backgrounded" to="/about-website">
+    <router-link class="backgrounded btn-backgrounded" to="/about-website">
         <span class="mdi mdi-launch"></span>
         了解更多
     </router-link>
@@ -88,15 +88,28 @@ export default Vue.extend({
       }
     }
 
-    &.backgrounded {
-        color: white;
-        background: @primary;
-        border: 1px solid @primary;
-        transition: all .2s ease;
+    &.btn-outlined {
+      &:hover {
+        background-color: darken(white, 60%);
+      }
+    }
 
-        &:hover {
-            box-shadow: @mdui-shadow-20;
-        }
+    &.backgrounded {
+      color: white;
+      background: darken(@primary, 5%);
+      border: 1px solid @primary;
+      transition: all .2s ease;
+
+      &:hover {
+          box-shadow: @mdui-shadow-20;
+      }
+    }
+
+    &.btn-backgrounded {
+      &:hover {
+        background: darken(@primary, 15%);
+        border: 1px solid darken(@primary, 10%);
+      }
     }
   }
 }
