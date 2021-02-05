@@ -3,8 +3,8 @@
         <swiper-slide v-for="(x, i) in bannerList" :key="i">
             <div class="swiper-item" :style="'background-image: url(' + x.bg + ')'">
                 <div class="banner-text-box">
-                    <h1>{{ x.title }}</h1>
-                    <p>{{ x.text }}</p>
+                    <h1 class="banner-title">{{ x.title }}</h1>
+                    <p class="banner-text">{{ x.text }}</p>
                 </div>
             </div>
         </swiper-slide>
@@ -15,6 +15,7 @@
 </template>
 
 <script lang="ts">
+import { Animation } from '@/functions';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -36,13 +37,37 @@ export default Vue.extend({
                 }
             },
             bannerList: [
-                { title: '测试标题', text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文', bg: 'https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png' },
-                { title: '测试标题', text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文', bg: 'https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png' },
-                { title: '测试标题', text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文', bg: 'https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png' },
-                { title: '测试标题', text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文', bg: 'https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png' },
-                { title: '测试标题', text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文', bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png' }
+                {
+                    title: '测试标题',
+                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
+                    bg: 'https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png'
+                },
+                {
+                    title: '测试标题',
+                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
+                    bg: 'https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png'
+                },
+                {
+                    title: '测试标题',
+                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
+                    bg: 'https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png'
+                },
+                {
+                    title: '测试标题',
+                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
+                    bg: 'https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png'
+                },
+                {
+                    title: '测试标题',
+                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
+                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
+                }
             ]
         };
+    },
+    mounted() {
+        Animation.ease(this, "in", "top", ".banner-title");
+        Animation.ease(this, "in", "top", ".banner-text", undefined, 200);
     }
 });
 </script>
