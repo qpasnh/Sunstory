@@ -61,37 +61,39 @@ import IconGroup from './IconGroup.vue';
 
 export default Vue.extend({
     mounted() {
-        this.$anime
-            .timeline({ loop: false })
-            .add({
-                targets: '.sotap-nav',
-                translateY: [-100, 0],
-                opacity: [0, 1],
-                easing: 'easeOutExpo',
-                duration: 750
-            })
-            .add({
-                targets: '.nav-item',
-                translateY: [0, 0],
-                opacity: [0, 1],
-                easing: 'easeOutExpo',
-                duration: 500,
-                delay: (e, i) => 100 * i
-            })
-            .add({
-                targets: '.more-icon',
-                translateY: [0, 0],
-                opacity: isMobile() ? [1, 1] : [0, 1],
-                easing: 'easeOutExpo',
-                duration: 500
-            })
-            .add({
-                targets: '.search-icon',
-                translateY: [0, 0],
-                opacity: isMobile() ? [1, 1] : [0, 1],
-                easing: 'easeOutExpo',
-                duration: 100
-            });
+        if (!isMobile()) {
+            this.$anime
+                .timeline({ loop: false })
+                .add({
+                    targets: '.sotap-nav',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 750
+                })
+                .add({
+                    targets: '.nav-item',
+                    translateY: [0, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 500,
+                    delay: (e, i) => 100 * i
+                })
+                .add({
+                    targets: '.more-icon',
+                    translateY: [0, 0],
+                    opacity: isMobile() ? [1, 1] : [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 500
+                })
+                .add({
+                    targets: '.search-icon',
+                    translateY: [0, 0],
+                    opacity: isMobile() ? [1, 1] : [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 100
+                });
+        }
     },
     data() {
         return {
@@ -144,11 +146,16 @@ export default Vue.extend({
             }
         },
         toggleDropdown(target: string, directOption?: boolean) {
-            console.log(target, directOption);
             let obj: HTMLDivElement = this.$refs[target] as HTMLDivElement;
             // p => positive option; n => negative option.
-            let p = directOption !== undefined ? directOption : obj.style.display === 'none' || (this.hamburgerOpen && target === 'dropdown');
-            let n = directOption !== undefined ? !directOption : obj.style.display === '' || (!this.hamburgerOpen && target === 'dropdown');
+            let p =
+                directOption !== undefined
+                    ? directOption
+                    : obj.style.display === 'none' || (this.hamburgerOpen && target === 'dropdown');
+            let n =
+                directOption !== undefined
+                    ? !directOption
+                    : obj.style.display === '' || (!this.hamburgerOpen && target === 'dropdown');
             if (p) {
                 obj.style.display = '';
             }
@@ -170,11 +177,6 @@ export default Vue.extend({
     },
     components: {
         IconGroup
-    },
-    computed: {
-        console() {
-            return window.console;
-        }
     }
 });
 </script>
