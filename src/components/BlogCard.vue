@@ -56,6 +56,11 @@ export default Vue.extend({
 
     .card-title {
       font-size: 28px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     .card-text {
