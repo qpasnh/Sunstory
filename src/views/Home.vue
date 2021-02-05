@@ -13,14 +13,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Banner from "@/layouts/Banner.vue";
-import Feature from "@/layouts/Feature.vue";
-import Description from "@/layouts/Description.vue";
-import Prefooter from "@/layouts/Prefooter.vue";
-import Gallery from "@/layouts/Gallery.vue";
-import Blog from "@/layouts/Blog.vue";
-import Footer from "@/layouts/Footer.vue";
-import Links from "@/layouts/Links.vue";
+import Banner from "@/layouts/Home/Banner.vue";
+import Feature from "@/layouts/Home/Feature.vue";
+import Description from "@/layouts/Home/Description.vue";
+import Prefooter from "@/layouts/Home/Prefooter.vue";
+import Gallery from "@/layouts/Home/Gallery.vue";
+import Blog from "@/layouts/Home/Blog.vue";
+import Footer from "@/layouts/Home/Footer.vue";
+import Links from "@/layouts/Home/Links.vue";
 
 export default Vue.extend({
   data() {
