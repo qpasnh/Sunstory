@@ -131,6 +131,24 @@ h6 {
     }
 }
 
+.gallery-row-meta-small-width-fix {
+    .meta {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .meta-item {
+            display: block;
+            width: 100%;
+            flex-wrap: wrap;
+
+            >* {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
 .gallery-container {
     .gallery-row {
         display: flex;
@@ -166,20 +184,12 @@ h6 {
             }
 
             &.thin {
-                .meta {
-                    flex-wrap: wrap;
-                    justify-content: center;
+                .gallery-row-meta-small-width-fix;
+            }
 
-                    .meta-item {
-                        display: block;
-                        width: 100%;
-                        flex-wrap: wrap;
-
-                        >* {
-                            display: block;
-                            width: 100%;
-                        }
-                    }
+            &.mid-thin {
+                @media screen and (max-width: 1024px) {
+                    .gallery-row-meta-small-width-fix;
                 }
             }
 
