@@ -12,3 +12,13 @@ interface BlogInstance {
 interface Dictionary {
     [prop: string]: any
 }
+
+interface GalleryItem {
+    author: string,
+    uuid: string,
+    date: string,
+    desc: string,
+    loc: string,
+    bg: string,
+    width?: number
+}

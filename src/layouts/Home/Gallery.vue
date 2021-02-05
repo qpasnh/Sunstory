@@ -99,7 +99,7 @@ export default Vue.extend({
                         bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
                         width: 100
                     }
-                ]
+                ] as Array<GalleryItem>
             ]
         };
     },
