@@ -19,8 +19,8 @@ export class Animation {
    * @param inORout 选择是进入还是离开，仅能为 `in` 或 `out`
    * @param direction 选择方向，仅能为 `top`、`bottom`、`left` 和 `right`。该方向是指这个元素出现时的运动朝向
    * @param sel 选择器，选择相应的元素。支持 class `.`、id `#` 等等
-   * @param duration 选填，动画持续时间，用于控制动画速度，单位毫秒
-   * @param delay 选填，动画延迟，用于控制动画执行时间，单位毫秒
+   * @param duration 选填，动画持续时间，用于控制动画速度，单位毫秒，默认 750
+   * @param delay 选填，动画延迟，用于控制动画执行时间，单位毫秒，默认 0
    */
   public static ease(
     inst: Vue,
