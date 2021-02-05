@@ -12,6 +12,7 @@
         "animejs": "^3.2.1",
         "axios": "^0.21.1",
         "core-js": "^3.6.5",
+        "intersection-observer": "^0.12.0",
         "nprogress": "^0.2.0",
         "register-service-worker": "^1.7.1",
         "remove-markdown": "^0.3.0",
@@ -19,6 +20,7 @@
         "swiper": "^5.4.5",
         "vue": "^2.6.11",
         "vue-awesome-swiper": "^4.1.1",
+        "vue-observe-visibility": "^1.0.0",
         "vue-router": "^3.2.0"
     },
     "devDependencies": {
