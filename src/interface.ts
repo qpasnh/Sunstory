@@ -22,3 +22,9 @@ interface GalleryItem extends Dictionary {
     bg: string,
     width?: number
 }
+
+interface LightboxItem extends Dictionary {
+    title: string,
+    description: string,
+    src: string
+}

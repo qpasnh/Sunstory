@@ -1,6 +1,6 @@
 <template>
-    <div class="gallery-card-box" @mouseover="updateStyles(1)" @mouseleave="updateStyles(0)"
-        @click="go(bg)">
+    <div class="gallery-card-box" @mouseenter="updateStyles(1)" @mouseleave="updateStyles(0)"
+        @click="onclick()">
         <div class="gallery-card" :style="'background-image: url(' + bg + ');'">
             <div class="overlay" :style="'opacity:' + alpha"></div>
             <div v-if="!imageOnly" :class="'title-' + id"
@@ -30,6 +30,10 @@ export default Vue.extend({
         },
         bg: {
             type: String
+        },
+        onclick: {
+            type: Function,
+            default: () => {return}
         }
     },
     data() {
@@ -82,9 +86,6 @@ export default Vue.extend({
                 this.showTitle = true;
                 this.$anime(titleIn);
             }
-        },
-        go(url: string) {
-            window.open(url);
         }
     },
     mounted() {

@@ -66,3 +66,13 @@ export class Animation {
     this.endPoint = p;
   }
 }
+
+/**
+ * 获取一个属于 [min, max] 的伪随机整数
+ * 
+ * @param min 最小值，包含
+ * @param max 最大值，包含
+ */
+export function getRandomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
