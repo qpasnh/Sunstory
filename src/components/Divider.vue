@@ -1,6 +1,6 @@
 <template>
   <div class="sotap-divider">
-    <parallax-background :bg-img="img" :speedFactor="0.7" event-type="scroll" direction="up">
+    <parallax-background :gradients="gradients" :bg-img="img" :speedFactor="0.7" event-type="scroll" direction="up">
       <template #content>
         <div class="divider-row">
           <slot></slot>
@@ -18,7 +18,15 @@ export default Vue.extend({
   components: {
     ParallaxBackground,
   },
-  props: ["img"],
+  props: {
+    img: {
+      type: String
+    },
+    gradients: {
+      type: Array,
+      default: []
+    }
+  }
 });
 </script>
 
