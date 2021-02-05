@@ -52,6 +52,7 @@ export default Vue.extend({
     getBlogPosts() {
       axios.get("https://blog.sotap.org/api/posts?pageSize=5").then((r) => {
         let data: Array<BlogInstance> = r.data.data;
+        let textLenLimit = 200;
         data.forEach((k) => {
           let quote = /\[\/\/\]:\((.*?)\)/.exec(k.text);
           let text = this.removeComment(removeMd(k.text));
@@ -60,7 +61,7 @@ export default Vue.extend({
             title: k.title,
             cid: k.cid,
             permalink: k.permalink,
-            text: text.substr(text[0] === ">" ? 1 : 0, 120) + (k.text.length > 120 ? "..." : ""),
+            text: text.substr(text[0] === ">" ? 1 : 0, textLenLimit) + (k.text.length > textLenLimit ? "..." : ""),
             created: k.created,
             bg: quote[1],
           });

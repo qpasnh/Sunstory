@@ -67,6 +67,11 @@ export default Vue.extend({
     .card-text {
       color: @textgray;
       transition: all 0.2s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
     }
 
     &:hover {
