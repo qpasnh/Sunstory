@@ -42,6 +42,9 @@ export default Vue.extend({
                 top: 0,
                 behavior: "smooth"
             })
+        },
+        go(url: string) {
+            window.open(url);
         }
     }
 });
