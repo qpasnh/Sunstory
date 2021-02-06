@@ -132,18 +132,20 @@ h6 {
 }
 
 .gallery-row-meta-small-width-fix {
-    .meta {
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .meta-item {
-            display: block;
-            width: 100%;
+    @media screen and (min-width: 690px) {
+        .meta {
             flex-wrap: wrap;
+            justify-content: center;
 
-            >* {
+            .meta-item {
                 display: block;
                 width: 100%;
+                flex-wrap: wrap;
+
+                >* {
+                    display: block;
+                    width: 100%;
+                }
             }
         }
     }
@@ -188,7 +190,7 @@ h6 {
             }
 
             &.mid-thin {
-                @media screen and (max-width: 1024px) {
+                @media screen and (max-width: 1300px) {
                     .gallery-row-meta-small-width-fix;
                 }
             }
