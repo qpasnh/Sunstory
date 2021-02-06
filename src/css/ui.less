@@ -10,3 +10,44 @@
         margin-right: 16px;
     }
 }
+
+.ui-button {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px;
+    text-shadow: none !important;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.outlined {
+        color: white;
+        border: 1px solid white;
+
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: @mdui-shadow-20;
+        }
+    }
+
+    &.backgrounded {
+        color: white;
+        background: @primary;
+        border: 1px solid @primary;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: @mdui-shadow-20;
+            background: darken(@primary, 15%);
+            border: 1px solid darken(@primary, 10%);
+            color: darken(white, 15%);
+        }
+    }
+}

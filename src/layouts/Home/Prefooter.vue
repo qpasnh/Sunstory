@@ -4,7 +4,7 @@
         <p>现在你可以无门槛*地加入 SoTap 了。无论你是一位普通的 Minecraft
             玩家，或者是建筑爱好者，亦或者是红石大师，甚至于编程大佬，这里都有你的一席之地。我们随时欢迎你的到来！</p>
         <small>*门槛其实是有的：你需要一个 Minecraft 国际正版账号，仅此而已！</small>
-        <a target="_blank" href="//baidu.com">立即加入讨论群 &raquo;</a>
+        <a class="ui-button backgrounded" target="_blank" href="//baidu.com">立即加入讨论群 &raquo;</a>
     </div>
 </template>
 
@@ -56,18 +56,9 @@ export default Vue.extend({
     }
 
     a {
-        text-decoration: none;
-        color: white;
-        background: @primary;
-        padding: 16px;
         position: absolute;
         right: 64px;
         bottom: 64px;
-        transition: all 0.2s ease;
-
-        &:hover {
-            box-shadow: @mdui-shadow-6;
-        }
     }
 
     small {
