@@ -125,16 +125,16 @@ export default Vue.extend({
     methods: {
         vis1() {
             if (isMobile()) {
-                Animation.ease(this, 'in', 'right', '.description-title');
+                Animation.ease('in', 'right', '.description-title');
             } else {
-                Animation.ease(this, 'in', 'top', '.description-title');
+                Animation.ease('in', 'top', '.description-title');
             }
         },
         vis2() {
-            Animation.ease(this, 'in', 'top', '.left-col');
+            Animation.ease('in', 'top', '.left-col');
         },
         vis3() {
-            Animation.ease(this, 'in', 'top', '.right-col');
+            Animation.ease('in', 'top', '.right-col');
         },
         slide(direction: 0 | 1) {
             // @ts-ignore
@@ -179,7 +179,7 @@ export default Vue.extend({
         // @ts-ignore
         animateGallery(e) {
             let id = e.target.element.id;
-            Animation.scale(this, 'in', 1, '#' + id.toString(), 1500);
+            Animation.scale('in', 1, '#' + id.toString(), 1500);
         }
     },
     data() {

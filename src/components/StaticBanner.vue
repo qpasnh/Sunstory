@@ -17,8 +17,8 @@ import Vue from 'vue';
 export default Vue.extend({
     props: ['bg'],
     mounted() {
-        Animation.ease(this, 'in', 'top', '.banner-title');
-        Animation.ease(this, 'in', 'top', '.banner-text', undefined, 200);
+        Animation.ease('in', 'top', '.banner-title');
+        Animation.ease('in', 'top', '.banner-text', undefined, 200);
     }
 });
 </script>

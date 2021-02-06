@@ -1,3 +1,5 @@
+import anime from "animejs"
+
 export function isMobile() {
   return (
     /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
@@ -23,14 +25,13 @@ export class Animation {
    * @param delay 选填，动画延迟，用于控制动画执行时间，单位毫秒，默认 0
    */
   public static ease(
-    inst: Vue,
     inORout: "in" | "out",
     direction: Direction,
     sel: string,
     duration: number = 750,
     delay: number = 0
   ) {
-    inst.$anime({
+    anime({
       targets: sel,
       translateY:
         (direction === "top" || direction === "bottom")
@@ -51,8 +52,8 @@ export class Animation {
     });
   }
 
-  public static scale(inst: Vue, inORout: "in" | "out", scale: number = 1, sel: string, duration: number = 750, delay: number = 0) {
-    inst.$anime({
+  public static scale(inORout: "in" | "out", scale: number = 1, sel: string, duration: number = 750, delay: number = 0) {
+    anime({
       targets: sel,
       scale: [0, scale],
       opacity: inORout === "in" ? [0, 1] : [1, 0],

@@ -66,8 +66,8 @@ export default Vue.extend({
         };
     },
     mounted() {
-        Animation.ease(this, "in", "top", ".banner-title");
-        Animation.ease(this, "in", "top", ".banner-text", undefined, 200);
+        Animation.ease("in", "top", ".banner-title");
+        Animation.ease("in", "top", ".banner-text", undefined, 200);
     }
 });
 </script>
