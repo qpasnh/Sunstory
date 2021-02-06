@@ -12,8 +12,6 @@ export function isMobile() {
 }
 
 export class Animation {
-  public static endPoint = 100;
-
   /**
    * 给予一个元素方向淡入或淡出效果
    * 
@@ -29,21 +27,22 @@ export class Animation {
     direction: Direction,
     sel: string | HTMLElement | Array<string> | Array<HTMLElement>,
     duration: number = 750,
-    delay: number = 0
+    delay: number = 0,
+    endpoint: number = 100
   ) {
     anime({
       targets: sel,
       translateY:
         (direction === "top" || direction === "bottom")
           ? inORout === "in"
-            ? [direction === "top" ? this.endPoint : -this.endPoint, 0]
-            : [0, this.endPoint]
+            ? [direction === "top" ? endpoint : -endpoint, 0]
+            : [0, endpoint]
           : [0, 0],
       translateX:
         (direction === "left" || direction === "right")
           ? inORout === "in"
-            ? [direction === "right" ? this.endPoint : -this.endPoint, 0]
-            : [0, this.endPoint]
+            ? [direction === "right" ? endpoint : -endpoint, 0]
+            : [0, endpoint]
           : [0, 0],
       opacity: inORout === "in" ? [0, 1] : [1, 0],
       easing: "easeOutExpo",
@@ -61,10 +60,6 @@ export class Animation {
       duration,
       delay
     })
-  }
-
-  public static setEndPoint(p: number) {
-    this.endPoint = p;
   }
 }
 
