@@ -25,7 +25,7 @@ export default Vue.extend({
         },
         gradients: {
             type: Array,
-            default: []
+            default: () => []
         },
         speedFactor: {
             type: Number,
