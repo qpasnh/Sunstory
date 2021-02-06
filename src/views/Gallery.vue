@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="row no-margin">
-            <divider :speedFactor="0.2" class="join-divider" :gradients="gradients"
+            <divider :speedFactor="0.2" class="join-divider" :coverOpacity="0.3"
                 img="https://i.loli.net/2021/02/06/OXbM7w9GZiPan4v.jpg">
                 <h1>参与到这所有的瑰丽中</h1>
                 <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap 之旅。我们随时欢迎你的加入！</p>
@@ -325,8 +325,7 @@ export default Vue.extend({
             ] as Array<GalleryItem>,
             waterfallWidthData: {} as Dictionary,
             index: null,
-            lightboxItems: [] as Array<LightboxItem>,
-            gradients: ['linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3))']
+            lightboxItems: [] as Array<LightboxItem>
         };
     },
     mounted() {
@@ -507,30 +506,5 @@ export default Vue.extend({
 
 .gallery-container {
     background: black;
-}
-
-.join-divider {
-    color: white;
-    text-shadow: @textshadow-1;
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    p {
-        max-width: 600px;
-        line-height: 1.8;
-        font-size: 17px;
-    }
-
-    .ui-button {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        padding-left: 32px;
-        padding-right: 32px;
-        font-size: 20px;
-    }
 }
 </style>

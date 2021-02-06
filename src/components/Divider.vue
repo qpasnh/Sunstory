@@ -1,6 +1,6 @@
 <template>
     <div class="sotap-divider">
-        <parallax-background :key="Math.random().toString().substr(2, 5)" :gradients="gradients" :bg-img="img" :speedFactor="speedFactor"
+        <parallax-background :key="Math.random().toString().substr(2, 5)" :gradients="opacityGradient" :bg-img="img" :speedFactor="speedFactor"
             event-type="scroll" direction="up">
             <template #content>
                 <div class="divider-row">
@@ -23,13 +23,18 @@ export default Vue.extend({
         img: {
             type: String
         },
-        gradients: {
-            type: Array,
-            default: () => ["linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))"]
+        coverOpacity: {
+            type: Number,
+            default: 0
         },
         speedFactor: {
             type: Number,
             default: 0.5
+        }
+    },
+    computed: {
+        opacityGradient() {
+            return [`linear-gradient(rgba(0, 0, 0, ${this.coverOpacity}), rgba(0, 0, 0, ${this.coverOpacity}))`];
         }
     }
 });

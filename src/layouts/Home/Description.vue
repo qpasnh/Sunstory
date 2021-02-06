@@ -1,5 +1,5 @@
 <template>
-    <divider :speedFactor="0.6" :gradients="gradients" class="sotap-description"
+    <divider :speedFactor="0.6" :coverOpacity="0.2" class="sotap-description"
         img="https://mcsunrise.oss-cn-qingdao.aliyuncs.com/sunrise1.png">
         <h1>
             嘿，这里是全新的
@@ -25,11 +25,6 @@ import Divider from '@/components/Divider.vue';
 export default Vue.extend({
     components: {
         Divider
-    },
-    data() {
-        return {
-            gradients: ['linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2))']
-        };
     }
 });
 </script>
