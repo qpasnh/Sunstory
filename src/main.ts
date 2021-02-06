@@ -17,6 +17,14 @@ Vue.use(anime);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueCheckView);
 
+router.afterEach((to, from) => {
+  document.documentElement.scrollTo({
+    top: 0
+    // note: don't use behavior: 'smooth' here,
+    // because it'll cause too-early animation setting off.
+  });
+});
+
 new Vue({
   router,
   render: (h) => h(App),
