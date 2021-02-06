@@ -12,15 +12,15 @@
         </static-banner>
         <div class="row">
             <div class="gallery-description">
-                <h1 class="description-title" v-view.once="vis1">这里，<br>我们记录 SoTap 珍奇而瑰丽的点滴</h1>
+                <h1 class="description-title" style="opacity: 0" v-view.once="vis1">这里，<br>我们记录 SoTap 珍奇而瑰丽的点滴</h1>
                 <div class="text-cols">
-                    <div class="left-col" v-view.once="vis2">
+                    <div class="left-col" style="opacity: 0" v-view.once="visEffect">
                         <p><strong>这里是 SoTap Gallery。</strong></p>
                         <p>这是一个你也许先前从来没有听闻过的页面。在这里，我们将摆放一些有关 SoTap
                             服务器（内服或外服）的优秀摄影作品，并挑选恰当的作品来讲述它们的故事。</p>
                         <p>别担心，别着急，每一个人都有加入 Gallery 的机会，哪怕你的摄影技术并不好。我们只需要慢慢等待······</p>
                     </div>
-                    <div class="right-col" v-view.once="vis3">
+                    <div class="right-col" style="opacity: 0" v-view.once="visEffect">
                         <p><strong>而这样做有什么意义呢？</strong></p>
                         <p>想必意义是明显的。</p>
                         <p>SoTap 不仅是一个简单的 Minecraft 服务器，更是一个承载着许多玩家珍贵 Minecraft
@@ -106,7 +106,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import StaticBanner from '@/components/StaticBanner.vue';
-import { Animation, getRandomInt, isMobile } from '@/functions';
+import { Animation, getRandomInt, isMobile, visEffect } from '@/functions';
 import GalleryCard from '@/components/GalleryCard.vue';
 // @ts-ignore
 import CoolLightBox from 'vue-cool-lightbox';
@@ -123,18 +123,15 @@ export default Vue.extend({
         SectionTitle
     },
     methods: {
-        vis1() {
+        visEffect,
+        vis1(x: ViewObject) {
+            let el = x.target.element;
+            el.style.opacity = "";
             if (isMobile()) {
-                Animation.ease('in', 'right', '.description-title');
+                Animation.ease('in', 'right', el);
             } else {
-                Animation.ease('in', 'top', '.description-title');
+                Animation.ease('in', 'top', el);
             }
-        },
-        vis2() {
-            Animation.ease('in', 'top', '.left-col');
-        },
-        vis3() {
-            Animation.ease('in', 'top', '.right-col');
         },
         slide(direction: 0 | 1) {
             // @ts-ignore
