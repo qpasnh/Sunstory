@@ -25,7 +25,7 @@ export default Vue.extend({
         },
         gradients: {
             type: Array,
-            default: () => []
+            default: () => ["linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))"]
         },
         speedFactor: {
             type: Number,
