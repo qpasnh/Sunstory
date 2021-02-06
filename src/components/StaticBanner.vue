@@ -30,6 +30,7 @@ export default Vue.extend({
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    line-height: 1.8;
 
     @media screen and (min-width: 690px) {
         height: @bannerheight-d;
