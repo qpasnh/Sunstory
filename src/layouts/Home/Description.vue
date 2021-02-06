@@ -1,5 +1,5 @@
 <template>
-    <divider :gradients="gradients" class="sotap-description"
+    <divider :speedFactor="0.6" :gradients="gradients" class="sotap-description"
         img="https://mcsunrise.oss-cn-qingdao.aliyuncs.com/sunrise1.png">
         <h1>
             嘿，这里是全新的
@@ -28,7 +28,7 @@ export default Vue.extend({
     },
     data() {
         return {
-            gradients: ['linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3))']
+            gradients: ['linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2))']
         };
     }
 });
