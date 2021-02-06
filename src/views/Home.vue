@@ -7,7 +7,6 @@
     <blog />
     <prefooter />
     <links />
-    <Footer />
   </div>
 </template>
 
@@ -19,7 +18,6 @@ import Description from "@/layouts/Home/Description.vue";
 import Prefooter from "@/layouts/Home/Prefooter.vue";
 import Gallery from "@/layouts/Home/Gallery.vue";
 import Blog from "@/layouts/Home/Blog.vue";
-import Footer from "@/layouts/Home/Footer.vue";
 import Links from "@/layouts/Home/Links.vue";
 
 export default Vue.extend({
@@ -33,7 +31,6 @@ export default Vue.extend({
     Prefooter,
     Gallery,
     Blog,
-    Footer,
     Links,
   },
 });
