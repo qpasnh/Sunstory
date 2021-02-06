@@ -1,6 +1,7 @@
 <template>
     <div class="gallery">
-        <CoolLightBox :items="lightboxItems" :index="index" @close="index = null" />
+        <CoolLightBox thumbsPosition="right" effect="fade" :items="lightboxItems" :index="index"
+            @close="index = null" />
         <static-banner bg="https://i.loli.net/2021/02/05/1ZUVbn24YOHE3j8.jpg">
             <template #title>
                 SoTap 图库
@@ -48,14 +49,20 @@
                 <div class="swiper-pagination" slot="pagination" />
             </swiper>
         </div>
-        <div class="row">
+        <section-title>
+            <template #subtitle>佳作展览</template>
+            <template #title>Exhibition</template>
+            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图</small></template>
+        </section-title>
+        <div class="row no-margin-bottom">
             <div class="gallery-container">
                 <div class="gallery-row" v-for="i in Math.ceil(waterfall.length / 2)" :key="i">
-                    <gallery-card v-view.once="animateGallery" :onclick="() => { index = k + (i - 2) * 2 }"
-                        :class="getRandomWidth(i, k) <= 25 ? 'thin' : (getRandomWidth(i, k) <= 50 ? 'mid-thin' : '')"
-                        :id="'gallery-' + (k + 1 + (i - 2) * 2)"
-                        :imageOnly="true" class="gallery-img" v-for="k in 2"
-                        :key="k + 1 + (i - 2) * 2" :bg="getWaterfall(k + 1 + (i - 2) * 2, 'bg')"
+                    <gallery-card v-view.once="animateGallery"
+                        :onclick="() => { index = k + 1 + (i - 2) * 2 }"
+                        :class="getRandomWidth(i, k) <= 25 ? 'thin' : (waterfallWidthData[i + '.' + k] <= 50 ? 'mid-thin' : '')"
+                        :id="'gallery-' + (k + 1 + (i - 2) * 2)" :imageOnly="true"
+                        class="gallery-img" v-for="k in 2" :key="k + 1 + (i - 2) * 2"
+                        :bg="getWaterfall(k + 1 + (i - 2) * 2, 'bg')"
                         :style="'width: ' + waterfallWidthData[i + '.' + k] + '%; display: ' + (waterfall[k + 1 + (i - 2) * 2] === undefined ? 'none' : '')">
                         <template #text>
                             <span
@@ -83,6 +90,16 @@
                 </div>
             </div>
         </div>
+        <div class="row no-margin">
+            <divider :speedFactor="0.2" class="join-divider" :gradients="gradients"
+                img="https://i.loli.net/2021/02/06/OXbM7w9GZiPan4v.jpg">
+                <h1>参与到这所有的瑰丽中</h1>
+                <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap 之旅。我们随时欢迎你的加入！</p>
+                <router-link class="ui-button backgrounded" to="/join">
+                    立即加入 &raquo;
+                </router-link>
+            </divider>
+        </div>
     </div>
 </template>
 
@@ -94,12 +111,16 @@ import GalleryCard from '@/components/GalleryCard.vue';
 // @ts-ignore
 import CoolLightBox from 'vue-cool-lightbox';
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
+import Divider from '@/components/Divider.vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 export default Vue.extend({
     components: {
         StaticBanner,
         GalleryCard,
-        CoolLightBox
+        CoolLightBox,
+        Divider,
+        SectionTitle
     },
     methods: {
         vis1() {
@@ -158,7 +179,7 @@ export default Vue.extend({
         // @ts-ignore
         animateGallery(e) {
             let id = e.target.element.id;
-            Animation.scale(this, "in", 1, "#" + id.toString(), 1500);
+            Animation.scale(this, 'in', 1, '#' + id.toString(), 1500);
         }
     },
     data() {
@@ -304,7 +325,8 @@ export default Vue.extend({
             ] as Array<GalleryItem>,
             waterfallWidthData: {} as Dictionary,
             index: null,
-            lightboxItems: [] as Array<LightboxItem>
+            lightboxItems: [] as Array<LightboxItem>,
+            gradients: ['linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3))']
         };
     },
     mounted() {
@@ -485,5 +507,30 @@ export default Vue.extend({
 
 .gallery-container {
     background: black;
+}
+
+.join-divider {
+    color: white;
+    text-shadow: @textshadow-1;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        max-width: 600px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    .ui-button {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 32px;
+        padding-right: 32px;
+        font-size: 20px;
+    }
 }
 </style>
