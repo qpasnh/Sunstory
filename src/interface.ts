@@ -28,3 +28,20 @@ interface LightboxItem extends Dictionary {
     description: string,
     src: string
 }
+
+interface ViewObject {
+    percentCenter: number,
+    percentInView: number,
+    percentTop: number,
+    scrollPercent: 0,
+    scrollValue: 0,
+    target: ViewObjectTarget,
+    type: "enter" | "exit" | "progress"
+}
+
+interface ViewObjectTarget {
+    classes: Dictionary,
+    element: HTMLElement,
+    percent: number,
+    rect: DOMRect
+}

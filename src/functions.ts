@@ -27,7 +27,7 @@ export class Animation {
   public static ease(
     inORout: "in" | "out",
     direction: Direction,
-    sel: string,
+    sel: string | HTMLElement | Array<string> | Array<HTMLElement>,
     duration: number = 750,
     delay: number = 0
   ) {
@@ -52,7 +52,7 @@ export class Animation {
     });
   }
 
-  public static scale(inORout: "in" | "out", scale: number = 1, sel: string, duration: number = 750, delay: number = 0) {
+  public static scale(inORout: "in" | "out", scale: number = 1, sel: string | HTMLElement | Array<string> | Array<HTMLElement>, duration: number = 750, delay: number = 0) {
     anime({
       targets: sel,
       scale: [0, scale],
@@ -76,4 +76,13 @@ export class Animation {
  */
 export function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * 快速给元素添加进入的动画效果（自下而上滑动淡入）
+ * 
+ * @param ob v-view 调用时传入的专有参数，具体可查看 @/interface.ts
+ */
+export function visEffect(ob: ViewObject) {
+  Animation.ease("in", "top", ob.target.element);
 }
