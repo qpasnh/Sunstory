@@ -24,6 +24,9 @@
                 </div>
             </div>
         </div>
+        <div class="back-to-top" @click="toTop()">
+            <span class="mdi mdi-chevron-up"></span>
+        </div>
     </footer>
 </template>
 
@@ -32,6 +35,14 @@ import Vue from 'vue';
 export default Vue.extend({
     data() {
         return {};
+    },
+    methods: {
+        toTop() {
+            document.documentElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
     }
 });
 </script>
@@ -47,6 +58,31 @@ export default Vue.extend({
         max-width: 1200px;
         display: block;
         margin: auto;
+    }
+
+    .back-to-top {
+        background-color: @midgray;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        box-shadow: @mdui-shadow-6;
+        cursor: pointer;
+        right: 64px;
+        top: -24px;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: @primary;
+            color: white;
+        }
+
+        .mdi {
+            font-size: 1.5rem;
+        }
     }
 
     .root-bar {
@@ -87,7 +123,7 @@ export default Vue.extend({
                 color: white;
 
                 .social-item {
-                    background: rgb(56, 56, 56);
+                    background: @midgray;
                     box-shadow: @mdui-shadow-6;
                     width: 32px;
                     height: 32px;
