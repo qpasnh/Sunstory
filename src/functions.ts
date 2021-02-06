@@ -84,5 +84,7 @@ export function getRandomInt(min: number, max: number) {
  * @param ob v-view 调用时传入的专有参数，具体可查看 @/interface.ts
  */
 export function visEffect(ob: ViewObject) {
+  // remove opacity:0 settings
+  ob.target.element.style.opacity = "";
   Animation.ease("in", "top", ob.target.element);
 }
