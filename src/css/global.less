@@ -1,8 +1,10 @@
 @import "./ui.less";
 @import "./flaticon.css";
+@import "../fonts/lmroman/lmroman.css";
 
 html {
     .font-text;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,6 +26,10 @@ h6 {
 
 .font-header {
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', "微软雅黑", "Microsoft Yahei UI", sans-serif;
+}
+
+.font-roman {
+    font-family: "Latin Modern Math", 'Times New Roman', Times, serif;
 }
 
 .mdi {
@@ -262,6 +268,31 @@ h6 {
     }
 }
 
+.join-divider {
+    color: white;
+    text-shadow: @textshadow-1;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        max-width: 600px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    .ui-button {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 32px;
+        padding-right: 32px;
+        font-size: 20px;
+    }
+}
+
 .no-margin {
     margin: 0 !important;
 }
@@ -280,6 +311,33 @@ h6 {
 
 .no-margin-right {
     margin-right: 0 !important;
+}
+
+.hide-selection {
+    &::selection {
+        background: rgba(0, 0, 0, 0);
+    }
+    cursor: default;
+}
+
+.sotap-typo {
+    h1 {
+        &::before {
+            content: "#";
+            color: @primary;
+            opacity: .4;
+            position: absolute;
+            left: -16px;
+            bottom: 8px;
+            z-index: -1;
+        }
+    }
+
+    p {
+        color: @textgray;
+        font-size: 17px;
+        line-height: 1.8;
+    }
 }
 
 @primary: #fcd307;

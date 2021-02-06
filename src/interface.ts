@@ -45,3 +45,14 @@ interface ViewObjectTarget {
     percent: number,
     rect: DOMRect
 }
+
+interface TimelineObject {
+    year: number,
+    events: Array<TimelineEvents>
+}
+
+interface TimelineEvents {
+    name?: string,
+    title?: string,
+    text?: string,
+}

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Latin Modern Math";
+    src: url("./lmroman10-regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Latin Modern Math";
+    src: url("./lmroman10-bold.otf") format("opentype");
+    font-style: normal;
+    font-weight: bold;
+}
