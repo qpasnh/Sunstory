@@ -117,15 +117,7 @@ h6 {
     height: 48px;
     background: black;
     color: white;
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
     transition: all 0.2s ease;
-    z-index: 200;
-
-    @media screen and (max-width: 690px) {
-        display: none;
-    }
 
     .mdi {
         font-size: 1.5rem;
@@ -191,10 +183,11 @@ h6 {
                 margin-right: 0;
             }
 
-            &.thin, &.mid-thin {
+            &.thin,
+            &.mid-thin {
                 .gallery-row-meta-small-width-fix;
             }
-            
+
             .date {
                 font-size: 14px;
                 color: rgba(255, 255, 255, 0.4);
@@ -317,6 +310,7 @@ h6 {
     &::selection {
         background: rgba(0, 0, 0, 0);
     }
+
     cursor: default;
 }
 

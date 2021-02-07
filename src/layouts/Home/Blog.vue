@@ -6,8 +6,10 @@
             <template #desc>我们会在 SoTap Blog 上更新时事，下面是最近的几篇博文</template>
         </section-title>
         <div class="swiper-box">
-            <div @click="slide(0)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span></div>
-            <div @click="slide(1)" class="swiper-next"><span class="mdi mdi-arrow-right"></span></div>
+            <div @click="slide(0)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span>
+            </div>
+            <div @click="slide(1)" class="swiper-next"><span class="mdi mdi-arrow-right"></span>
+            </div>
             <swiper class="blog-swiper" ref="blogSwiper" :options="swiperOptions">
                 <swiper-slide v-for="(y, k) in blogs" :key="k">
                     <blog-card :href="y.permalink" class="blog-post" :ref="'post-' + (k + 1)"
@@ -62,7 +64,9 @@ export default Vue.extend({
                         title: k.title,
                         cid: k.cid,
                         permalink: k.permalink,
-                        text: text.substr(text[0] === '>' ? 1 : 0, textLenLimit) + (k.text.length > textLenLimit ? '...' : ''),
+                        text:
+                            text.substr(text[0] === '>' ? 1 : 0, textLenLimit) +
+                            (k.text.length > textLenLimit ? '...' : ''),
                         created: k.created,
                         bg: quote[1]
                     });
@@ -122,6 +126,18 @@ export default Vue.extend({
                 margin-right: 0;
             }
         }
+    }
+}
+
+.swiper-next,
+.swiper-prev {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    z-index: 200;
+    
+    @media screen and (max-width: 690px) {
+        display: none;
     }
 }
 
