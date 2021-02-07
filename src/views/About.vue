@@ -63,6 +63,17 @@
                             <span>{{ y.name }}</span>
                         </div>
                         <div class="content sotap-typo">
+                            <swiper style="opacity: 0" v-view.once="visEffect" v-if="y.swiper" class="content-swiper"
+                                :ref="'contentSwiper-' + i + '-' + k" :options="swiperOptions">
+                                <swiper-slide v-for="(z, u) in y.swiper" :key="u"
+                                    class="content-swiper-item"
+                                    :style="'background-image: url(' + z + ')'"></swiper-slide>
+                                <div class="swiper-pagination" slot="pagination"></div>
+                            </swiper>
+                            <div v-if="y.swiper" @click="slide(0, i + '-' + k)" class="swiper-prev">
+                                <span class="mdi mdi-arrow-left"></span></div>
+                            <div v-if="y.swiper" @click="slide(1, i + '-' + k)" class="swiper-next">
+                                <span class="mdi mdi-arrow-right"></span></div>
                             <h1 style="opacity: 0" v-if="y.title" v-view.once="visEffect">
                                 {{ y.title }}
                             </h1>
@@ -94,15 +105,17 @@
                 </div>
             </div>
         </div>
-		<div class="row no-margin">
-			<divider :coverOpacity="0.2" class="join-divider" img="https://i.loli.net/2021/02/06/fWOFoxL3nE2V4pN.jpg" :speedFactor="0.2">
-				<h1>编程设计，样样在行？</h1>
-				<p>SoTap 管理组欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的 SoTap 吧！</p>
-				<router-link class="ui-button backgrounded" to="/join/management">
-					<span class="mdi mdi-launch"></span>&emsp;了解更多
-				</router-link>
-			</divider>
-		</div>
+        <div class="row no-margin">
+            <divider :coverOpacity="0.2" class="join-divider"
+                img="https://i.loli.net/2021/02/06/fWOFoxL3nE2V4pN.jpg" :speedFactor="0.15">
+                <h1>编程设计，样样在行？</h1>
+                <p>SoTap 管理组欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的
+                    SoTap 吧！</p>
+                <router-link class="ui-button backgrounded" to="/join/management">
+                    <span class="mdi mdi-launch"></span>&emsp;了解更多
+                </router-link>
+            </divider>
+        </div>
     </div>
 </template>
 
@@ -117,7 +130,7 @@ export default Vue.extend({
     components: {
         StaticBanner,
         SectionTitle,
-		Divider
+        Divider
     },
     methods: {
         visEffect,
@@ -128,15 +141,35 @@ export default Vue.extend({
         visLeft(x: ViewObject) {
             x.target.element.style.opacity = '';
             Animation.ease('in', 'left', x.target.element, 1000, 150, 50);
+        },
+        slide(direction: 0 | 1, target: string) {
+            // @ts-ignore
+            let instance = this.$refs['contentSwiper-' + target][0].swiperInstance;
+            if (direction === 0) {
+                instance.slidePrev();
+            } else {
+                instance.slideNext();
+            }
         }
     },
     data() {
         return {
+            swiperOptions: {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination'
+                }
+            },
             timeline: [
                 {
                     year: 2019,
                     events: [
                         {
+                            swiper: [
+                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png',
+                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png',
+                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png'
+                            ],
                             name: 'eventX',
                             title: 'titleX',
                             text:
@@ -318,21 +351,21 @@ export default Vue.extend({
             display: flex;
             flex-direction: row;
             align-items: center;
-			padding: 32px;
+            padding: 32px;
             color: black;
 
-			&:first-child {
-				padding-top: 64px;
-			}
+            &:first-child {
+                padding-top: 64px;
+            }
 
-			&:last-child {
-				padding-bottom: 64px;
-			}
+            &:last-child {
+                padding-bottom: 64px;
+            }
 
             .people-avatar {
                 width: 150px;
                 border-radius: 50%;
-				.hide-selection;
+                .hide-selection;
             }
 
             .people-content {
@@ -430,6 +463,42 @@ export default Vue.extend({
                         margin-left: 3rem;
                         h1 {
                             margin-top: 0;
+                        }
+
+                        .swiper-next,
+                        .swiper-prev {
+                            position: absolute;
+                            z-index: 200;
+                            top: calc(25rem - 48px);        
+                            opacity: .3;  
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+
+                        .swiper-next {
+                            right: 0;
+                            border-bottom-right-radius: 4px;
+                        }
+
+                        .swiper-prev {
+                            left: 48px;
+                            border-bottom-left-radius: 4px;
+                        }
+
+                        .content-swiper {
+                            width: 100%;
+                            height: 25rem;
+                            border-radius: 4px;
+                            margin-bottom: 32px;
+                            position: relative;
+
+                            .content-swiper-item {
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
                         }
                     }
                 }
