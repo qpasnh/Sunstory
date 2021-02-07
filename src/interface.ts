@@ -56,3 +56,15 @@ interface TimelineEvents {
     title?: string,
     text?: string,
 }
+
+interface NodeTreeObject {
+    nodeName: string,
+    parentName: string,
+    children: Array<boolean | NodeTreeObject>,
+    content: string
+}
+
+interface Catalogue {
+    name: string,
+    children: Array<Catalogue>
+}

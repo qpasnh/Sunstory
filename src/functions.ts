@@ -83,3 +83,22 @@ export function visEffect(ob: ViewObject) {
   ob.target.element.style.opacity = "";
   Animation.ease("in", "top", ob.target.element);
 }
+
+export function getNodeTree(node: Node): boolean | NodeTreeObject {
+  if (node.hasChildNodes()) {
+      var children = [];
+      for (var j = 0; j < node.childNodes.length; j++) {
+          children.push(getNodeTree(node.childNodes[j]));
+      }
+
+      return {
+          nodeName: node.nodeName,
+          parentName: (node.parentNode as (Node & ParentNode)).nodeName,
+          children: children,
+          // @ts-ignore
+          content: node.innerText || "",
+      };
+  }
+
+  return false;
+}
