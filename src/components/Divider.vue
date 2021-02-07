@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import ParallaxBackground from '@/components/parallax-background.vue';
+import ParallaxBackground from '@/components/parallax-background/parallax-background.vue';
 
 export default Vue.extend({
     components: {
