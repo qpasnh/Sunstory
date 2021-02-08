@@ -262,6 +262,10 @@ export default Vue.extend({
                     width: 50%;
                 }
 
+                @media screen and (max-width: 1200px) {
+                    padding: 32px;
+                }
+
                 h1 {
                     font-size: 2rem;
                     .font-header;
