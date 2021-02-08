@@ -208,7 +208,7 @@ export default Vue.extend({
                 .recents-item {
                     display: flex;
                     flex-direction: row;
-                    align-items: flex-start;
+                    align-items: center;
                     margin-bottom: 32px;
                     cursor: pointer;
                     .font-header;

@@ -6,7 +6,7 @@
                     :style="[{'padding-left': getTitleMargin(item.level)}]"
                     class="catalog-list-item" @click="activeAnchor(item.ref)" :class="{
 			'active': active === item.ref,
-			'child': isChildren(item.level)
+			['child-' + item.level]: isChildren(item.level)
 		  }">
                     <slot name="row" v-bind:level="item.level" v-bind:isActive="active === item.ref"
                         v-bind:title="item.title">
@@ -227,6 +227,16 @@ export default {
             font-size: 18px;
             width: fit-content;
             text-align: right;
+
+            &.child-2::after {
+                width: calc(110% - 32px);
+                left: calc(32px - 5%);
+            }
+
+            &.child-3::after {
+                width: calc(110% - 48px);
+                left: calc(48px - 5%);
+            }
 
             &::after {
                 display: block;
