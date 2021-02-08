@@ -3,6 +3,7 @@
 @import "../fonts/lmroman/lmroman.css";
 @import "../fonts/inter/inter.css";
 @import "../fonts/poppins/poppins.css";
+@import "./nprogress.less";
 
 html {
   .font-text;
@@ -134,6 +135,10 @@ h6 {
   background: black;
   color: white;
   transition: all 0.2s ease;
+
+  @media screen and (max-width: 1350px) {
+      display: none;
+  }
 
   .mdi {
     font-size: 1.5rem;
@@ -295,7 +300,7 @@ h6 {
     @media screen and (max-width: 1200px) {
         text-align: center;
     }
-    
+
     .ui-button {
       @media screen and (min-width: 1200px) {
         position: absolute;

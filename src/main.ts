@@ -10,12 +10,22 @@ import "@mdi/font/css/materialdesignicons.min.css";
 import "./interface";
 // @ts-ignore
 import VueCheckView from "vue-check-view";
+import NProgress from 'nprogress';
 
 Vue.config.productionTip = false;
+
+NProgress.configure({
+  showSpinner: false
+})
 
 Vue.use(anime);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueCheckView);
+
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+})
 
 router.afterEach((to, from) => {
   document.documentElement.scrollTo({
@@ -23,6 +33,7 @@ router.afterEach((to, from) => {
     // note: don't use behavior: 'smooth' here,
     // because it'll cause too-early animation setting off.
   });
+  NProgress.done();
 });
 
 new Vue({
