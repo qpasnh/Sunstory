@@ -477,6 +477,10 @@ export default Vue.extend({
 .swiper-prev {
     opacity: 0.3;
     transition: all 0.2s ease;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 100;
 
     &:hover {
         opacity: 1;
