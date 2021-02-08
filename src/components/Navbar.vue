@@ -9,7 +9,29 @@
                 <span class="hamburger__bottom-bun"></span>
             </div>
             <div class="nav-logo" @click="$router.push('/')">
-                <img class="logo-svg" src="@/assets/logo.svg" draggable="false" />
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+                    <title>Logo</title>
+                    <circle cx="250" cy="250" r="71"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M142.53,324.94A131,131,0,0,1,324.94,142.53"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path
+                        d="M367.82,99.66c-75-58.89-183.79-53.8-252.88,15.28S40.77,292.86,99.66,367.82"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path
+                        d="M135.38,402.8c74.83,56.27,181.57,50.37,249.68-17.74s74-174.85,17.74-249.68"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M359.75,178.44A131,131,0,0,1,178.44,359.75"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M186.24,281.23a71,71,0,0,1,95-95"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M324.94,142.53A131,131,0,0,0,142.53,324.94"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M178.44,359.75A131,131,0,0,0,359.75,178.44"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                    <path d="M315.53,222.66a71,71,0,0,1-92.87,92.87"
+                        style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
+                </svg>
                 <span class="logo-text">SoTap</span>
             </div>
             <div class="nav-items">
@@ -61,6 +83,7 @@ import IconGroup from './IconGroup.vue';
 
 export default Vue.extend({
     mounted() {
+        this.drawLogo();
         if (!isMobile()) {
             this.$anime
                 .timeline({ loop: false })
@@ -173,7 +196,28 @@ export default Vue.extend({
                 obj.style.pointerEvents = 'auto';
             }
         },
-        isMobile
+        isMobile,
+        drawLogo() {
+            this.$anime({
+                targets: '.nav-logo .logo-svg > *',
+                strokeDashoffset: [this.$anime.setDashoffset, 0],
+                easing: 'easeInOutSine',
+                duration: 1200,
+                delay: function (el, i) {
+                    return i * 250;
+                },
+                direction: 'alternate',
+                loop: false
+            });
+            this.$anime({
+                targets: '.nav-logo .logo-text',
+                easing: 'easeOutExpo',
+                opacity: [0, 1],
+                translateX: [-10, 0],
+                delay: 2300,
+                duration: 1000
+            });
+        }
     },
     components: {
         IconGroup
@@ -235,6 +279,33 @@ export default Vue.extend({
                 &::selection {
                     background: rgba(0, 0, 0, 0);
                 }
+            }
+
+            @keyframes wink {
+                from {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.2;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @-webkit-keyframes wink {
+                from {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.2;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                animation: wink .3s ease;
             }
         }
 
