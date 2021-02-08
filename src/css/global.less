@@ -482,6 +482,22 @@ h6 {
   pointer-events: none;
 }
 
+.fade-enter,
+.fade-leave-to {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .4s ease;
+}
+
+.fade-enter-to,
+.fade-leave {
+    opacity: 1;
+    visibility: visible;
+}
 @primary: #fcd307;
 @primaryl: rgba(252, 211, 7, 0.21);
 @textgray: rgba(0, 0, 0, 0.6);
