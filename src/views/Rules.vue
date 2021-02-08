@@ -17,9 +17,6 @@ export default Vue.extend({
     components: {
         General,
         Rules
-    },
-    mounted() {
-        console.log(Rules);
     }
 });
 </script>
