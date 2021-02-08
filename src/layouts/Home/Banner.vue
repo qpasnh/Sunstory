@@ -17,52 +17,14 @@
 <script lang="ts">
 import { Animation } from '@/functions';
 import Vue from 'vue';
+import HomeBannerList from "@/data/content/HomeBannerList.json";
+import HomeSwiperOptions from "@/data/config/HomeSwiperOptions.json";
 
 export default Vue.extend({
     data() {
         return {
-            swiperOptions: {
-                loop: true,
-                effect: 'fade',
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next.banner-swiper-button',
-                    prevEl: '.swiper-button-prev.banner-swiper-button'
-                },
-                pagination: {
-                    el: '.swiper-pagination'
-                }
-            },
-            bannerList: [
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                }
-            ]
+            swiperOptions: HomeSwiperOptions,
+            bannerList: HomeBannerList
         };
     },
     mounted() {

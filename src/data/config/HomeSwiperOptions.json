@@ -1,0 +1,15 @@
+{
+  "loop": true,
+  "effect": "fade",
+  "autoplay": {
+    "delay": 3000,
+    "disableOnInteraction": false
+  },
+  "navigation": {
+    "nextEl": ".swiper-button-next.banner-swiper-button",
+    "prevEl": ".swiper-button-prev.banner-swiper-button"
+  },
+  "pagination": {
+    "el": ".swiper-pagination"
+  }
+}

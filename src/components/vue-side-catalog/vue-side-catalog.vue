@@ -45,7 +45,7 @@ export default {
             lineLeft: 22,
             lineShow: true,
             height: '',
-            container: '#typo',
+            container: '.general-typo',
             innerScroll: false,
             watch: false,
             refList: []

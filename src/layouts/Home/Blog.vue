@@ -33,6 +33,7 @@ import axios from 'axios';
 import BlogCard from '@/components/BlogCard.vue';
 import removeMd from 'remove-markdown';
 import SectionTitle from '@/components/SectionTitle.vue';
+import BlogSwiperOptions from "@/data/config/BlogSwiperOptions.json";
 
 export default Vue.extend({
     data() {
@@ -40,15 +41,7 @@ export default Vue.extend({
             blogs: [] as Array<BlogInstance>,
             firstId: 0,
             lastId: 3,
-            swiperOptions: {
-                loop: false,
-                slidesPerView: 3,
-                spaceBetween: 30,
-                navigation: {
-                    prevEl: '.swiper-button-prev.post-prev',
-                    nextEl: '.swiper-button-next.post-next'
-                }
-            }
+            swiperOptions: BlogSwiperOptions
         };
     },
     methods: {

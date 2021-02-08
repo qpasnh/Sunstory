@@ -125,6 +125,8 @@ import StaticBanner from '@/components/StaticBanner.vue';
 import { Animation, visEffect } from '@/functions';
 import SectionTitle from '@/components/SectionTitle.vue';
 import Divider from '@/components/Divider.vue';
+import AboutTimeline from '@/data/content/AboutTimeline.json';
+import AboutPeople from '@/data/content/AboutPeople.json';
 
 export default Vue.extend({
     components: {
@@ -160,104 +162,8 @@ export default Vue.extend({
                     el: '.swiper-pagination'
                 }
             },
-            timeline: [
-                {
-                    year: 2019,
-                    events: [
-                        {
-                            swiper: [
-                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png',
-                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png',
-                                'https://i.loli.net/2021/02/06/PKBviXMZ5bm6YJx.png'
-                            ],
-                            name: 'eventX',
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        }
-                    ]
-                },
-                {
-                    year: 2020,
-                    events: [
-                        {
-                            name: 'eventX',
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            name: 'eventX',
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        }
-                    ]
-                },
-                {
-                    year: 2021,
-                    events: [
-                        {
-                            title: 'titleX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        },
-                        {
-                            name: 'eventX',
-                            text:
-                                '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                        }
-                    ]
-                }
-            ] as Array<TimelineObject>,
-            people: [
-                {
-                    name: 'Sapherise',
-                    position: 'Founder & Owner',
-                    desc:
-                        'SoTap 服务器服主、运营者，负责服务器的运维和推广，统筹服务器的各种开销和资金流管理，策划活动和编写文案，调配组织管理组完成服务器事项。',
-                    avatar: 'https://sotap.org/images/sapherise.png'
-                },
-                {
-                    name: 'Subilan',
-                    position: 'Developer',
-                    desc:
-                        '现就职 Tencent，负责服务器后台技术指导和一些相关功能的开发，职责是维护所有相关服务器的稳定运行和技术故障排查，开发网页新功能和新插件。',
-                    avatar: 'https://fnmdp.oss-cn-beijing.aliyuncs.com/assets/avatar-big.jpg'
-                },
-                {
-                    name: 'Cropenfe',
-                    position: 'In-game Operator',
-                    desc:
-                        '大学鸡一只，主要负责新玩家游戏内玩法指导和游戏答疑，参与修建公共设施，维护游戏内的秩序，辅助活动组织，处理玩家游戏内问题和监督玩家行为。',
-                    avatar: 'https://i.loli.net/2021/02/06/xBrncPUVEzThkK6.jpg'
-                },
-                {
-                    name: 'Constant137',
-                    position: 'Operator & Developer',
-                    desc:
-                        '爱好物理的大学生，真·量子力学研究者，负责服务器和社区群组内的管理事务，协调问题和解决等。同时也是开发组的一员，负责开发新的插件和项目，丰富服务器内容。',
-                    avatar: 'https://sotap.org/images/constant137.jpg'
-                }
-            ]
+            timeline: AboutTimeline as Array<TimelineObject>,
+            people: AboutPeople
         };
     }
 });

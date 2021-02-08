@@ -9,9 +9,7 @@
             </template>
         </static-banner>
         <div class="general-container">
-            <div id="typo" class="general-typo sotap-typo">
-                <slot name="content" />
-            </div>
+            <slot name="content" />
             <div class="sidebar">
                 <div v-if="recents" class="sidebar-item recents">
                     <div class="sidebar-item-title">其它你需要知道的...</div>

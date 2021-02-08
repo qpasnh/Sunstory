@@ -1,0 +1,9 @@
+{
+  "loop": false,
+  "slidesPerView": 3,
+  "spaceBetween": 30,
+  "navigation": {
+    "prevEl": ".swiper-button-prev.post-prev",
+    "nextEl": ".swiper-button-next.post-next"
+  }
+}
