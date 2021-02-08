@@ -55,7 +55,7 @@
         <section-title>
             <template #subtitle>佳作展览</template>
             <template #title>Exhibition</template>
-            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图{{ isMobile() ? "。由于 Minecraft 多为横屏截图，将手机横屏欣赏效果更佳！" : "" }}</small></template>
+            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图<br>{{ isMobile() ? "由于 Minecraft 多为横屏截图，横屏欣赏效果更佳！" : "" }}</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="gallery-container">
