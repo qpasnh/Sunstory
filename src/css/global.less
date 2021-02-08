@@ -498,6 +498,11 @@ h6 {
     opacity: 1;
     visibility: visible;
 }
+
+*:not(.hide-selection)::selection {
+  background: @primaryl;
+}
+
 @primary: #fcd307;
 @primaryl: rgba(252, 211, 7, 0.21);
 @textgray: rgba(0, 0, 0, 0.6);
