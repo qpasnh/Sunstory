@@ -64,6 +64,10 @@ export default Vue.extend({
     }
 
     .back-to-top {
+        @media screen and (max-width: 690px) {
+            display: none;
+        }
+
         background-color: @midgray;
         border-radius: 50%;
         width: 48px;

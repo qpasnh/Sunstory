@@ -3,14 +3,15 @@
         <section-title>
             <template #title>Blog</template>
             <template #subtitle>博文博览</template>
-            <template #desc>我们会在 SoTap Blog 上更新时事，下面是最近的几篇博文</template>
+            <template #desc>我们会在 SoTap Blog 上更新时事，下面是最近的几篇博文<br><small v-if="isMobile()">p.s.
+                    左右滑动可查看更多哦</small></template>
         </section-title>
         <div class="swiper-box">
             <div @click="slide(0)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span>
             </div>
             <div @click="slide(1)" class="swiper-next"><span class="mdi mdi-arrow-right"></span>
             </div>
-            <swiper class="blog-swiper" ref="blogSwiper" :options="swiperOptions">
+            <swiper class="blog-swiper" ref="blogSwiper" :options="getRealOptions()">
                 <swiper-slide v-for="(y, k) in blogs" :key="k">
                     <blog-card :href="y.permalink" class="blog-post" :ref="'post-' + (k + 1)"
                         :class="'post-' + (k + 1)" :key="2 * k + 1" :bg="y.bg">
@@ -34,6 +35,7 @@ import BlogCard from '@/components/BlogCard.vue';
 import removeMd from 'remove-markdown';
 import SectionTitle from '@/components/SectionTitle.vue';
 import BlogSwiperOptions from '@/data/config/BlogSwiperOptions.json';
+import { isMobile } from '@/functions';
 
 export default Vue.extend({
     data() {
@@ -77,6 +79,14 @@ export default Vue.extend({
             } else {
                 instance.slideNext();
             }
+        },
+        isMobile,
+        getRealOptions() { 
+            if (this.isMobile()) {
+                this.swiperOptions.slidesPerView = 1;
+                this.swiperOptions.spaceBetween = 0;
+            }
+            return this.swiperOptions;
         }
     },
     mounted() {

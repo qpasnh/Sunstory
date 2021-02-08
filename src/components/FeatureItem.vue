@@ -21,7 +21,7 @@
 
     .feature-icon {
         font-size: 5rem;
-        margin-right: 16px;
+        margin-right: 24px;
         color: @primary;
     }
 
@@ -35,6 +35,7 @@
         .feature-text {
             color: @textgray;
             font-size: 15px;
+            line-height: 1.5;
         }
     }
 }

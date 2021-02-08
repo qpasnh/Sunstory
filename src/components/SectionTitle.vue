@@ -18,6 +18,10 @@
     margin-top: 72px;
     margin-bottom: 72px;
 
+    @media screen and (max-width: 1000px) {
+        padding: 0 16px;
+    }
+
     .section-subtitle {
         font-size: 12px;
         font-weight: bold;
@@ -36,7 +40,7 @@
         }
 
         @media screen and (max-width: 690px) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
     }
 

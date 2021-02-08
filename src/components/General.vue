@@ -10,7 +10,7 @@
         </static-banner>
         <div class="general-container">
             <slot name="content" />
-            <div class="sidebar">
+            <div class="sidebar" v-if="!isMobile()">
                 <div v-if="recents" class="sidebar-item recents">
                     <div class="sidebar-item-title">其它你需要知道的...</div>
                     <div class="recents-item" v-for="(x, i) in recentItems" :key="i"
@@ -59,6 +59,7 @@
 import Vue from 'vue';
 import StaticBanner from './StaticBanner.vue';
 import Catalogue from '@/components/vue-side-catalog/vue-side-catalog.vue';
+import { isMobile } from '@/functions';
 
 export default Vue.extend({
     props: {
@@ -113,7 +114,8 @@ export default Vue.extend({
             } else {
                 window.open(url);
             }
-        }
+        },
+        isMobile
     }
 });
 </script>
@@ -139,11 +141,21 @@ export default Vue.extend({
     }
 
     .general-typo {
-        width: 70%;
+        @media screen and (max-width: 960px) {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 960px) {
+            width: 70%;
+        }
         margin-right: 16px;
     }
 
     .sidebar {
+        @media screen and (max-width: 960px) {
+            display: none;
+        }
+
         width: 30%;
         margin-left: 16px;
         position: sticky;

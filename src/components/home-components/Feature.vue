@@ -67,17 +67,27 @@ export default Vue.extend({
         align-items: flex-start;
         flex-wrap: nowrap;
 
+        @media screen and (max-width: 1200px) {
+            flex-direction: column;
+        }
+
         > * {
-            &:first-child {
-                margin-left: 0;
+            @media screen and (min-width: 1200px) {
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                margin: 0 16px 0 16px;
+                width: calc(33.3% - 32px);
             }
 
-            &:last-child {
-                margin-right: 0;
+            @media screen and (max-width: 1200px) {
+                padding: 16px 32px;
             }
-
-            margin: 0 16px 0 16px;
-            width: calc(33.3% - 32px);
         }
     }
 }

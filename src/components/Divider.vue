@@ -49,6 +49,11 @@ export default Vue.extend({
         margin: auto;
         max-width: 1200px;
         position: relative;
+
+        @media screen and (max-width: 1000px) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
     }
 }
 </style>

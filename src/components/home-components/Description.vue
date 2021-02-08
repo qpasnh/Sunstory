@@ -8,14 +8,16 @@
         </h1>
         <h2>我们重新彻底编写了我们的网站，带来了许多新的特性，也简化了一些冗余之处<br>无论你是从前 SoTap
             的老玩家，还是人生中第一次打开此网站，我们都有许多新东西带给你</h2>
-        <a class="ui-button outlined" target="_blank" href="https://wiki.sotap.org">
-            <span class="mdi mdi-book-outline"></span>
-            阅读 Wiki
-        </a>
-        <router-link class="ui-button backgrounded" to="/about-website">
-            <span class="mdi mdi-launch"></span>
-            了解更多
-        </router-link>
+        <div class="button-bar">
+            <a class="ui-button outlined" target="_blank" href="https://wiki.sotap.org">
+                <span class="mdi mdi-book-outline"></span>
+                阅读 Wiki
+            </a>
+            <router-link class="ui-button backgrounded" to="/about-website">
+                <span class="mdi mdi-launch"></span>
+                了解更多
+            </router-link>
+        </div>
     </divider>
 </template>
 
@@ -31,7 +33,10 @@ export default Vue.extend({
 
 <style lang="less" scoped>
 .sotap-description {
-    text-align: center;
+    @media screen and (min-width: 1000px) {
+        text-align: center;
+    }
+
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
 
     h1 {
@@ -50,16 +55,24 @@ export default Vue.extend({
         color: white;
         font-weight: normal;
         font-size: 1.3rem;
+        line-height: 1.8;
     }
 
     p {
         color: rgba(255, 255, 255, 0.9);
     }
 
-    a {
-        margin-left: 16px;
-        margin-right: 16px;
-        margin-top: 16px;
+    .button-bar {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        
+        .ui-button {
+            display: inline-block;
+            margin-left: 16px;
+            margin-right: 16px;
+            margin-top: 16px;
+        }
     }
 }
 </style>

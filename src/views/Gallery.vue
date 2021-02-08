@@ -41,8 +41,10 @@
                         <div class="story-img" :style="'background-image: url(' + x.bg + ')'" />
                         <div class="story-container">
                             <div class="story-box">
-                                <h1>{{ x.title }}</h1>
-                                <p>{{ x.text }}</p>
+                                <div class="story">
+                                    <h1>{{ x.title }}</h1>
+                                    <p>{{ x.text }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -53,7 +55,7 @@
         <section-title>
             <template #subtitle>佳作展览</template>
             <template #title>Exhibition</template>
-            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图</small></template>
+            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图{{ isMobile() ? "。由于 Minecraft 多为横屏截图，将手机横屏欣赏效果更佳！" : "" }}</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="gallery-container">
@@ -96,9 +98,11 @@
                 img="https://i.loli.net/2021/02/06/OXbM7w9GZiPan4v.jpg">
                 <h1>参与到这所有的瑰丽中</h1>
                 <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap 之旅。我们随时欢迎你的加入！</p>
-                <router-link class="ui-button backgrounded" to="/join">
-                    立即加入 &raquo;
-                </router-link>
+                <div class="join-link">
+                    <router-link class="ui-button backgrounded" to="/join">
+                        立即加入 &raquo;
+                    </router-link>
+                </div>
             </divider>
         </div>
     </div>
@@ -180,7 +184,8 @@ export default Vue.extend({
         animateGallery(e) {
             let id = e.target.element.id;
             Animation.scale('in', 1, '#' + id.toString(), 1500);
-        }
+        },
+        isMobile
     },
     data() {
         return {
@@ -285,12 +290,14 @@ export default Vue.extend({
                 color: black;
             }
 
-            @media screen and (min-width: 690px) {
+            @media screen and (min-width: 1024px) {
                 width: calc(50% - 16px);
             }
 
-            margin-left: 16px;
-            margin-right: 16px;
+            @media screen and (min-width: 1024px) {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
             width: 100%;
 
             &:first-child {
@@ -305,7 +312,14 @@ export default Vue.extend({
 
 .story-swiper {
     width: 100%;
-    height: 40rem;
+    
+    @media screen and (min-width: 1024px) {
+        height: 40rem;
+    }
+ 
+    @media screen and (max-width: 1024px) {
+        height: 30rem;
+    }
 
     .swiper-item {
         height: 100%;
@@ -319,29 +333,67 @@ export default Vue.extend({
 
         .story-img {
             height: 100%;
-            width: 65%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+
+            @media screen and (min-width: 1024px) {
+                width: 65%;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
         }
 
         .story-container {
             height: 100%;
-            width: 35%;
             background: @bggray;
             color: white;
-            padding: 2rem 5rem;
             display: flex;
             align-items: center;
 
-            h1 {
-                margin-top: 0;
-                font-size: 3rem;
+            @media screen and (min-width: 1024px) {
+                width: 35%;
+                padding: 2rem 5rem;
             }
 
-            p {
-                font-size: 20px;
-                line-height: 1.8;
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                position: absolute;
+                max-height: 25%;
+                padding: 2rem 0;
+                bottom: 0;
+            }
+
+            .story {
+                position: relative;
+                padding: 0 32px;
+
+                h1 {
+                    margin-top: 0;
+
+                    @media screen and (min-width: 1024px) {
+                        font-size: 3rem;
+                    }
+
+                    @media screen and (max-width: 1024px) {
+                        margin-bottom: 16px;
+                        font-size: 2rem;
+                    }
+                }
+
+                p {
+                    line-height: 1.8;
+
+                    @media screen and (min-width: 1024px) {
+                        font-size: 20px;
+                    }
+
+                    @media screen and (max-width: 1024px) {
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }

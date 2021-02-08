@@ -114,9 +114,11 @@
                 <h1>编程设计，样样在行？</h1>
                 <p>SoTap 管理组欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的
                     SoTap 吧！</p>
-                <router-link class="ui-button backgrounded" to="/join/management">
-                    <span class="mdi mdi-launch"></span>&emsp;了解更多
-                </router-link>
+                <div class="join-link">
+                    <router-link class="ui-button backgrounded" to="/join/management">
+                        <span class="mdi mdi-launch"></span>&emsp;了解更多
+                    </router-link>
+                </div>
             </divider>
         </div>
     </div>
@@ -178,11 +180,8 @@ export default Vue.extend({
     position: relative;
     margin: 32px 0;
 
-    > * {
-        @media screen and (max-width: 1200px) {
-            margin-left: 32px !important;
-            margin-right: 32px !important;
-        }
+    @media screen and (min-width: 1200px) {
+        margin: 64px 0;
     }
 
     &.about-intro-container {
@@ -193,22 +192,32 @@ export default Vue.extend({
         margin: auto;
 
         .about-intro {
-            margin: 64px 0;
             display: flex;
             align-items: center;
-            flex-direction: row;
             position: relative;
-
-            > * {
-                margin-right: 32px;
-                margin-left: 32px;
-
-                &:first-child {
-                    margin-left: 0;
-                }
+            @media screen and (min-width: 1200px) {
+                flex-direction: row;
+            }
+            @media screen and (max-width: 1200px) {
+                flex-direction: column;
+                margin-bottom: 32px;
 
                 &:last-child {
-                    margin-right: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            > * {
+                padding: 0 32px;
+
+                @media screen and (min-width: 1200px) {
+                    &:first-child {
+                        padding-left: 0;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
                 }
             }
 
@@ -216,12 +225,20 @@ export default Vue.extend({
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
-                width: 50%;
-                height: 320px;
                 border-radius: 4px;
                 box-sizing: content-box;
                 transition: all 0.3s ease;
                 z-index: 500;
+
+                @media screen and (min-width: 1200px) {
+                    width: 50%;
+                    height: 320px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    width: calc(100% - 64px);
+                    height: 200px;
+                }
 
                 &:hover {
                     box-shadow: @mdui-shadow-20;
@@ -232,7 +249,9 @@ export default Vue.extend({
             }
 
             .intro-content {
-                width: 50%;
+                @media screen and (min-width: 1200px) {
+                    width: 50%;
+                }
 
                 h1 {
                     font-size: 2rem;
@@ -255,13 +274,20 @@ export default Vue.extend({
         flex-direction: column;
 
         .people-box {
-            max-width: 1200px;
+            max-width: 100%;
             margin: auto;
             display: flex;
-            flex-direction: row;
             align-items: center;
             padding: 32px;
             color: black;
+
+            @media screen and (min-width: 1200px) {
+                flex-direction: row;
+            }
+
+            @media screen and (max-width: 1200px) {
+                flex-direction: column;
+            }
 
             &:first-child {
                 padding-top: 64px;
@@ -278,9 +304,19 @@ export default Vue.extend({
             }
 
             .people-content {
-                margin-left: 48px;
+                @media screen and (min-width: 1200px) {
+                    margin-left: 48px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    text-align: center;
+                }
 
                 .people-title {
+                    @media screen and (max-width: 1200px) {
+                        margin-top: 32px;
+                    }
+
                     h2 {
                         margin-top: 0;
                         margin-bottom: 8px;
@@ -319,20 +355,34 @@ export default Vue.extend({
                 border-left: 2px dotted rgba(0, 0, 0, 0.1);
                 width: 2px;
                 left: 8rem;
+
+                @media screen and (max-width: 1200px) {
+                    display: none;
+                }
             }
 
             .year-row {
                 position: relative;
-                max-width: calc(1200px - 9rem);
-                margin-left: 13rem;
+                @media screen and (min-width: 1200px) {
+                    max-width: calc(1200px - 9rem);
+                    margin-left: 13rem;
+                }
 
                 .year {
                     .font-roman;
-                    position: absolute;
-                    left: -11rem;
-                    font-size: 2.5rem;
-                    line-height: 1;
                     .hide-selection;
+                    font-size: 2.5rem;
+
+                    @media screen and (min-width: 1200px) {
+                        position: absolute;
+                        left: -11rem;
+                        line-height: 1;
+                    }
+
+                    @media screen and (max-width: 1200px) {
+                        padding: 16px 32px;
+                        padding-top: 0;
+                    }
                 }
 
                 .event-row {
@@ -343,8 +393,17 @@ export default Vue.extend({
                         max-width: 6rem;
                         word-wrap: break-word;
                         position: absolute;
-                        left: -4rem;
-                        margin-top: 4px;
+                        z-index: 50;
+
+                        @media screen and (max-width: 960px) {
+                            right: 16px;
+                            top: 0;
+                        }
+
+                        @media screen and (min-width: 960px) {
+                            left: -4rem;
+                            margin-top: 4px;
+                        }
 
                         span {
                             font-weight: bold;
@@ -369,7 +428,14 @@ export default Vue.extend({
                     }
 
                     .content {
-                        margin-left: 3rem;
+                        @media screen and (min-width: 1200px) {
+                            margin-left: 3rem;
+                        }
+
+                        @media screen and (max-width: 960px) {
+                            padding: 0 32px;
+                        }
+
                         h1 {
                             margin-top: 0;
                         }
@@ -378,8 +444,15 @@ export default Vue.extend({
                         .swiper-prev {
                             position: absolute;
                             z-index: 200;
-                            top: calc(25rem - 48px);
                             opacity: 0.3;
+
+                            @media screen and (max-width: 960px) {
+                                top: calc(12rem - 48px);
+                            }
+
+                            @media screen and (min-width: 960px) {
+                                top: calc(25rem - 48px);
+                            }
 
                             &:hover {
                                 opacity: 1;
@@ -388,17 +461,31 @@ export default Vue.extend({
 
                         .swiper-next {
                             right: 0;
+                            @media screen and (max-width: 960px) {
+                                right: 32px;
+                            }
                             border-bottom-right-radius: 4px;
                         }
 
                         .swiper-prev {
                             left: 48px;
+                            @media screen and (max-width: 960px) {
+                                left: calc(48px - 16px);
+                            }
                             border-bottom-left-radius: 4px;
                         }
 
                         .content-swiper {
                             width: 100%;
-                            height: 25rem;
+
+                            @media screen and (min-width: 960px) {
+                                height: 25rem;
+                            }
+
+                            @media screen and (max-width: 960px) {
+                                height: 12rem;
+                            }
+
                             border-radius: 4px;
                             margin-bottom: 32px;
                             position: relative;
