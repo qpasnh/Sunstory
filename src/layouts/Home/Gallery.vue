@@ -9,8 +9,8 @@
         <div class="container">
             <div class="gallery-container">
                 <div class="gallery-row" v-for="(x, i) in gallery" :key="i">
-                    <gallery-card :imageOnly="true" :style="'width: ' + y.width + '%'"
-                        v-for="(y, i) in x" :bg="y.bg" :key="i">
+                    <gallery-card :imageOnly="true" :style="'width: ' + width[i][u] + '%'"
+                        v-for="(y, u) in x" :bg="y.bg" :key="u" :galleryId="galleryChosen[i * 2 + u]">
                         <template #text>
                             <span class="description">{{ y.desc }}</span>
                             <div class="meta">
@@ -40,6 +40,7 @@ import Vue from 'vue';
 import GalleryCard from '@/components/GalleryCard.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 import { isMobile } from '@/functions';
+import GalleryWaterfall from '@/data/content/GalleryWaterfall.json';
 
 export default Vue.extend({
     components: {
@@ -48,58 +49,13 @@ export default Vue.extend({
     },
     data() {
         return {
-            gallery: [
-                [
-                    {
-                        author: 'Subilan',
-                        uuid: '5c94fc153e60447ab642431e8815f41d',
-                        date: '2021/02/03',
-                        desc: '空中的雪山',
-                        loc: '某地',
-                        bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
-                        width: 35
-                    },
-                    {
-                        author: 'Subilan',
-                        uuid: '5c94fc153e60447ab642431e8815f41d',
-                        date: '2021/02/03',
-                        desc: '空中的雪山',
-                        loc: '某地',
-                        bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
-                        width: 55
-                    }
-                ],
-                [
-                    {
-                        author: 'Subilan',
-                        uuid: '5c94fc153e60447ab642431e8815f41d',
-                        date: '2021/02/03',
-                        desc: '空中的雪山',
-                        loc: '某地',
-                        bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
-                        width: 55
-                    },
-                    {
-                        author: 'Subilan',
-                        uuid: '5c94fc153e60447ab642431e8815f41d',
-                        date: '2021/02/03',
-                        desc: '空中的雪山',
-                        loc: '某地',
-                        bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
-                        width: 35
-                    }
-                ],
-                [
-                    {
-                        author: 'Subilan',
-                        uuid: '5c94fc153e60447ab642431e8815f41d',
-                        date: '2021/02/03',
-                        desc: '空中的雪山',
-                        loc: '某地',
-                        bg: 'https://mcsunrise.oss-cn-qingdao.aliyuncs.com/skyland4.png',
-                        width: 100
-                    }
-                ] as Array<GalleryItem>
+            gallery: [[], [], []] as Array<Array<GalleryItem>>,
+            galleryChosen: [0, 1, 3, 4, 5],
+            width: [
+                // percentage
+                [35, 65],
+                [65, 35],
+                [100]
             ]
         };
     },
@@ -107,7 +63,22 @@ export default Vue.extend({
         isMobile,
         go(url: string) {
             window.open(url);
+        },
+        initGallery() {
+            let i = 0;
+            let u = 0;
+            this.galleryChosen.forEach((k) => {
+                i++;
+                this.gallery[u].push(GalleryWaterfall[k]);
+                if (i === 2) {
+                    i = 0;
+                    u++;
+                }
+            });
         }
+    },
+    mounted() {
+        this.initGallery();
     }
 });
 </script>

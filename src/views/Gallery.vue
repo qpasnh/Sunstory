@@ -113,6 +113,8 @@ import CoolLightBox from 'vue-cool-lightbox';
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
 import Divider from '@/components/Divider.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
+import GalleryWaterfall from "@/data/content/GalleryWaterfall.json";
+import GalleryBannerList from "@/data/content/GalleryBannerList.json";
 
 export default Vue.extend({
     components: {
@@ -181,152 +183,31 @@ export default Vue.extend({
     },
     data() {
         return {
-            bannerList: [
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/XY1z2MrBbf9m8nV.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/tTY2vnsPgh3H7ZB.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/MZW7LRoGylx1wFI.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/lEfq7KoSVhHuxtr.png'
-                },
-                {
-                    title: '测试标题',
-                    text: '测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文测试正文',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                }
-            ],
+            bannerList: GalleryBannerList,
             swiperOptions: {
                 loop: true,
                 pagination: {
                     el: '.swiper-pagination'
                 }
             },
-            waterfall: [
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                },
-                {
-                    author: 'WindSpiritSR',
-                    uuid: '61065c24adf54780af37c754b201ce34',
-                    date: '2021/02/05',
-                    desc: 'Sit with Cat',
-                    loc: '彩虹桥',
-                    bg: 'https://i.loli.net/2021/01/24/qML4thaSIWrd7P5.png'
-                }
-            ] as Array<GalleryItem>,
+            waterfall: GalleryWaterfall as Array<GalleryItem>,
             waterfallWidthData: {} as Dictionary,
-            index: null,
+            index: null as null | number,
             lightboxItems: [] as Array<LightboxItem>
         };
     },
     mounted() {
         this.getLightboxItems();
+        if (this.$route.params.option === "view" && this.$route.params.target !== undefined) {
+            this.index = parseInt(this.$route.params.target);
+        }
+    },
+    watch: {
+        index(v: number | null) {
+            if (v === null && this.$route.params.option !== undefined && this.$route.params.target !== undefined) {
+                this.$router.push("/gallery")
+            }
+        }
     }
 });
 </script>
