@@ -387,13 +387,19 @@ h6 {
         margin: 8px 0;
     }
 
-    p, ul, ol, em, u {
+    p, ul, ol {
         color: @textgray;
         font-size: 15px;
         line-height: 1.8;
     }
 
     p {
+        small {
+            display: inline;
+            color: #aaa;
+            font-size: 12px;
+        }
+
         margin-top: 0;
         margin-bottom: 1rem;
     }
@@ -435,10 +441,12 @@ h6 {
 }
 
 @primary: #fcd307;
+@primaryl: rgba(252, 211, 7, .21);
 @textgray: rgba(0, 0, 0, .6);
 @textgrayl: rgba(255, 255, 255, .6);
 @bggray: rgba(0, 0, 0, .95);
 @midgray: rgb(56, 56, 56);
+@inv: rgba(0, 0, 0, 0);
 @textshadow-1: 0px 1px 5px rgba(0, 0, 0, 0.4);
 @mdui-shadow-20: 0 10px 13px -6px rgba(0, 0, 0, .2), 0 20px 31px 3px rgba(0, 0, 0, .14), 0 8px 38px 7px rgba(0, 0, 0, .12);
 @mdui-shadow-6: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);

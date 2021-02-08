@@ -216,48 +216,47 @@ export default {
 
 <style lang="less" scoped>
 .side-catalog {
-    padding-left: 16px;
-    border-left: 1px dotted rgba(0, 0, 0, 0.21);
-
     .catalog-list {
         .catalog-list-item {
-            padding-bottom: 32px;
+            position: relative;
+            padding-left: 16px;
+            padding-bottom: 16px;
+            margin: 8px 0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: 18px;
+            width: fit-content;
+            text-align: right;
+
+            &::after {
+                display: block;
+                content: '';
+                width: calc(110% - 16px);
+                background: @inv;
+                position: absolute;
+                height: 6px;
+                left: calc(16px - 5%);
+                margin: 0 auto;
+                bottom: 16px;
+                z-index: -1;
+                transition: all 0.2s ease;
+            }
 
             &.active {
-                .catalog-list-item-title {
-                    font-weight: bold;
-                    &::after {
-                        opacity: 1;
-                    }
+                font-weight: bold;
+                transform: scale(1.3);
+                transform-origin: left left;
+
+                &::after {
+                    background: @primary;
                 }
             }
 
             &:not(.active) {
-                .catalog-list-item-title {
-                    &:hover {
-                        &::after {
-                            opacity: .4;
-                        }
+                &:hover {
+                    &::after {
+                        background: @primaryl;
                     }
-                }
-            }
-
-            .catalog-list-item-title {
-                position: relative;
-                transition: all 0.2s ease;
-                cursor: pointer;
-
-                &::after {
-                    content: '#';
-                    display: block;
-                    position: absolute;
-                    left: -12px;
-                    bottom: 0;
-                    height: 100%;
-					z-index: -1;
-                    color: @primary;
-					opacity: 0;
-                    transition: opacity 0.3s ease;
                 }
             }
         }
