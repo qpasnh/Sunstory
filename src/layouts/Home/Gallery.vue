@@ -10,7 +10,8 @@
             <div class="gallery-container">
                 <div class="gallery-row" v-for="(x, i) in gallery" :key="i">
                     <gallery-card :imageOnly="true" :style="'width: ' + width[i][u] + '%'"
-                        v-for="(y, u) in x" :bg="y.bg" :key="u" :galleryId="galleryChosen[i * 2 + u]">
+                        v-for="(y, u) in x" :bg="y.bg" :key="u"
+                        :galleryId="galleryChosen[i * 2 + u]">
                         <template #text>
                             <span class="description">{{ y.desc }}</span>
                             <div class="meta">

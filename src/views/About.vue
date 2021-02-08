@@ -63,17 +63,20 @@
                             <span>{{ y.name }}</span>
                         </div>
                         <div class="content sotap-typo">
-                            <swiper style="opacity: 0" v-view.once="visEffect" v-if="y.swiper" class="content-swiper"
-                                :ref="'contentSwiper-' + i + '-' + k" :options="swiperOptions">
+                            <swiper style="opacity: 0" v-view.once="visEffect" v-if="y.swiper"
+                                class="content-swiper" :ref="'contentSwiper-' + i + '-' + k"
+                                :options="swiperOptions">
                                 <swiper-slide v-for="(z, u) in y.swiper" :key="u"
                                     class="content-swiper-item"
                                     :style="'background-image: url(' + z + ')'"></swiper-slide>
                                 <div class="swiper-pagination" slot="pagination"></div>
                             </swiper>
                             <div v-if="y.swiper" @click="slide(0, i + '-' + k)" class="swiper-prev">
-                                <span class="mdi mdi-arrow-left"></span></div>
+                                <span class="mdi mdi-arrow-left"></span>
+                            </div>
                             <div v-if="y.swiper" @click="slide(1, i + '-' + k)" class="swiper-next">
-                                <span class="mdi mdi-arrow-right"></span></div>
+                                <span class="mdi mdi-arrow-right"></span>
+                            </div>
                             <h1 style="opacity: 0" v-if="y.title" v-view.once="visEffect">
                                 {{ y.title }}
                             </h1>
@@ -375,8 +378,8 @@ export default Vue.extend({
                         .swiper-prev {
                             position: absolute;
                             z-index: 200;
-                            top: calc(25rem - 48px);        
-                            opacity: .3;  
+                            top: calc(25rem - 48px);
+                            opacity: 0.3;
 
                             &:hover {
                                 opacity: 1;

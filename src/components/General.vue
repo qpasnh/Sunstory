@@ -45,7 +45,8 @@
                             src="@/assets/afdian.svg" draggable="false" />
                         <div class="afdian-text sotap-typo">
                             <p>SoTap 的运营不易。如果你喜欢 SoTap，可以选择到<a href="https://afdian.net/@sotap"
-                                    target="_blank">爱发电</a>上为我们充值。<small><em>亦可点击上方按钮</em></small></p>
+                                    target="_blank">爱发电</a>上为我们充值。<small><em>亦可点击上方按钮</em></small>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +190,7 @@ export default Vue.extend({
                         width: 100%;
                         margin-bottom: 16px;
                         cursor: pointer;
-                        transition: all .2s ease;
+                        transition: all 0.2s ease;
                         border-radius: 8px;
 
                         &:hover {

@@ -33,7 +33,7 @@ import axios from 'axios';
 import BlogCard from '@/components/BlogCard.vue';
 import removeMd from 'remove-markdown';
 import SectionTitle from '@/components/SectionTitle.vue';
-import BlogSwiperOptions from "@/data/config/BlogSwiperOptions.json";
+import BlogSwiperOptions from '@/data/config/BlogSwiperOptions.json';
 
 export default Vue.extend({
     data() {
@@ -128,7 +128,7 @@ export default Vue.extend({
     top: 50%;
     bottom: 50%;
     z-index: 200;
-    
+
     @media screen and (max-width: 690px) {
         display: none;
     }

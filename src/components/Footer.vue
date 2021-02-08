@@ -40,8 +40,8 @@ export default Vue.extend({
         toTop() {
             document.documentElement.scrollTo({
                 top: 0,
-                behavior: "smooth"
-            })
+                behavior: 'smooth'
+            });
         },
         go(url: string) {
             window.open(url);
@@ -76,7 +76,7 @@ export default Vue.extend({
         cursor: pointer;
         right: 64px;
         top: -24px;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
 
         &:hover {
             background-color: @primary;

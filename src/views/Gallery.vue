@@ -12,7 +12,8 @@
         </static-banner>
         <div class="row">
             <div class="gallery-description">
-                <h1 class="description-title" style="opacity: 0" v-view.once="vis1">这里，<br>我们记录 SoTap 珍奇而瑰丽的点滴</h1>
+                <h1 class="description-title" style="opacity: 0" v-view.once="vis1">这里，<br>我们记录
+                    SoTap 珍奇而瑰丽的点滴</h1>
                 <div class="text-cols">
                     <div class="left-col" style="opacity: 0" v-view.once="visEffect">
                         <p><strong>这里是 SoTap Gallery。</strong></p>
@@ -113,8 +114,8 @@ import CoolLightBox from 'vue-cool-lightbox';
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
 import Divider from '@/components/Divider.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
-import GalleryWaterfall from "@/data/content/GalleryWaterfall.json";
-import GalleryBannerList from "@/data/content/GalleryBannerList.json";
+import GalleryWaterfall from '@/data/content/GalleryWaterfall.json';
+import GalleryBannerList from '@/data/content/GalleryBannerList.json';
 
 export default Vue.extend({
     components: {
@@ -128,7 +129,7 @@ export default Vue.extend({
         visEffect,
         vis1(x: ViewObject) {
             let el = x.target.element;
-            el.style.opacity = "";
+            el.style.opacity = '';
             if (isMobile()) {
                 Animation.ease('in', 'right', el);
             } else {
@@ -198,14 +199,14 @@ export default Vue.extend({
     },
     mounted() {
         this.getLightboxItems();
-        if (this.$route.params.option === "view" && this.$route.params.target !== undefined) {
+        if (this.$route.params.option === 'view' && this.$route.params.target !== undefined) {
             this.index = parseInt(this.$route.params.target);
         }
     },
     watch: {
         index(v: number | null) {
             if (v === null && this.$route.params.option !== undefined && this.$route.params.target !== undefined) {
-                this.$router.push("/gallery")
+                this.$router.push('/gallery');
             }
         }
     }

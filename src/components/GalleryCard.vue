@@ -37,7 +37,9 @@ export default Vue.extend({
         },
         onclick: {
             type: Function,
-            default: () => { return; }
+            default: () => {
+                return;
+            }
         }
     },
     data() {
@@ -93,7 +95,7 @@ export default Vue.extend({
         },
         goGallery() {
             if (this.galleryId === -1) return;
-            this.$router.push("/gallery/view/" + this.galleryId);
+            this.$router.push('/gallery/view/' + this.galleryId);
         },
         onclickFunction() {
             this.goGallery();

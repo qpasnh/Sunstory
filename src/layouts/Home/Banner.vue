@@ -17,8 +17,8 @@
 <script lang="ts">
 import { Animation } from '@/functions';
 import Vue from 'vue';
-import HomeBannerList from "@/data/content/HomeBannerList.json";
-import HomeSwiperOptions from "@/data/config/HomeSwiperOptions.json";
+import HomeBannerList from '@/data/content/HomeBannerList.json';
+import HomeSwiperOptions from '@/data/config/HomeSwiperOptions.json';
 
 export default Vue.extend({
     data() {
@@ -28,8 +28,8 @@ export default Vue.extend({
         };
     },
     mounted() {
-        Animation.ease("in", "top", ".banner-title");
-        Animation.ease("in", "top", ".banner-text", undefined, 200);
+        Animation.ease('in', 'top', '.banner-title');
+        Animation.ease('in', 'top', '.banner-text', undefined, 200);
     }
 });
 </script>

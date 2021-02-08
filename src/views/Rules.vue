@@ -3,7 +3,7 @@
         <template #bannerTitle>服务器规则</template>
         <template #bannerText>这里是 SoTap 旗下所有服务器规则的共有部分。最近一次更新是在 2021 年 2 月 7 日。</template>
         <template #content>
-            <rules/>
+            <rules />
         </template>
     </General>
 </template>

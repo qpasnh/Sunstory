@@ -7,7 +7,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import SectionTitle from '@/components/SectionTitle.vue';
-import HomeLinks from "@/data/content/HomeLinks.json";
+import HomeLinks from '@/data/content/HomeLinks.json';
 
 export default Vue.extend({
     components: {
