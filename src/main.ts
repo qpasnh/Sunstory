@@ -23,17 +23,19 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(VueCheckView);
 
 router.beforeEach((to, from, next) => {
-  NProgress.start();
+  if (to.name !== from.name) NProgress.start();
+  
   next();
 })
 
 router.afterEach((to, from) => {
+  if (to.name !== from.name) NProgress.done();
   document.documentElement.scrollTo({
     top: 0
     // note: don't use behavior: 'smooth' here,
     // because it'll cause too-early animation setting off.
   });
-  NProgress.done();
+  
 });
 
 new Vue({
