@@ -195,6 +195,7 @@ export default Vue.extend({
             display: flex;
             align-items: center;
             position: relative;
+
             @media screen and (min-width: 1200px) {
                 flex-direction: row;
             }
@@ -208,9 +209,9 @@ export default Vue.extend({
             }
 
             > * {
-                padding: 0 32px;
-
                 @media screen and (min-width: 1200px) {
+                    padding-top: 32px;
+
                     &:first-child {
                         padding-left: 0;
                     }
@@ -233,6 +234,14 @@ export default Vue.extend({
                 @media screen and (min-width: 1200px) {
                     width: 50%;
                     height: 320px;
+
+                    &:last-child {
+                        margin-left: 64px;
+                    }
+
+                    &:first-child {
+                        margin-right: 64px;
+                    }
                 }
 
                 @media screen and (max-width: 1200px) {
@@ -256,6 +265,7 @@ export default Vue.extend({
                 h1 {
                     font-size: 2rem;
                     .font-header;
+                    margin-top: 0;
                 }
 
                 p {
