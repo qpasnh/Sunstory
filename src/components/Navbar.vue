@@ -80,6 +80,8 @@
 import Vue from 'vue';
 import { isMobile } from '@/functions';
 import IconGroup from './IconGroup.vue';
+import NavbarPrimaryItems from '@/data/config/NavbarPrimaryItems.json';
+import NavbarSecondaryItems from '@/data/config/NavbarSecondaryItems.json';
 
 export default Vue.extend({
     mounted() {
@@ -120,42 +122,8 @@ export default Vue.extend({
     },
     data() {
         return {
-            navItems: [
-                {
-                    name: 'Home',
-                    to: '/'
-                },
-                {
-                    name: 'About',
-                    to: '/about'
-                },
-                {
-                    name: 'Rules',
-                    to: '/rules'
-                },
-                {
-                    name: 'Gallery',
-                    to: '/gallery'
-                }
-            ],
-            moreItems: [
-                {
-                    name: 'Wiki',
-                    href: 'https://wiki.sotap.org'
-                },
-                {
-                    name: 'BBS',
-                    href: 'https://g.sotap.org'
-                },
-                {
-                    name: 'Stats',
-                    href: 'https://stats.sotap.org'
-                },
-                {
-                    name: 'GitHub',
-                    href: 'https://github.com/sotapmc'
-                }
-            ],
+            navItems: NavbarPrimaryItems,
+            moreItems: NavbarSecondaryItems,
             hamburgerOpen: false
         };
     },
@@ -305,7 +273,7 @@ export default Vue.extend({
             }
 
             &:hover {
-                animation: wink .3s ease;
+                animation: wink 0.3s ease;
             }
         }
 
