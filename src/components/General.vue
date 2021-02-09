@@ -60,6 +60,7 @@ import Vue from 'vue';
 import StaticBanner from './StaticBanner.vue';
 import Catalogue from '@/components/vue-side-catalog/vue-side-catalog.vue';
 import { isMobile } from '@/functions';
+import SidebarItems from '@/data/content/SidebarItems.json';
 
 export default Vue.extend({
     props: {
@@ -89,22 +90,7 @@ export default Vue.extend({
     },
     data() {
         return {
-            recentItems: [
-                {
-                    img: 'https://sotap.oss-cn-qingdao.aliyuncs.com/0.jpg',
-                    text: 'FAQ：常见问题及其解答',
-                    href: '//baidu.com'
-                },
-                {
-                    img: 'https://sotap.oss-cn-qingdao.aliyuncs.com/0.jpg',
-                    text: 'FAQ：常见问题及其解答',
-                    href: '//baidu.com'
-                },
-                {
-                    text: 'FAQ：常见问题及其解答',
-                    href: '//baidu.com'
-                }
-            ]
+            recentItems: SidebarItems
         };
     },
     methods: {
@@ -152,7 +138,7 @@ export default Vue.extend({
     }
 
     .sidebar {
-        @media screen and (max-width: 960px) {
+        @media screen and (max-width: 1200px) {
             display: none;
         }
 
