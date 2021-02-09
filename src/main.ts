@@ -11,6 +11,7 @@ import "./interface";
 // @ts-ignore
 import VueCheckView from "vue-check-view";
 import NProgress from 'nprogress';
+import VueLazyload from 'vue-lazyload';
 
 Vue.config.productionTip = false;
 
@@ -21,10 +22,13 @@ NProgress.configure({
 Vue.use(anime);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueCheckView);
+Vue.use(VueLazyload, {
+  error: require("./assets/solid-black.jpg"),
+  loading: require("./assets/solid-black.jpg")
+});
 
 router.beforeEach((to, from, next) => {
   if (to.name !== from.name) NProgress.start();
-  
   next();
 })
 
