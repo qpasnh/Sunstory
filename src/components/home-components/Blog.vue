@@ -76,7 +76,7 @@ export default Vue.extend({
         swiperSlide,
         isMobile,
         getRealOptions() { 
-            if (this.isMobile()) {
+            if (this.isMobile() && window.innerWidth <= 1024) {
                 this.swiperOptions.slidesPerView = 1;
                 this.swiperOptions.spaceBetween = 0;
             }

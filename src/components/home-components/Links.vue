@@ -1,7 +1,7 @@
 <template>
     <div class="sotap-links">
         <swiper :options="{loop: true}" class="link-swiper" ref="linkSwiper">
-            <swiper-slide v-for="(x, i) in getLinks(isMobile() && windowWidth <= 1200 ? 3 : 5)" :key="i">
+            <swiper-slide v-for="(x, i) in getLinks(isMobile() && windowWidth <= 1024 ? 3 : 5)" :key="i">
                 <div class="link-container">
                     <div class="link-item" v-for="(y, k) in x" :key="k">
                         <img :src="y.img" @click="go(y.href)" />

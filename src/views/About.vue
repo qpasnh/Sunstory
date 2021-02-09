@@ -182,7 +182,7 @@ export default Vue.extend({
     position: relative;
     margin: 32px 0;
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1024px) {
         margin: 64px 0;
     }
 
@@ -193,20 +193,20 @@ export default Vue.extend({
         position: relative;
         margin: auto;
         margin-bottom: 96px;
-        
 
         .about-intro {
             display: flex;
             align-items: center;
             position: relative;
 
-            @media screen and (min-width: 1200px) {
+            @media screen and (min-width: 1024px) {
+                margin: 0 32px;
                 &:first-child {
                     margin-bottom: 64px;
                 }
             }
 
-            @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1024px) {
                 flex-direction: column;
 
                 &:first-child {
@@ -223,7 +223,7 @@ export default Vue.extend({
                 transition: all 0.3s ease;
                 z-index: 500;
 
-                @media screen and (min-width: 1200px) {
+                @media screen and (min-width: 1024px) {
                     width: 50%;
                     height: 320px;
 
@@ -236,7 +236,7 @@ export default Vue.extend({
                     }
                 }
 
-                @media screen and (max-width: 1200px) {
+                @media screen and (max-width: 1024px) {
                     width: calc(100% - 64px);
                     height: 200px;
                 }
@@ -256,11 +256,11 @@ export default Vue.extend({
             }
 
             .intro-content {
-                @media screen and (min-width: 1200px) {
+                @media screen and (min-width: 1024px) {
                     width: 50%;
                 }
 
-                @media screen and (max-width: 1200px) {
+                @media screen and (max-width: 1024px) {
                     padding: 32px;
                 }
 
@@ -294,11 +294,11 @@ export default Vue.extend({
             padding: 32px;
             color: black;
 
-            @media screen and (min-width: 1200px) {
+            @media screen and (min-width: 1024px) {
                 flex-direction: row;
             }
 
-            @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1024px) {
                 flex-direction: column;
             }
 
@@ -317,16 +317,16 @@ export default Vue.extend({
             }
 
             .people-content {
-                @media screen and (min-width: 1200px) {
+                @media screen and (min-width: 1024px) {
                     margin-left: 48px;
                 }
 
-                @media screen and (max-width: 1200px) {
+                @media screen and (max-width: 1024px) {
                     text-align: center;
                 }
 
                 .people-title {
-                    @media screen and (max-width: 1200px) {
+                    @media screen and (max-width: 1024px) {
                         margin-top: 32px;
                     }
 
@@ -369,14 +369,14 @@ export default Vue.extend({
                 width: 2px;
                 left: 8rem;
 
-                @media screen and (max-width: 1200px) {
+                @media screen and (max-width: 1024px) {
                     display: none;
                 }
             }
 
             .year-row {
                 position: relative;
-                @media screen and (min-width: 1200px) {
+                @media screen and (min-width: 1024px) {
                     max-width: calc(1200px - 9rem);
                     margin-left: 13rem;
                 }
@@ -386,13 +386,13 @@ export default Vue.extend({
                     .hide-selection;
                     font-size: 2.5rem;
 
-                    @media screen and (min-width: 1200px) {
+                    @media screen and (min-width: 1024px) {
                         position: absolute;
                         left: -11rem;
                         line-height: 1;
                     }
 
-                    @media screen and (max-width: 1200px) {
+                    @media screen and (max-width: 1024px) {
                         padding: 16px 32px;
                         padding-top: 0;
                     }
@@ -401,8 +401,13 @@ export default Vue.extend({
                 .event-row {
                     position: relative;
 
-                    @media screen and (max-width: 960px) {
+                    @media screen and (max-width: 1024px) {
                         margin: 0 32px;
+                        width: initial !important;
+                    }
+
+                    @media screen and (max-width: 1200px) {
+                        width: calc(100% - 32px);
                     }
 
                     .event {
@@ -411,12 +416,12 @@ export default Vue.extend({
                         position: absolute;
                         z-index: 50;
 
-                        @media screen and (max-width: 960px) {
+                        @media screen and (max-width: 1024px) {
                             position: absolute;
                             right: 0;
                         }
 
-                        @media screen and (min-width: 960px) {
+                        @media screen and (min-width: 1024px) {
                             left: -4rem;
                             margin-top: 4px;
                         }
@@ -444,7 +449,7 @@ export default Vue.extend({
                     }
 
                     .content {
-                        @media screen and (min-width: 1200px) {
+                        @media screen and (min-width: 1024px) {
                             margin-left: 3rem;
                         }
 
@@ -458,11 +463,11 @@ export default Vue.extend({
                             z-index: 200;
                             opacity: 0.3;
 
-                            @media screen and (max-width: 960px) {
+                            @media screen and (max-width: 1024px) {
                                 top: calc(12rem - 48px);
                             }
 
-                            @media screen and (min-width: 960px) {
+                            @media screen and (min-width: 1024px) {
                                 top: calc(25rem - 48px);
                             }
 

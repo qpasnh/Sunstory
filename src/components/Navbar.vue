@@ -399,7 +399,7 @@ export default Vue.extend({
     }
 
     .more-icon {
-        @media screen and (max-width: 690px) {
+        @media screen and (max-width: 1200px) {
             display: none;
         }
     }
