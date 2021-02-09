@@ -15,7 +15,7 @@
                         </slot>
                         <span class="catalog-list-item-title" :class="[
 			`catalog-list-item-title-child${item.level || 1}`
-		  ]" :title="item.title">{{ item.title }}</span>
+		  ]" :title="item.title">{{ item.title.substr(1) }}</span>
                     </slot>
                 </div>
             </div>
@@ -59,11 +59,11 @@ export default {
             return this.innerScroll ? this.scrollElement : document.documentElement;
         }
     },
-    async mounted() {
+    mounted() {
         this.debounceIntoView = debounce(this.activeIntoView, 250);
         this.throttleScroll = throttle(this.scrollHandle, 200);
-        await this.setOffsetParent();
-        await this.setTopList();
+        this.setOffsetParent();
+        this.setTopList();
         this.initActive();
         this.scrollElement.addEventListener('scroll', this.throttleScroll);
         if (!this.watch) return;
@@ -180,7 +180,7 @@ export default {
         topForList() {
             this.refList.forEach((item) => {
                 const offsetTop = this.getRefDom(item.ref).offsetTop;
-                const title = item.title || this.getRefDom(item.ref).innerText;
+                const title = item.title || this.getRefDom(item.ref).textContent;
                 this.topList.push({
                     ref: item.ref,
                     title,
@@ -202,7 +202,7 @@ export default {
                 if (this.levelList.includes(nodeName)) {
                     this.topList.push({
                         ref: `${item.nodeName}-${index}`,
-                        title: item.innerText,
+                        title: item.textContent,
                         offsetTop: item.offsetTop,
                         level: headlevel[nodeName]
                     });
