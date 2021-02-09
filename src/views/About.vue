@@ -192,6 +192,8 @@ export default Vue.extend({
         max-width: 1200px;
         position: relative;
         margin: auto;
+        margin-bottom: 96px;
+        
 
         .about-intro {
             display: flex;
@@ -199,28 +201,16 @@ export default Vue.extend({
             position: relative;
 
             @media screen and (min-width: 1200px) {
-                flex-direction: row;
-            }
-            @media screen and (max-width: 1200px) {
-                flex-direction: column;
-                margin-bottom: 32px;
-
-                &:last-child {
-                    margin-bottom: 0;
+                &:first-child {
+                    margin-bottom: 64px;
                 }
             }
 
-            > * {
-                @media screen and (min-width: 1200px) {
-                    padding-top: 32px;
+            @media screen and (max-width: 1200px) {
+                flex-direction: column;
 
-                    &:first-child {
-                        padding-left: 0;
-                    }
-
-                    &:last-child {
-                        padding-right: 0;
-                    }
+                &:first-child {
+                    margin-bottom: 32px;
                 }
             }
 
@@ -254,7 +244,13 @@ export default Vue.extend({
                 &:hover {
                     box-shadow: @mdui-shadow-20;
                     @media screen and (min-width: 1200px) {
-                        transform: rotateZ(-5deg) scale(1.3) !important;
+                        &:first-child {
+                            transform: scale(1.3) rotateZ(-5deg) !important;
+                        }
+
+                        &:last-child {
+                            transform: scale(1.3) rotateZ(5deg) !important;
+                        }
                     }
                 }
             }
@@ -278,6 +274,7 @@ export default Vue.extend({
                     font-size: 18px;
                     color: @textgray;
                     line-height: 1.6;
+                    margin-bottom: 0;
                 }
             }
         }

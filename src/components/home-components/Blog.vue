@@ -48,7 +48,7 @@ export default Vue.extend({
     },
     methods: {
         getBlogPosts() {
-            axios.get('https://blog.sotap.org/api/posts?pageSize=5').then((r) => {
+            axios.get('https://blog.sotap.org/api/posts?pageSize=6').then((r) => {
                 let data: Array<BlogInstance> = r.data.data;
                 let textLenLimit = 200;
                 data.forEach((k) => {

@@ -32,7 +32,7 @@
                     <path d="M315.53,222.66a71,71,0,0,1-92.87,92.87"
                         style="fill:none;stroke:#30adf4;stroke-linecap:round;stroke-miterlimit:10;stroke-width:18px" />
                 </svg>
-                <span class="logo-text">SoTap</span>
+                <span class="logo-text rainbow">SoTap</span>
             </div>
             <div class="nav-items">
                 <span class="nav-item" v-for="(x, i) in navItems" :key="i"
@@ -228,6 +228,7 @@ export default Vue.extend({
             align-items: center;
             cursor: pointer;
             z-index: 10000;
+            transition: all 0.2s ease;
 
             @media screen and (max-width: 800px) {
                 margin-left: 56px;
@@ -239,41 +240,38 @@ export default Vue.extend({
             }
 
             .logo-text {
-                font-family: 'Poppins', sans-serif;
-                font-weight: 500;
-                color: white;
-                font-size: 1.75rem;
-
-                &::selection {
-                    background: rgba(0, 0, 0, 0);
-                }
+                color: transparent; 
+                background: white;
+                background-clip: text;
+                -webkit-background-clip: text;
             }
 
-            @keyframes wink {
-                from {
-                    opacity: 1;
+            .logo-text.rainbow {
+                &:hover {
+                    background: linear-gradient(
+                        130deg,
+                        #ff2400,
+                        #ff2400,
+                        #ff2400,
+                        #ffa000,
+                        @primary,
+                        #4caf50,
+                        #2195f3,
+                        #fff,
+                        #fff,
+                        #fff,
+                        #fff,
+                    );
+                    background-repeat: no-repeat;
+                    background-size: 1800% 1800%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    -webkit-animation: rainbow 1s ease forwards;
+                    animation: rainbow 1s ease forwards;
+                    height: 100%;
+                    width: fit-content;
                 }
-                50% {
-                    opacity: 0.2;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            @-webkit-keyframes wink {
-                from {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 0.2;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-
-            &:hover {
-                animation: wink 0.3s ease;
             }
         }
 

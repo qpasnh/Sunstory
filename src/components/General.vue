@@ -25,7 +25,7 @@
                 <div v-if="catalogue" class="sidebar-item catalogue">
                     <div class="catalogue-container">
                         <div class="sidebar-item-title">文章目录</div>
-                        <Catalogue class="catalogue-instance" />
+                        <Catalogue :container="'.general-typo'" :innerScroll="true" class="catalogue-instance" />
                     </div>
                 </div>
                 <div v-if="help" class="sidebar-item help">
@@ -119,7 +119,6 @@ export default Vue.extend({
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 64px 0;
 
     @media screen and (max-width: 1200px) {
         margin-left: 32px;

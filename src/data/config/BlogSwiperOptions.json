@@ -1,5 +1,5 @@
 {
-  "loop": false,
+  "loop": true,
   "slidesPerView": 3,
   "spaceBetween": 30,
   "navigation": {

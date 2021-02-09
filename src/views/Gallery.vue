@@ -222,7 +222,6 @@ export default Vue.extend({
 .row {
     width: 100%;
     position: relative;
-    margin: 64px 0;
 }
 
 .gallery-description {
@@ -234,6 +233,7 @@ export default Vue.extend({
     flex-wrap: wrap;
     padding-left: 32px;
     padding-right: 32px;
+    margin-bottom: 96px;
 
     h1 {
         font-size: 3rem;

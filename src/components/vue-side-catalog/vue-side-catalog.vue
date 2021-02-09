@@ -81,7 +81,6 @@ export default {
     methods: {
         activeAnchor(ref) {
             if (this.active === ref) return;
-
             this.itemClicking = true;
             this.scrollToEle.scrollTop = this.refTopMap[ref];
             this.active = ref;
@@ -177,9 +176,23 @@ export default {
             });
         },
 
+        getOffsetPrefix(element, index) {
+            let origin = element.offsetTop;
+            let brothers = Array.from(element.parentNode.children);
+            let selfIndex = brothers.indexOf(element);
+            let brother = null;
+            while (brother === null || !this.levelList.includes(brother.nodeName)) {
+                selfIndex++;
+                if (selfIndex >= brothers.length) break;
+                brother = brothers[selfIndex];
+            }
+            return origin - 72 + brother.offsetHeight;
+        },
+
         topForList() {
-            this.refList.forEach((item) => {
-                const offsetTop = this.getRefDom(item.ref).offsetTop;
+            let i = 0;
+            this.refList.forEach((item, index) => {
+                const offsetTop = this.getOffsetPrefix(this.getRefDom(item.ref), index);
                 const title = item.title || this.getRefDom(item.ref).textContent;
                 this.topList.push({
                     ref: item.ref,
@@ -188,6 +201,7 @@ export default {
                     level: item.level
                 });
                 this.refTopMap[item.ref] = offsetTop;
+                i++;
             });
         },
 
@@ -197,16 +211,18 @@ export default {
                 headlevel[item] = index + 1;
             });
             const childrenList = Array.from(document.querySelectorAll(`${this.container}>*`));
+            let i = 0;
             childrenList.forEach((item, index) => {
                 const nodeName = item.nodeName.toLowerCase();
                 if (this.levelList.includes(nodeName)) {
                     this.topList.push({
                         ref: `${item.nodeName}-${index}`,
                         title: item.textContent,
-                        offsetTop: item.offsetTop,
+                        offsetTop: this.getOffsetPrefix(item, i),
                         level: headlevel[nodeName]
                     });
-                    this.refTopMap[`${item.nodeName}-${index}`] = item.offsetTop;
+                    this.refTopMap[`${item.nodeName}-${index}`] = this.getOffsetPrefix(item, i);
+                    i++;
                 }
             });
         }

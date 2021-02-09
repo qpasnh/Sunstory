@@ -137,7 +137,7 @@ h6 {
   transition: all 0.2s ease;
 
   @media screen and (max-width: 1350px) {
-      display: none;
+    display: none;
   }
 
   .mdi {
@@ -305,7 +305,7 @@ h6 {
 
   .join-link {
     @media screen and (max-width: 1200px) {
-        text-align: center;
+      text-align: center;
     }
 
     .ui-button {
@@ -491,23 +491,41 @@ h6 {
 
 .fade-enter,
 .fade-leave-to {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .fade-enter-to,
 .fade-leave {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 *:not(.hide-selection)::selection {
   background: @primaryl;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 70%;
+  }
+  100% {
+    background-position: 100% 19%;
+  }
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 90%;
+  }
+  100% {
+    background-position: 100% 19%;
+  }
 }
 
 @primary: #fcd307;
