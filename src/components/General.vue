@@ -102,6 +102,11 @@ export default Vue.extend({
             }
         },
         isMobile
+    },
+    mounted() {
+        if (this.isMobile()) {
+            (document.querySelector(".general-typo") as HTMLDivElement).style.width = "100%";
+        }
     }
 });
 </script>
@@ -119,6 +124,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-bottom: 96px;
 
     @media screen and (max-width: 1200px) {
         margin-left: 32px;
@@ -132,8 +138,8 @@ export default Vue.extend({
 
         @media screen and (min-width: 1200px) {
             width: 70%;
+            margin-right: 16px;
         }
-        margin-right: 16px;
     }
 
     .sidebar {
