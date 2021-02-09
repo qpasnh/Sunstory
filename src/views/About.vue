@@ -59,7 +59,8 @@
                 <div class="year-row" v-for="(x, i) in timeline" :key="i">
                     <div style="opacity: 0" class="year" v-view.once="visLeft">{{ x.year }}</div>
                     <div class="event-row" v-for="(y, k) in x.events" :key="k">
-                        <div style="opacity: 0" class="event" v-view.once="visRight" v-if="y.name">
+                        <div style="opacity: 0" class="event"
+                            v-view.once="isMobile() ? visEffect : visRight" v-if="y.name">
                             <span>{{ y.name }}</span>
                         </div>
                         <div class="content sotap-typo">
@@ -127,7 +128,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import StaticBanner from '@/components/StaticBanner.vue';
-import { Animation, visEffect } from '@/functions';
+import { Animation, visEffect, isMobile } from '@/functions';
 import SectionTitle from '@/components/SectionTitle.vue';
 import Divider from '@/components/Divider.vue';
 import AboutTimeline from '@/data/content/AboutTimeline.json';
@@ -157,7 +158,8 @@ export default Vue.extend({
             } else {
                 instance.slideNext();
             }
-        }
+        },
+        isMobile
     },
     data() {
         return {
@@ -288,7 +290,7 @@ export default Vue.extend({
         flex-direction: column;
 
         .people-box {
-            max-width: 100%;
+            max-width: 1200px;
             margin: auto;
             display: flex;
             align-items: center;
@@ -304,11 +306,11 @@ export default Vue.extend({
             }
 
             &:first-child {
-                padding-top: 64px;
+                margin-top: 64px;
             }
 
             &:last-child {
-                padding-bottom: 64px;
+                margin-bottom: 64px;
             }
 
             .people-avatar {
@@ -401,7 +403,10 @@ export default Vue.extend({
 
                 .event-row {
                     position: relative;
-                    width: 100%;
+
+                    @media screen and (max-width: 960px) {
+                        margin: 0 32px;
+                    }
 
                     .event {
                         max-width: 6rem;
@@ -410,8 +415,8 @@ export default Vue.extend({
                         z-index: 50;
 
                         @media screen and (max-width: 960px) {
-                            right: 16px;
-                            top: 0;
+                            position: absolute;
+                            right: 0;
                         }
 
                         @media screen and (min-width: 960px) {
@@ -444,10 +449,6 @@ export default Vue.extend({
                     .content {
                         @media screen and (min-width: 1200px) {
                             margin-left: 3rem;
-                        }
-
-                        @media screen and (max-width: 960px) {
-                            padding: 0 32px;
                         }
 
                         h1 {
