@@ -50,7 +50,7 @@ export default Vue.extend({
         max-width: 1200px;
         position: relative;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 1200px) {
             padding-left: 32px;
             padding-right: 32px;
         }

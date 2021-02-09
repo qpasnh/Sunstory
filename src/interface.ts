@@ -68,3 +68,13 @@ interface Catalogue {
     name: string,
     children: Array<Catalogue>
 }
+
+interface LinkObject extends Dictionary {
+    href: string,
+    img: string
+}
+
+interface SwiperSlideInstance {
+    slideNext: () => void,
+    slidePrev: () => void
+}

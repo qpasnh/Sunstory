@@ -176,7 +176,7 @@ export default {
             });
         },
 
-        getOffsetPrefix(element, index) {
+        getOffsetPrefix(element) {
             let origin = element.offsetTop;
             let brothers = Array.from(element.parentNode.children);
             let selfIndex = brothers.indexOf(element);
@@ -192,7 +192,7 @@ export default {
         topForList() {
             let i = 0;
             this.refList.forEach((item, index) => {
-                const offsetTop = this.getOffsetPrefix(this.getRefDom(item.ref), index);
+                const offsetTop = this.getOffsetPrefix(this.getRefDom(item.ref));
                 const title = item.title || this.getRefDom(item.ref).textContent;
                 this.topList.push({
                     ref: item.ref,
@@ -211,18 +211,16 @@ export default {
                 headlevel[item] = index + 1;
             });
             const childrenList = Array.from(document.querySelectorAll(`${this.container}>*`));
-            let i = 0;
             childrenList.forEach((item, index) => {
                 const nodeName = item.nodeName.toLowerCase();
                 if (this.levelList.includes(nodeName)) {
                     this.topList.push({
                         ref: `${item.nodeName}-${index}`,
                         title: item.textContent,
-                        offsetTop: this.getOffsetPrefix(item, i),
+                        offsetTop: this.getOffsetPrefix(item),
                         level: headlevel[nodeName]
                     });
-                    this.refTopMap[`${item.nodeName}-${index}`] = this.getOffsetPrefix(item, i);
-                    i++;
+                    this.refTopMap[`${item.nodeName}-${index}`] = this.getOffsetPrefix(item);
                 }
             });
         }

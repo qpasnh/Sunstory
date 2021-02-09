@@ -246,7 +246,7 @@ export default Vue.extend({
                 -webkit-background-clip: text;
             }
 
-            .logo-text.rainbow {
+            .logo-text {
                 &:hover {
                     background: linear-gradient(
                         130deg,
@@ -267,8 +267,8 @@ export default Vue.extend({
                     -webkit-background-clip: text;
                     background-clip: text;
                     color: transparent;
-                    -webkit-animation: rainbow 1s ease forwards;
-                    animation: rainbow 1s ease forwards;
+                    -webkit-animation: rainbow 2s ease forwards;
+                    animation: rainbow 2s ease forwards;
                     height: 100%;
                     width: fit-content;
                 }

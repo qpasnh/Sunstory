@@ -102,3 +102,16 @@ export function getNodeTree(node: Node): boolean | NodeTreeObject {
 
   return false;
 }
+
+/**
+ * 
+ * @param direction 滚动方向，0 左 1 右
+ * @param instance Swiper 实例
+ */
+export function swiperSlide(direction: 0 | 1, instance: SwiperSlideInstance) {
+  if (direction === 0) {
+    instance.slidePrev();
+  } else {
+    instance.slideNext();
+  }
+}

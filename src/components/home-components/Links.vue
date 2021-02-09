@@ -1,6 +1,20 @@
 <template>
     <div class="sotap-links">
-        links友链部分回炉重做中，勿cue
+        <swiper :options="{loop: true}" class="link-swiper" ref="linkSwiper">
+            <swiper-slide v-for="(x, i) in getLinks(isMobile() ? 3 : 5)" :key="i">
+                <div class="link-container">
+                    <div class="link-item" v-for="(y, k) in x" :key="k">
+                        <img :src="y.img" @click="go(y.href)" />
+                    </div>
+                </div>
+            </swiper-slide>
+        </swiper>
+        <div @click="swiperSlide(0, $refs.linkSwiper.swiperInstance)" class="swiper-prev"><span
+                class="mdi mdi-arrow-left"></span>
+        </div>
+        <div @click="swiperSlide(1, $refs.linkSwiper.swiperInstance)" class="swiper-next"><span
+                class="mdi mdi-arrow-right"></span>
+        </div>
     </div>
 </template>
 
@@ -8,6 +22,7 @@
 import Vue from 'vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 import HomeLinks from '@/data/content/HomeLinks.json';
+import { swiperSlide, isMobile } from '@/functions';
 
 export default Vue.extend({
     components: {
@@ -15,17 +30,88 @@ export default Vue.extend({
     },
     data() {
         return {
-            links: HomeLinks
+            links: HomeLinks as Array<LinkObject>
         };
+    },
+    methods: {
+        getLinks(perpage: number) {
+            let arr: Array<Array<LinkObject>> = [];
+            let start = 0;
+            let end = 0;
+            for (let i = 0; i <= Math.floor(this.links.length / perpage); i++) {
+                start = i * perpage;
+                end = start + perpage;
+                arr.push(this.links.slice(start, end));
+            }
+            return arr;
+        },
+        go(url: string) {
+            window.open(url);
+        },
+        swiperSlide,
+        isMobile
     }
 });
 </script>
 
 <style lang="less" scoped>
 .sotap-links {
-    font-size: 32px;
-    font-style: italic;
-    text-align: center;
-    padding: 128px;
+    width: 100%;
+    position: relative;
+    background: #222222;
+
+    .link-swiper {
+        width: 100%;
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        .link-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .link-item {
+                @media screen and (min-width: 1024px) {
+                    margin: 0 32px;
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    margin: 0 8px;
+                }
+
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                img {
+                    height: 35px;
+                }
+            }
+        }
+    }
+
+    .swiper-prev,
+    .swiper-next {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        opacity: .3;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .swiper-prev {
+        left: 0;
+    }
+
+    .swiper-next {
+        right: 0;
+    }
 }
 </style>

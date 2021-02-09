@@ -7,9 +7,9 @@
                     左右滑动可查看更多哦</small></template>
         </section-title>
         <div class="swiper-box">
-            <div @click="slide(0)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span>
+            <div @click="swiperSlide(0, $refs.blogSwiper.swiperInstance)" class="swiper-prev"><span class="mdi mdi-arrow-left"></span>
             </div>
-            <div @click="slide(1)" class="swiper-next"><span class="mdi mdi-arrow-right"></span>
+            <div @click="swiperSlide(1, $refs.blogSwiper.swiperInstance)" class="swiper-next"><span class="mdi mdi-arrow-right"></span>
             </div>
             <swiper class="blog-swiper" ref="blogSwiper" :options="getRealOptions()">
                 <swiper-slide v-for="(y, k) in blogs" :key="k">
@@ -35,7 +35,7 @@ import BlogCard from '@/components/BlogCard.vue';
 import removeMd from 'remove-markdown';
 import SectionTitle from '@/components/SectionTitle.vue';
 import BlogSwiperOptions from '@/data/config/BlogSwiperOptions.json';
-import { isMobile } from '@/functions';
+import { isMobile, swiperSlide } from '@/functions';
 
 export default Vue.extend({
     data() {
@@ -51,11 +51,12 @@ export default Vue.extend({
             axios.get('https://blog.sotap.org/api/posts?pageSize=6').then((r) => {
                 let data: Array<BlogInstance> = r.data.data;
                 let textLenLimit = 200;
+                let _blogs: Array<BlogInstance> = [];
                 data.forEach((k) => {
                     let quote = /\[\/\/\]:\((.*?)\)/.exec(k.text);
                     let text = this.removeComment(removeMd(k.text));
                     if (quote === null) return true;
-                    this.blogs.push({
+                    _blogs.push({
                         title: k.title,
                         cid: k.cid,
                         permalink: k.permalink,
@@ -66,20 +67,13 @@ export default Vue.extend({
                         bg: quote[1]
                     });
                 });
+                this.blogs = _blogs.reverse();
             });
         },
         removeComment(str: string) {
             return str.replace(/\[\/\/\]:\(.*?\)/g, '').replace(/[\r\n]/g, '');
         },
-        slide(direction: 0 | 1) {
-            // @ts-ignore
-            let instance = this.$refs.blogSwiper.swiperInstance;
-            if (direction === 0) {
-                instance.slidePrev();
-            } else {
-                instance.slideNext();
-            }
-        },
+        swiperSlide,
         isMobile,
         getRealOptions() { 
             if (this.isMobile()) {
@@ -135,8 +129,8 @@ export default Vue.extend({
 .swiper-next,
 .swiper-prev {
     position: absolute;
-    top: 50%;
     bottom: 50%;
+    transform: translateY(50%);
     z-index: 200;
 
     @media screen and (max-width: 690px) {

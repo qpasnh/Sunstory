@@ -126,11 +126,11 @@ export default Vue.extend({
     }
 
     .general-typo {
-        @media screen and (max-width: 960px) {
+        @media screen and (max-width: 1200px) {
             width: 100%;
         }
 
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 1200px) {
             width: 70%;
         }
         margin-right: 16px;
