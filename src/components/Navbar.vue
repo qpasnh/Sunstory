@@ -284,7 +284,7 @@ export default Vue.extend({
 
             .nav-item {
                 color: #aaa;
-                cursor: pointer;
+                cursor: pointer !important;
                 transition: color 0.2s ease;
                 text-decoration: none;
                 margin-right: 10px;
