@@ -38,7 +38,7 @@ export default Vue.extend({
             let arr: Array<Array<LinkObject>> = [];
             let start = 0;
             let end = 0;
-            for (let i = 0; i <= Math.floor(this.links.length / perpage); i++) {
+            for (let i = 0; i < Math.ceil(this.links.length / perpage); i++) {
                 start = i * perpage;
                 end = start + perpage;
                 arr.push(this.links.slice(start, end));
@@ -67,8 +67,13 @@ export default Vue.extend({
 
     .link-swiper {
         width: 100%;
-        padding-top: 32px;
-        padding-bottom: 32px;
+        @media screen and (min-width: 1024px) {
+            padding-top: 32px 0;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            padding: 16px 0;
+        }
 
         .link-container {
             width: 100%;
@@ -86,14 +91,20 @@ export default Vue.extend({
                 }
 
                 @media screen and (max-width: 1024px) {
-                    margin: 0 8px;
+                    margin: 0 10px;
                 }
 
                 cursor: pointer;
                 transition: all 0.2s ease;
 
                 img {
-                    height: 35px;
+                    @media screen and (min-width: 1024px) {
+                        height: 35px;
+                    }
+
+                    @media screen and (max-width: 1024px) {
+                        height: 30px;
+                    }
                 }
             }
         }
