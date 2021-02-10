@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts">
+import { fixLoopSwiper } from '@/functions';
 import Vue from 'vue';
 export default Vue.extend({
     props: {
@@ -27,6 +28,9 @@ export default Vue.extend({
         go(url: string) {
             window.open(url);
         }
+    },
+    mounted() {
+        fixLoopSwiper(this, ".blog-post .card-background")
     }
 });
 </script>
@@ -41,6 +45,7 @@ export default Vue.extend({
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-color: black;
     }
 
     .blog-content {

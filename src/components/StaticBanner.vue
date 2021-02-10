@@ -1,5 +1,5 @@
 <template>
-    <div class="static-banner" :style="'background-image: url(' + bg + ')'">
+    <div class="static-banner" v-lazy:background-image="bg">
         <div class="banner-text-box">
             <h1 class="banner-title">
                 <slot name="title"></slot>
@@ -32,6 +32,8 @@ export default Vue.extend({
     background-repeat: no-repeat;
     line-height: 1.8;
     margin-bottom: 96px;
+    background-color: black;
+    transition: all .2s ease;
 
     @media screen and (min-width: 690px) {
         height: @bannerheight-d;

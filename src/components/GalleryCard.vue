@@ -1,7 +1,7 @@
 <template>
     <div class="gallery-card-box" @mouseenter="updateStyles(1)" @mouseleave="updateStyles(0)"
         @click="onclickFunction()">
-        <div class="gallery-card" :style="'background-image: url(' + bg + ');'">
+        <div class="gallery-card" v-lazy:background-image="bg">
             <div class="overlay" :style="'opacity:' + alpha"></div>
             <div v-if="!imageOnly" :class="'title-' + id"
                 :style="'display:' + (showTitle ? 'initial' : 'none')">

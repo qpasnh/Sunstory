@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { Animation, swiperSlide } from '@/functions';
+import { Animation, fixLoopSwiper, swiperSlide } from '@/functions';
 import Vue from 'vue';
 import HomeBannerList from '@/data/content/HomeBannerList.json';
 import HomeSwiperOptions from '@/data/config/HomeSwiperOptions.json';
@@ -36,18 +36,7 @@ export default Vue.extend({
     mounted() {
         Animation.ease('in', 'top', '.banner-title');
         Animation.ease('in', 'top', '.banner-text', undefined, 200);
-        this.$Lazyload.$on('loaded', ({ el, src }) => {
-            let slide: HTMLDivElement = el.parentNode as HTMLDivElement;
-            let dup = document
-                .querySelector(
-                    ".swiper-slide-duplicate[data-swiper-slide-index='" +
-                        slide.getAttribute('data-swiper-slide-index') +
-                        "']"
-                )
-                ?.querySelector('.swiper-item') as HTMLDivElement | null;
-            if (dup === null) return;
-            dup.style.backgroundImage = 'url(' + src + ')';
-        });
+        fixLoopSwiper(this, ".swiper-item");
     },
     methods: {
         swiperSlide

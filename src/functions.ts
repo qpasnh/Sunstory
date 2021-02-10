@@ -1,4 +1,4 @@
-import anime from "animejs"
+import anime from "animejs";
 
 export function isMobile() {
   return (
@@ -14,7 +14,7 @@ export function isMobile() {
 export class Animation {
   /**
    * 给予一个元素方向淡入或淡出效果
-   * 
+   *
    * @param inst Vue 实例，一般提供 `this`
    * @param inORout 选择是进入还是离开，仅能为 `in` 或 `out`
    * @param direction 选择方向，仅能为 `top`、`bottom`、`left` 和 `right`。该方向是指这个元素出现时的运动朝向
@@ -33,13 +33,13 @@ export class Animation {
     anime({
       targets: sel,
       translateY:
-        (direction === "top" || direction === "bottom")
+        direction === "top" || direction === "bottom"
           ? inORout === "in"
             ? [direction === "top" ? endpoint : -endpoint, 0]
             : [0, endpoint]
           : [0, 0],
       translateX:
-        (direction === "left" || direction === "right")
+        direction === "left" || direction === "right"
           ? inORout === "in"
             ? [direction === "right" ? endpoint : -endpoint, 0]
             : [0, endpoint]
@@ -51,21 +51,27 @@ export class Animation {
     });
   }
 
-  public static scale(inORout: "in" | "out", scale: number = 1, sel: string | HTMLElement | Array<string> | Array<HTMLElement>, duration: number = 750, delay: number = 0) {
+  public static scale(
+    inORout: "in" | "out",
+    scale: number = 1,
+    sel: string | HTMLElement | Array<string> | Array<HTMLElement>,
+    duration: number = 750,
+    delay: number = 0
+  ) {
     anime({
       targets: sel,
       scale: [0, scale],
       opacity: inORout === "in" ? [0, 1] : [1, 0],
       easing: "easeOutExpo",
       duration,
-      delay
-    })
+      delay,
+    });
   }
 }
 
 /**
  * 获取一个属于 [min, max] 的伪随机整数
- * 
+ *
  * @param min 最小值，包含
  * @param max 最大值，包含
  */
@@ -75,7 +81,7 @@ export function getRandomInt(min: number, max: number) {
 
 /**
  * 快速给元素添加进入的动画效果（自下而上滑动淡入）
- * 
+ *
  * @param ob v-view 调用时传入的专有参数，具体可查看 @/interface.ts
  */
 export function visEffect(ob: ViewObject) {
@@ -86,25 +92,25 @@ export function visEffect(ob: ViewObject) {
 
 export function getNodeTree(node: Node): boolean | NodeTreeObject {
   if (node.hasChildNodes()) {
-      var children = [];
-      for (var j = 0; j < node.childNodes.length; j++) {
-          children.push(getNodeTree(node.childNodes[j]));
-      }
+    var children = [];
+    for (var j = 0; j < node.childNodes.length; j++) {
+      children.push(getNodeTree(node.childNodes[j]));
+    }
 
-      return {
-          nodeName: node.nodeName,
-          parentName: (node.parentNode as (Node & ParentNode)).nodeName,
-          children: children,
-          // @ts-ignore
-          content: node.innerText || "",
-      };
+    return {
+      nodeName: node.nodeName,
+      parentName: (node.parentNode as Node & ParentNode).nodeName,
+      children: children,
+      // @ts-ignore
+      content: node.innerText || "",
+    };
   }
 
   return false;
 }
 
 /**
- * 
+ *
  * @param direction 滚动方向，0 左 1 右
  * @param instance Swiper 实例
  */
@@ -114,4 +120,18 @@ export function swiperSlide(direction: 0 | 1, instance: SwiperSlideInstance) {
   } else {
     instance.slideNext();
   }
+}
+
+export function fixLoopSwiper(inst: Vue, backgroundEl: string) {
+  inst.$Lazyload.$on("loaded", ({ el, src }) => {
+    let parent: HTMLElement | null = el.closest(".swiper-slide");
+    let dup = parent?.parentNode?.querySelector(
+      ".swiper-slide-duplicate[data-swiper-slide-index='" +
+        parent.getAttribute("data-swiper-slide-index") +
+        "']"
+    );
+    let target = dup?.querySelector(backgroundEl) as HTMLDivElement;
+    if (target === null || target === undefined) return;
+    target.style.backgroundImage = "url(" + src + ")";
+  });
 }

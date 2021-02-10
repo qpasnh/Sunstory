@@ -81,6 +81,7 @@ export default Vue.extend({
         right: 64px;
         top: -24px;
         transition: all 0.2s ease;
+        z-index: 500;
 
         &:hover {
             background-color: @primary;
