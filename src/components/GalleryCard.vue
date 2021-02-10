@@ -125,6 +125,8 @@ export default Vue.extend({
     align-items: center;
     justify-content: center;
     z-index: -100;
+    background-color: black;
+    transition: all .2s ease;
 
     .overlay {
         position: absolute;
