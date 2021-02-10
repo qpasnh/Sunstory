@@ -1,6 +1,6 @@
 @echo off
-echo åŒæ­¥ä¸­...
+echo Í¬²½ÖÐ...
 git pull origin main
-echo åŒæ­¥å®Œæˆï¼Œå¦‚æœ‰é—®é¢˜è¯·æˆªå›¾å’¨è¯¢ã€‚
+echo Í¬²½Íê³É£¬ÈçÓÐÎÊÌâÇë½ØÍ¼×ÉÑ¯¡£
 pause
 exit
