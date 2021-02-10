@@ -1,16 +1,17 @@
 [
   {
-    "img": "https://sotap.oss-cn-qingdao.aliyuncs.com/0.jpg",
+    "img": "https://sotap.oss-cn-qingdao.aliyuncs.com/thumbnail.jpg",
     "text": "FAQ：常见问题及其解答",
-    "href": "//baidu.com"
+    "href": "https://wiki.sotap.org/#/getting-started/faq"
+  },
+  {
+    "img": "https://mcsunrise.oss-cn-qingdao.aliyuncs.com/island.png",
+    "text": "什么是 SoTap ？",
+    "href": "https://wiki.sotap.org/#/introduction"
   },
   {
     "img": "https://sotap.oss-cn-qingdao.aliyuncs.com/0.jpg",
-    "text": "FAQ：常见问题及其解答",
-    "href": "//baidu.com"
-  },
-  {
-    "text": "FAQ：常见问题及其解答",
-    "href": "//baidu.com"
+	"text": "加入玩家群组",
+    "href": "https://wiki.sotap.org/#/forum/groups"
   }
 ]

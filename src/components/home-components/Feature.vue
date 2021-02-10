@@ -9,21 +9,8 @@
                     商业友好型
                 </template>
                 <template #text>
-                    最公益的商业服：遵循 Mojang EULA
-                    协议，商业服也可以有公益服的感觉。始终遵循无强制、无限制、无暗费的三大基本准则；不设定任何土旧的「神装|神器|坐骑」等破坏平衡的增值服务；同时提供「Pay
-                    as you go」支付方案，按需付费模式使玩家节省更多。
-                </template>
-            </feature-item>
-            <feature-item>
-                <template #icon>
-                    <span class="flaticon-analysis"></span>
-                </template>
-                <template #title>
-                    隐私不留痕
-                </template>
-                <template #text>
-                    社区管辖的所有服务器均遵循欧盟 GDPR 规定，不在任何情况下收集保存玩家 IP
-                    地址、聊天记录、互动记录等敏感数据；在任何时候都不会将玩家数据分享给第三方；同时玩家有权利要求将自己的数据从服务器上永久删除和要求服务器提供自己的个人数据下载。
+                    遵循Mojang EULA协议，商业服也可以有公益服的感觉。遵循无强制、无暗费的基本准则；不设定土旧「神装|神器」等破坏平衡的增值服务；
+					不阉割任何原版游戏的功能；提供「偏外观类」的增值物品。在这里，每一个玩家都能享受到完整/公平/舒适的游戏。
                 </template>
             </feature-item>
             <feature-item>
@@ -31,10 +18,23 @@
                     <span class="flaticon-web-design"></span>
                 </template>
                 <template #title>
-                    用心制作
+                    最化小限制
                 </template>
                 <template #text>
-                    我们重新设计了社区官网的界面，让其保持轻盈而加载快速的同时又不失其美观性。为了确保游戏服务器和社区相关服务器的平稳运行，我们花费了许多的时间来校调、修改和完善。精心设计的游戏设定到活跃的活动策划团队，这一切都是为了给玩家最好体验。
+                    我们一直紧跟最新稳定版本，抛开恼人的条条框框，没有规划限制、没有建筑外观限制、没有流水/岩浆/怪物数量限制，也没有生物密集养殖限制。
+					无论是选择当名探险家还是打算找一片“世外桃源”来安心养老抑或是建筑爱好者都可以在这里尽情发挥你的才能。
+                </template>
+            </feature-item>
+            <feature-item>
+                <template #icon>
+                    <span class="flaticon-idea"></span>
+                </template>
+                <template #title>
+                    创造力社区
+                </template>
+                <template #text>
+                    在这片地大物博的世界里，创造是铸造伟大的阶梯。玩家们创建了城镇与市场，谱写了温馨与美好，亦在互助中孕育友情。
+					时间流淌在高楼大厦之间，亦流动在红石的光辉中。从宏伟的世界建筑到喜闻乐见的玩家雕塑，社区驱使着创造力，丰富着世界的多彩。
                 </template>
             </feature-item>
         </div>

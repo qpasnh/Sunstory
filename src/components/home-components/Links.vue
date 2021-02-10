@@ -104,7 +104,7 @@ export default Vue.extend({
         position: absolute;
         bottom: 50%;
         transform: translateY(50%);
-        opacity: .3;
+        opacity: 1;
 
         &:hover {
             opacity: 1;

@@ -12,7 +12,7 @@
             <slot name="content" />
             <div class="sidebar" v-if="!isMobile()">
                 <div v-if="recents" class="sidebar-item recents">
-                    <div class="sidebar-item-title">其它你需要知道的...</div>
+                    <div class="sidebar-item-title">其它你可能感兴趣的...</div>
                     <div class="recents-item" v-for="(x, i) in recentItems" :key="i"
                         @click="go(x.href)">
                         <div v-if="x.img" class="recents-img"
@@ -32,10 +32,11 @@
                     <img src="https://sotap.org/images/help.png" />
                     <div class="sidebar-item-title">需要帮助？</div>
                     <ul>
-                        <li>客服邮箱：support@sotap.org</li>
-                        <li>玩家社区的帮助中心 24H 开放</li>
-                        <li>前往官方博客中的 support 中心联系客服</li>
-                        <li>前往官方博客获取最新社区消息和公告</li>
+                        <li>管理邮箱：support@sotap.org</li>
+                        <li>社区BBS的帮助板块 24H 开放</li>
+                        <li>加入官方QQ群联系管理组成员</li>
+						<li>阅读官方Wiki来查找你的问题解答</li>
+                        <li>前往官方博客获取最新消息和公告</li>
                     </ul>
                 </div>
                 <div v-if="afdian" class="sidebar-item afdian">
@@ -45,7 +46,7 @@
                             src="@/assets/afdian.svg" draggable="false" />
                         <div class="afdian-text sotap-typo">
                             <p>SoTap 的运营不易。如果你喜欢 SoTap，可以选择到<a href="https://afdian.net/@sotap"
-                                    target="_blank">爱发电</a>上为我们充值。<small><em>亦可点击上方按钮</em></small>
+                                    target="_blank">爱发电</a>上赞助我们。<small><em>亦可点击上方按钮</em></small>
                             </p>
                         </div>
                     </div>
