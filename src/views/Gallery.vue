@@ -2,7 +2,7 @@
     <div class="gallery">
         <CoolLightBox thumbsPosition="right" effect="fade" :items="lightboxItems" :index="index"
             @close="index = null" />
-        <static-banner bg="https://i.loli.net/2021/02/05/1ZUVbn24YOHE3j8.jpg">
+        <static-banner bg="https://sotap.oss-cn-qingdao.aliyuncs.com/xc3.png">
             <template #title>
                 SoTap 图库
             </template>
@@ -55,8 +55,9 @@
         <section-title>
             <template #subtitle>佳作展览</template>
             <template #title>Exhibition</template>
-            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s.
-                    点击即可查看大图<br>{{ isMobile() ? "由于 Minecraft 多为横屏截图，横屏欣赏效果更佳！" : "" }}</small></template>
+            <template #desc>我们会不定期地挑选玩家作品放在此处展览，按时间顺序排列<br><small>p.s.
+                    点击即可查看大图 /
+                    图片宽度每次刷新随机分配<br>{{ isMobile() ? "由于 Minecraft 多为横屏截图，横屏欣赏效果更佳！" : "" }}</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="gallery-container">
@@ -74,12 +75,7 @@
                             <div class="meta">
                                 <div class="meta-item">
                                     <span class="meta-title">provided by</span>
-                                    <div class="image-author">
-                                        <img
-                                            :src="'https://crafatar.com/avatars/' + getWaterfall(k + 1 + (i - 2) * 2, 'uuid')" />
-                                        <span
-                                            class="author-name">{{ getWaterfall(k + 1 + (i - 2) * 2, 'author') }}</span>
-                                    </div>
+                                    <player :name="getWaterfall(k + 1 + (i - 2) * 2, 'author')" />
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-title">at</span>
@@ -96,9 +92,12 @@
         </div>
         <div class="row no-margin">
             <divider :speedFactor="0.2" class="join-divider" :coverOpacity="0.3"
-                img="https://i.loli.net/2021/02/06/OXbM7w9GZiPan4v.jpg">
+                img="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/join1.jpg">
                 <h1>参与到这所有的瑰丽中</h1>
-                <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap 之旅。我们随时欢迎你的加入！</p>
+                <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap
+                    之旅。我们随时欢迎你的加入！<br><small>背景图片由
+                        <player name="Marble_Gate" /> 提供
+                    </small></p>
                 <div class="join-link">
                     <router-link class="ui-button backgrounded" to="/join">
                         立即加入 &raquo;
@@ -121,6 +120,7 @@ import Divider from '@/components/Divider.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 import GalleryWaterfall from '@/data/content/GalleryWaterfall.json';
 import GalleryBannerList from '@/data/content/GalleryBannerList.json';
+import Player from '@/components/Player.vue';
 
 export default Vue.extend({
     components: {
@@ -128,7 +128,8 @@ export default Vue.extend({
         GalleryCard,
         CoolLightBox,
         Divider,
-        SectionTitle
+        SectionTitle,
+        Player
     },
     methods: {
         visEffect,
@@ -208,7 +209,7 @@ export default Vue.extend({
         if (this.$route.params.option === 'view' && this.$route.params.target !== undefined) {
             this.index = parseInt(this.$route.params.target);
         }
-        fixLoopSwiper(this, ".swiper-item .story-img")
+        fixLoopSwiper(this, '.swiper-item .story-img');
     },
     watch: {
         index(v: number | null) {
@@ -339,7 +340,7 @@ export default Vue.extend({
             background-position: center;
             background-repeat: no-repeat;
             background-color: black;
-            transition: all .2s ease;
+            transition: all 0.2s ease;
 
             @media screen and (min-width: 1024px) {
                 width: 65%;
