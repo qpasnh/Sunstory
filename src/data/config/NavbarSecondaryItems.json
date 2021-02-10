@@ -8,11 +8,15 @@
     "href": "https://g.sotap.org"
   },
   {
+    "name": "Pay",
+    "href": "https://pay.sotap.org"
+  },
+  {
     "name": "Stats",
     "href": "https://stats.sotap.org"
   },
   {
-    "name": "GitHub",
-    "href": "https://github.com/sotapmc"
+    "name": "Changelog",
+    "href": "https://open.sotap.org/"
   }
 ]

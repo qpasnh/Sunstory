@@ -4,7 +4,7 @@
         <p>现在你可以无门槛*地加入 SoTap 了。无论你是一位普通的 Minecraft
             玩家，或者是建筑爱好者，亦或者是红石大师，甚至于编程大佬，这里都有你的一席之地。我们随时欢迎你的到来！</p>
         <small>*门槛其实是有的：你需要一个 Minecraft 国际正版账号，仅此而已！</small>
-        <a class="ui-button backgrounded" target="_blank" href="//baidu.com">立即加入讨论群 &raquo;</a>
+        <a class="ui-button backgrounded" target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8kbYiHNk0L8Neqo_SbnLYo6in0TtA0WS&jump_from=webapi">立即加入官方Q群 &raquo;</a>
     </div>
 </template>
 
