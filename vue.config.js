@@ -1,6 +1,22 @@
 const path = require("path");
 
 module.exports = {
+  pwa: {
+    name: "SoTap",
+    themeColor: "#fcd307",
+    msTileColor: "#fcd307",
+    appleMobileWebAppCapable: "yes",
+    appleMobileWebAppStatusBarStyle: "default",
+    workboxPluginMode: "GenerateSW",
+    iconPaths: {
+      faviconSVG: "./src/assets/logo.svg",
+      favicon32: "./src/assets/icons/logo-32x32.png",
+      favicon16: "./src/assets/icons/logo-16x16.png",
+      appleTouchIcon: null,
+      maskIcon: null,
+      msTileImage: "./src/assets/icons/logo-144x144.png",
+    },
+  },
   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "less",
@@ -14,24 +30,24 @@ module.exports = {
           test: /\.md$/,
           use: [
             {
-              loader: 'vue-loader',
+              loader: "vue-loader",
               options: {
                 compilerOptions: {
-                  preserveWhiteSpace: false
-                }
-              }
+                  preserveWhiteSpace: false,
+                },
+              },
             },
             {
-              loader: '@tianyong90/vue-markdown-loader',
+              loader: "@tianyong90/vue-markdown-loader",
               options: {
-                contentCssClass: 'general-typo sotap-typo',
+                contentCssClass: "general-typo sotap-typo",
                 markdown: {
                   lineNumbers: true,
-                }
-              }
-            }
-          ]
-        }
+                },
+              },
+            },
+          ],
+        },
       ],
     },
   },
