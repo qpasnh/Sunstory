@@ -16,7 +16,7 @@
                     <div class="recents-item" v-for="(x, i) in recentItems" :key="i"
                         @click="go(x.href)">
                         <div v-if="x.img" class="recents-img"
-                            :style="'background-image: url(' + x.img + ')'" />
+                            v-lazy:background-image="x.img" />
                         <span class="recents-text">
                             {{ x.text }}
                         </span>
@@ -232,6 +232,7 @@ export default Vue.extend({
                         background-size: cover;
                         background-repeat: no-repeat;
                         margin-right: 16px;
+                        transition: all .2s ease;
                     }
 
                     .recents-text {

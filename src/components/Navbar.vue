@@ -289,6 +289,7 @@ export default Vue.extend({
                 text-decoration: none;
                 margin-right: 10px;
                 margin-left: 10px;
+                .hide-selection;
 
                 &:first-child {
                     margin-left: 0;
