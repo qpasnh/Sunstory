@@ -1,10 +1,10 @@
 <template>
     <div>
         <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
-            <swiper-slide v-for="(x, i) in bannerList" :key="i">
+            <swiper-slide :class="i === 0 ? 'primary-slide' : ''" v-for="(x, i) in bannerList" :key="i">
                 <div class="swiper-item" v-lazy:background-image="x.bg">
                     <div class="banner-text-box">
-                        <h1 class="banner-title">{{ x.title }}</h1>
+                        <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
                 </div>
