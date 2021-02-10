@@ -31,12 +31,12 @@
                 <div v-if="help" class="sidebar-item help">
                     <img src="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/help.png" />
                     <div class="sidebar-item-title">需要帮助？</div>
-                    <ul>
+                    <ul class="sotap-typo">
                         <li>管理邮箱：support@sotap.org</li>
-                        <li>社区BBS的帮助板块 24H 开放</li>
-                        <li>加入官方QQ群联系管理组成员</li>
-                        <li>阅读官方Wiki来查找你的问题解答</li>
-                        <li>前往官方博客获取最新消息和公告</li>
+                        <li><a href="https://g.sotap.org/t/support" target="_blank">社区 BBS 的帮助板块</a> 24H 开放</li>
+                        <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=8kbYiHNk0L8Neqo_SbnLYo6in0TtA0WS&jump_from=webapi" target="_blank">加入官方 QQ 群</a>联系管理组成员</li>
+                        <li>阅读<a href="https://wiki.sotap.org" target="_blank">官方 Wiki</a> 来查找你的问题解答</li>
+                        <li>前往<a href="https://blog.sotap.org" target="_blank">官方博客</a>获取最新消息和公告</li>
                     </ul>
                 </div>
                 <div v-if="afdian" class="sidebar-item afdian">
