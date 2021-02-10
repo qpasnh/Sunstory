@@ -25,7 +25,8 @@
         "vue-check-view": "^0.3.0",
         "vue-cool-lightbox": "^2.7.1",
         "vue-lazyload": "^1.3.3",
-        "vue-router": "^3.2.0"
+        "vue-router": "^3.2.0",
+        "vue-simple-spinner": "^1.2.10"
     },
     "devDependencies": {
         "@types/animejs": "^3.1.2",
