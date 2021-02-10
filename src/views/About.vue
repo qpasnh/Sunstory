@@ -12,12 +12,12 @@
             <div class="about-intro">
                 <div class="intro-content">
                     <h1 style="opacity: 0" v-view.once="visEffect">SoTap 是怎样的一个社区？</h1>
-                    <p style="opacity: 0" v-view.once="visEffect">
-                        “海纳百川，有容乃大”，SoTap社区欢迎所有拥有着开放和包容理念的人群。
-						无论你是熟悉mc或是初次接触mc，加入即为家人。
-						这里，社区成员不仅仅是游戏玩乐，卖萌打滚，更有着多元且合适的想法交流，热烈而欢快的讨论。
-						无论早中晚，一声“你好！”表达了所有真挚的问候。游戏内有各种特色活动，从夏季SoTap运动会到玩家自发组织各类活动比赛；
-						从各色小游戏到组团下地牢；玩家们在玩乐中体会生活的花红柳绿，社区的温馨美好。我们由衷希望SoTap是一个愉快的服务器，亦是一个温馨的兴趣社区，是玩家的庇护所，养老地，甚至是心中的一片乐土。
+                    <p class="sotap-typo" style="opacity: 0" v-view.once="visEffect">
+                        <strong>「海纳百川，有容乃大。」</strong>社区欢迎所有拥有着开放和包容理念的人群。
+						无论你是熟悉 MC 或是初次接触 MC，加入即为家人。<br>
+						这里，社区成员不仅仅是游戏玩乐，卖萌打滚，更有着多元且合适的想法交流，热烈而欢快的讨论。<br>
+						无论早中晚，一声「你好！」表达了所有真挚的问候。游戏内有各种特色活动，从夏季 SoTap 运动会到玩家自发组织各类活动比赛；
+						从各色小游戏到组团下地牢；玩家们在玩乐中体会生活的花红柳绿，社区的温馨美好。<br>我们由衷希望 SoTap 是一个愉快的服务器，亦是一个温馨的兴趣社区，是玩家的庇护所，养老地，甚至是心中的一片乐土。
 						我们也希望通过这个社区，去沟通世界，去成为不同地区玩家的友情的桥梁，成为所有成员自由而充满着温柔的港湾。
                     </p>
                 </div>
@@ -29,12 +29,12 @@
                     style="opacity: 0; background-image: url(https://sotap.oss-cn-qingdao.aliyuncs.com/3.png)" />
                 <div class="intro-content">
                     <h1 style="opacity: 0" v-view.once="visEffect">OFG 的意义与和其它服务器的区别</h1>
-                    <p style="opacity: 0" v-view.once="visEffect">
+                    <p class="sotap-typo" style="opacity: 0" v-view.once="visEffect">
                         OFG 是 <strong>O</strong>ught <strong>F</strong>or <strong>G</strong>ay 的缩写，OFG 性质的社区则是专注于 LGBT
-                        群体用户体验的社区。LGBT 群体将是本游戏服务器的主要玩家。我们与其它服务器最大不同的一点是，我们的服务器的主要受众群体是
-                        Gay<code>/geɪ/</code>同性恋，当然也会有「直男/直女」的加入。因此，如果您对同性恋抱着「包容、不歧视、理解」的态度加入我们，我们会热烈地欢迎您。
-						我们致力于为玩家提供一个线上的社区，另一个维度的温馨世界。我们希望营造一个轻松、舒适、友善的环境和提供极致的游戏体验，同时以游戏为载体将其变为一个有趣的交友平台让玩家在游玩的同时找到更多志同道合的的伙伴。我们更希望将这里构建成一个没有歧视的理想世界，这里同/直/双都可以无偏见的和平友好共处，让这里成为
-                        LGBT 玩家们的心灵港湾。
+                        群体用户体验的社区。LGBT 群体将是本游戏服务器的主要玩家。<br>我们与其它服务器最大不同的一点是，我们的服务器的主要受众群体是
+                        Gay<code>/geɪ/</code>同性恋，当然也会有「直男/直女」的加入。我们欢迎所有对同性恋抱着「包容、不歧视、理解」的态度的人们。
+						我们致力于为玩家提供一个线上的社区，另一个维度的温馨世界。我们希望营造一个轻松、舒适、友善的环境和提供极致的游戏体验，同时以游戏为载体将其变为一个有趣的交友平台让玩家在游玩的同时找到更多志同道合的的伙伴。
+                        <br>我们更希望将这里构建成一个没有歧视的理想世界，这里同/直/双都可以无偏见的和平友好共处，让这里成为 LGBT 玩家们的心灵港湾。
                     </p>
                 </div>
             </div>
@@ -163,6 +163,11 @@ export default Vue.extend({
             timeline: AboutTimeline as Array<TimelineObject>,
             people: AboutPeople
         };
+    },
+    mounted() {
+        document.querySelectorAll("img").forEach(k => {
+            k.draggable = false;
+        })
     }
 });
 </script>
