@@ -17,10 +17,7 @@
                             <div class="meta">
                                 <div class="meta-item">
                                     <span class="meta-title">provided by</span>
-                                    <div class="image-author">
-                                        <img :src="'https://crafatar.com/avatars/' + y.uuid" />
-                                        <span class="author-name">{{ y.author }}</span>
-                                    </div>
+                                    <player :name="y.author" />
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-title">at</span>
@@ -42,11 +39,13 @@ import GalleryCard from '@/components/GalleryCard.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 import { isMobile } from '@/functions';
 import GalleryWaterfall from '@/data/content/GalleryWaterfall.json';
+import Player from '@/components/Player.vue';
 
 export default Vue.extend({
     components: {
         GalleryCard,
-        SectionTitle
+        SectionTitle,
+        Player
     },
     data() {
         return {

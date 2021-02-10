@@ -95,8 +95,8 @@
                 img="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/join1.jpg">
                 <h1>参与到这所有的瑰丽中</h1>
                 <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap
-                    之旅。我们随时欢迎你的加入！<br><small>背景图片由
-                        <player name="Marble_Gate" /> 提供
+                    之旅。我们随时欢迎你的加入！<br><small>背景图片 by
+                        <player name="Marble_Gate" />
                     </small></p>
                 <div class="join-link">
                     <router-link class="ui-button backgrounded" to="/join">

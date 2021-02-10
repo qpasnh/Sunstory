@@ -15,8 +15,7 @@
                     <div class="sidebar-item-title">其它你可能感兴趣的...</div>
                     <div class="recents-item" v-for="(x, i) in recentItems" :key="i"
                         @click="go(x.href)">
-                        <div v-if="x.img" class="recents-img"
-                            v-lazy:background-image="x.img" />
+                        <div v-if="x.img" class="recents-img" v-lazy:background-image="x.img" />
                         <span class="recents-text">
                             {{ x.text }}
                         </span>
@@ -25,17 +24,18 @@
                 <div v-if="catalogue" class="sidebar-item catalogue">
                     <div class="catalogue-container">
                         <div class="sidebar-item-title">文章目录</div>
-                        <Catalogue :container="'.general-typo'" :innerScroll="true" class="catalogue-instance" />
+                        <Catalogue :container="'.general-typo'" :innerScroll="true"
+                            class="catalogue-instance" />
                     </div>
                 </div>
                 <div v-if="help" class="sidebar-item help">
-                    <img src="https://sotap.org/images/help.png" />
+                    <img src="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/help.png" />
                     <div class="sidebar-item-title">需要帮助？</div>
                     <ul>
                         <li>管理邮箱：support@sotap.org</li>
                         <li>社区BBS的帮助板块 24H 开放</li>
                         <li>加入官方QQ群联系管理组成员</li>
-						<li>阅读官方Wiki来查找你的问题解答</li>
+                        <li>阅读官方Wiki来查找你的问题解答</li>
                         <li>前往官方博客获取最新消息和公告</li>
                     </ul>
                 </div>
@@ -106,7 +106,7 @@ export default Vue.extend({
     },
     mounted() {
         if (this.isMobile()) {
-            (document.querySelector(".general-typo") as HTMLDivElement).style.width = "100%";
+            (document.querySelector('.general-typo') as HTMLDivElement).style.width = '100%';
         }
     }
 });
@@ -233,7 +233,7 @@ export default Vue.extend({
                         background-size: cover;
                         background-repeat: no-repeat;
                         margin-right: 16px;
-                        transition: all .2s ease;
+                        transition: all 0.2s ease;
                     }
 
                     .recents-text {
