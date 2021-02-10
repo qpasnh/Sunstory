@@ -102,14 +102,14 @@
         </div>
         <div class="row no-margin">
             <divider :coverOpacity="0.2" class="join-divider"
-                img="https://i.loli.net/2021/02/06/fWOFoxL3nE2V4pN.jpg" :speedFactor="0.15">
+                img="https://sotap.oss-cn-qingdao.aliyuncs.com/8.png" :speedFactor="0.05">
                 <h1>编程设计，样样在行？</h1>
                 <p>SoTap 管理组欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的
                     SoTap 吧！</p>
                 <div class="join-link">
-                    <router-link class="ui-button backgrounded" to="join/management">
+                    <a class="ui-button backgrounded" href="https://wiki.sotap.org/#/about/management" target="_blank">
                         <span class="mdi mdi-launch"></span>&emsp;了解更多
-                    </router-link>
+                    </a>
                 </div>
             </divider>
         </div>
