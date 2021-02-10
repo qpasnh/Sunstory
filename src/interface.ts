@@ -15,7 +15,6 @@ interface Dictionary {
 
 interface GalleryItem extends Dictionary {
     author: string,
-    uuid: string,
     date: string,
     desc: string,
     loc: string,
