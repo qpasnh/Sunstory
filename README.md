@@ -1,5 +1,5 @@
 # Sunstory
 
-**Sunstory** 是 SoTap 新官网的项目名称，区别于旧的 [sotap.org](//github.com/sotapmc/sotap.org)。根据初步讨论，Sunstory 将沿用旧版 sotap.org 中的设计风格，但有较多的改动。
+![](https://i.loli.net/2021/02/10/bWSIXfA3mYt4olM.png)
 
-Sunstory 将使用 Vue 2 编写。
+**Sunstory** 是 SoTap 新一代官网项目的内部代号，使用 Vue 2 编写。
