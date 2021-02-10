@@ -1,5 +1,5 @@
 <template>
-    <div class="sotap-divider">
+    <div class="sotap-divider" :class="align === 'left' ? 'left-aligned' : 'right-aligned'">
         <parallax-background :key="Math.random().toString().substr(2, 5)"
             :gradients="opacityGradient" :bg-img="img" :speedFactor="speedFactor"
             event-type="scroll" direction="up">
@@ -31,6 +31,10 @@ export default Vue.extend({
         speedFactor: {
             type: Number,
             default: 0.5
+        },
+        align: {
+            type: String,
+            default: "left"
         }
     },
     computed: {

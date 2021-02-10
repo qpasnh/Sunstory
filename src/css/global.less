@@ -327,6 +327,60 @@ h6 {
   }
 }
 
+.sotap-prefooter {
+  small {
+    color: @textgrayl;
+    line-height: 1.5;
+    font-size: 14px;
+    display: block;
+  }
+
+  @media screen and (max-width: 1200px) {
+    a {
+      display: block;
+      width: fit-content;
+      margin: auto;
+      margin-top: 32px;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    a {
+      position: absolute;
+      bottom: 64px;
+    }
+  }
+
+  &.left-aligned {
+    text-align: left;
+    @media screen and (min-width: 1200px) {
+      a {
+        right: 64px;
+      }
+
+      p {
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &.right-aligned {
+    text-align: right;
+    @media screen and (min-width: 1200px) {
+      a {
+        left: 64px;
+      }
+
+      p {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
 .no-margin {
   margin: 0 !important;
 }
@@ -537,7 +591,7 @@ h6 {
 @primaryl: rgba(252, 211, 7, 0.21);
 @textgray: rgba(0, 0, 0, 0.6);
 @textgrayl: rgba(255, 255, 255, 0.6);
-@bggray: rgba(0, 0, 0, 0.95);
+@bggray: rgb(12, 12, 12);
 @midgray: rgb(56, 56, 56);
 @inv: rgba(0, 0, 0, 0);
 @textshadow-1: 0px 1px 5px rgba(0, 0, 0, 0.4);

@@ -1,10 +1,8 @@
 <template>
-    <div class="sotap-prefooter">
-        <h1>独乐不如众乐</h1>
-        <p>现在你可以无门槛*地加入 SoTap 了。无论你是一位普通的 Minecraft
-            玩家，或者是建筑爱好者，亦或者是红石大师，甚至于编程大佬，这里都有你的一席之地。我们随时欢迎你的到来！</p>
-        <small>*门槛其实是有的：你需要一个 Minecraft 国际正版账号，仅此而已！</small>
-        <a class="ui-button backgrounded" target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8kbYiHNk0L8Neqo_SbnLYo6in0TtA0WS&jump_from=webapi">立即加入官方Q群 &raquo;</a>
+    <div class="sotap-prefooter" v-lazy:background-image="bg" :class="alignPos === 'left' ? 'left-aligned' : 'right-aligned'">
+        <h1><slot name="title"></slot></h1>
+        <p><slot name="text"></slot></p>
+        <slot name="button"></slot>
     </div>
 </template>
 
@@ -15,6 +13,15 @@ import Divider from '@/components/Divider.vue';
 export default Vue.extend({
     components: {
         Divider
+    },
+    props: {
+        bg: {
+            type: String
+        },
+        alignPos: {
+            type: String,
+            default: "left"
+        }
     }
 });
 </script>
@@ -34,12 +41,6 @@ export default Vue.extend({
         p {
             font-size: 24px;
         }
-
-        a {
-            position: absolute;
-            right: 64px;
-            bottom: 64px;
-        }
     }
 
     @media screen and (max-width: 1200px) {
@@ -52,20 +53,13 @@ export default Vue.extend({
         p {
             font-size: 18px;
         }
-
-        a {
-            display: block;
-            width: fit-content;
-            margin: auto;
-            margin-top: 32px;
-            transform: translateX(-50%);
-        }
     }
 
-    background-image: url(https://i.loli.net/2021/02/02/pFxYjXhqrTz2Ced.png);
     background-size: cover;
     background-position: center;
     position: relative;
+    background-color: black;
+    transition: all .2s ease;
 
     h1 {
         color: #fff;
@@ -88,11 +82,6 @@ export default Vue.extend({
         @media screen and (min-width: 1200px) {
             max-width: 1200px;
         }
-    }
-
-    small {
-        color: @textgrayl;
-        line-height: 1.5;
     }
 }
 </style>

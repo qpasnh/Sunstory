@@ -38,7 +38,7 @@
             <swiper class="story-swiper" ref="storySwiper" :options="swiperOptions">
                 <swiper-slide v-for="(x, i) in bannerList" :key="i">
                     <div class="swiper-item">
-                        <div class="story-img" :style="'background-image: url(' + x.bg + ')'" />
+                        <div class="story-img" v-lazy:background-image="x.bg" />
                         <div class="story-container">
                             <div class="story-box">
                                 <div class="story">
@@ -55,7 +55,8 @@
         <section-title>
             <template #subtitle>佳作展览</template>
             <template #title>Exhibition</template>
-            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s. 点击即可查看大图<br>{{ isMobile() ? "由于 Minecraft 多为横屏截图，横屏欣赏效果更佳！" : "" }}</small></template>
+            <template #desc>我们会不定期地挑选玩家作品放在此处展览。<br><small>p.s.
+                    点击即可查看大图<br>{{ isMobile() ? "由于 Minecraft 多为横屏截图，横屏欣赏效果更佳！" : "" }}</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="gallery-container">
@@ -111,7 +112,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import StaticBanner from '@/components/StaticBanner.vue';
-import { Animation, getRandomInt, isMobile, visEffect } from '@/functions';
+import { Animation, fixLoopSwiper, getRandomInt, isMobile, visEffect } from '@/functions';
 import GalleryCard from '@/components/GalleryCard.vue';
 // @ts-ignore
 import CoolLightBox from 'vue-cool-lightbox';
@@ -207,6 +208,7 @@ export default Vue.extend({
         if (this.$route.params.option === 'view' && this.$route.params.target !== undefined) {
             this.index = parseInt(this.$route.params.target);
         }
+        fixLoopSwiper(this, ".swiper-item .story-img")
     },
     watch: {
         index(v: number | null) {
@@ -312,11 +314,11 @@ export default Vue.extend({
 
 .story-swiper {
     width: 100%;
-    
+
     @media screen and (min-width: 1024px) {
         height: 40rem;
     }
- 
+
     @media screen and (max-width: 1024px) {
         height: 30rem;
     }
@@ -336,12 +338,18 @@ export default Vue.extend({
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-color: black;
+            transition: all .2s ease;
 
             @media screen and (min-width: 1024px) {
                 width: 65%;
             }
 
             @media screen and (max-width: 1024px) {
+                max-height: calc(75% - 4rem);
+                background-position-y: 100%;
+                position: absolute;
+                top: 0;
                 width: 100%;
             }
         }
