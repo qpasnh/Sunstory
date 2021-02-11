@@ -23,6 +23,7 @@ module.exports = {
       patterns: [path.resolve(__dirname, "./src/css/*.less")],
     },
   },
+  productionSourceMap: false,
   configureWebpack: {
     module: {
       rules: [
