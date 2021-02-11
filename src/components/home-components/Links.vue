@@ -68,7 +68,7 @@ export default Vue.extend({
     .link-swiper {
         width: 100%;
         @media screen and (min-width: 1024px) {
-            padding-top: 32px 0;
+            padding: 32px 0;
         }
         
         @media screen and (max-width: 1024px) {
