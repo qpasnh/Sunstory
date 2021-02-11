@@ -624,6 +624,32 @@ h6 {
   color: #f44336;
 }
 
+.rainbow {
+  background: linear-gradient(
+    130deg,
+    #ff2400,
+    #ff2400,
+    #ff2400,
+    #ffa000,
+    @primary,
+    #4caf50,
+    #2195f3,
+    #fff,
+    #fff,
+    #fff,
+    #fff
+  );
+  background-repeat: no-repeat;
+  background-size: 1800% 1800%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: rainbow 2s ease forwards;
+  animation: rainbow 2s ease forwards;
+  width: fit-content;
+  text-shadow: none !important;
+}
+
 @primary: #fcd307;
 @primaryl: rgba(252, 211, 7, 0.21);
 @textgray: rgba(0, 0, 0, 0.6);

@@ -7,6 +7,7 @@
         "build": "vue-cli-service build"
     },
     "dependencies": {
+        "@chenfengyuan/vue-countdown": "^1.1.5",
         "@mdi/font": "^5.9.55",
         "@tianyong90/vue-markdown-loader": "^0.1.5",
         "@types/remove-markdown": "^0.1.1",

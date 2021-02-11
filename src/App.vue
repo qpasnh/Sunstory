@@ -1,12 +1,12 @@
 <template>
     <div class="app">
-        <navbar />
+        <navbar v-if="$route.name !== 'yinting'" />
         <div class="main-content">
             <transition name="fade" mode="out-in">
                 <router-view />
             </transition>
         </div>
-        <Footer />
+        <Footer v-if="$route.name !== 'yinting'" />
     </div>
 </template>
 
@@ -25,3 +25,9 @@ export default Vue.extend({
     }
 });
 </script>
+
+<style lang="less" scoped>
+.app, .main-content {
+    height: 100%;
+}
+</style>

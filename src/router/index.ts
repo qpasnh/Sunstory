@@ -31,6 +31,11 @@ const routes: Array<RouteConfig> = [
     path: "/rules",
     name: "rules",
     component: () => import("@/views/Rules.vue")
+  },
+  {
+    path: "/yinting",
+    name: "yinting",
+    component: () => import("@/views/yinting.vue")
   }
 ];
 
