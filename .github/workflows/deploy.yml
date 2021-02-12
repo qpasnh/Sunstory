@@ -43,4 +43,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key : ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: cd ${{ secrets.DEPLOY_PATH }} && npm install && npm run build
+          script: cd ${{ secrets.DEPLOY_PATH }} && npm install && npm run build && cp .htaccess dist/
