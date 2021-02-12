@@ -6,16 +6,16 @@
             <span class="logo-text">SoTap</span>
             官网
         </h1>
-        <h2>我们重新彻底编写了我们的网站，带来了许多新的特性，也简化了一些冗余之处<br>无论你是从前 SoTap
-            的老玩家，还是人生中第一次打开此网站，我们都有许多新东西带给你</h2>
+        <h2>SoTap 一直以来都提倡为玩家营造全方位的优良体验，官网也是我们的计划之一<br>闲暇之余，你可以阅读官网了解 SoTap 本身，亦可以阅读 Wiki
+            来了解相关知识，使游戏体验更为丰富</h2>
         <div class="button-bar">
             <a class="ui-button outlined" target="_blank" href="https://wiki.sotap.org">
                 <span class="mdi mdi-book-outline"></span>
                 阅读 Wiki
             </a>
-            <router-link class="ui-button backgrounded" to="/about-website">
+            <router-link class="ui-button backgrounded" to="/rules">
                 <span class="mdi mdi-launch"></span>
-                了解更多
+                查看服规
             </router-link>
         </div>
     </divider>
@@ -66,7 +66,7 @@ export default Vue.extend({
         width: 100%;
         position: relative;
         text-align: center;
-        
+
         .ui-button {
             display: inline-block;
             margin-left: 16px;
