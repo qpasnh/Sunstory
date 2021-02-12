@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key : ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: cd ${{ secrets.DEPLOY_PATH }} && git fetch --all && git reset --hard origin/main && git pull
+          script: cd ${{ secrets.DEPLOY_PATH }} && git fetch --all && git reset --hard origin/main && git pull origin main
 
       - name: Build
         uses: appleboy/ssh-action@master
