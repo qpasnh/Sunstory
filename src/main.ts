@@ -22,10 +22,7 @@ NProgress.configure({
 Vue.use(anime);
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueCheckView);
-Vue.use(VueLazyload, {
-  error: require("./assets/solid-black.jpg"),
-  loading: require("./assets/solid-black.jpg")
-});
+Vue.use(VueLazyload);
 
 router.beforeEach((to, from, next) => {
   if (to.name !== from.name) NProgress.start();

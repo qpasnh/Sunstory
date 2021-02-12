@@ -47,7 +47,7 @@ export default Vue.extend({
         width: 16px;
         height: 16px;
         transition: all 0.2s ease;
-        background-image: black;
+        background-image: @inv;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
