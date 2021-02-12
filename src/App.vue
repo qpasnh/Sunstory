@@ -33,11 +33,13 @@ export default Vue.extend({
         }
     },
     mounted() {
-        if (this.$cookies.get("darkmode_state") === "true") {
+        if (this.$cookies.get('darkmode_state') === 'true') {
             this.$actions.setDarkmode(true);
-        } else if (this.$cookies.get("darkmode_state") === "false") {
+        } else if (this.$cookies.get('darkmode_state') === 'false') {
             this.$actions.setDarkmode(false);
         }
+        let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+        link.href = 'https://sotapmc.oss-cn-beijing.aliyuncs.com/img/logo/favicon.ico';
     }
 });
 </script>
