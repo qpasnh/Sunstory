@@ -171,6 +171,7 @@ export default Vue.extend({
                 img {
                     width: 100%;
                     margin-bottom: 16px;
+                    border-radius: 4px;
                 }
 
                 ul {
