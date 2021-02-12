@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main-banner">
         <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
             <swiper-slide :class="i === 0 ? 'primary-slide' : ''" v-for="(x, i) in bannerList" :key="i">
                 <div class="swiper-item" v-lazy:background-image="x.bg">
@@ -45,6 +45,12 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
+
+.main-banner {
+    width: 100%;
+    position: relative;
+}
+
 .banner-swiper {
     width: 100%;
     position: relative;
@@ -74,7 +80,8 @@ export default Vue.extend({
     @media screen and (max-width: 690px) {
         display: none;
     }
-    bottom: calc(50% + 72px);
+
+    bottom: 50%;
     transform: translateY(50%);
     position: absolute;
     transition: all 0.2s ease;
