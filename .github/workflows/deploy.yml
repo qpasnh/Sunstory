@@ -25,16 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Deploy
-        uses: easingthemes/ssh-deploy@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-          ARGS: "-avz --delete"
-          SOURCE: "/"
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_PORT: ${{ secrets.SSH_PORT }}
-          REMOTE_USER: ${{ secrets.SSH_USER }}
-          TARGET: ${{ secrets.DEPLOY_PATH }}
+      - name: Pull
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key : ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd ${{ secrets.DEPLOY_PATH }} && git fetch --all && git reset --hard origin/main && git pull origin main
 
       - name: Build
         uses: appleboy/ssh-action@master
@@ -43,4 +41,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key : ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: cd ${{ secrets.DEPLOY_PATH }} && npm install && npm run build && cp .htaccess dist/
+          script: cd ${{ secrets.DEPLOY_PATH }} && npm install 2>&1 && npm run build 2>&1 && cp .htaccess dist/
