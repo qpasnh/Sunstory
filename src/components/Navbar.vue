@@ -56,6 +56,7 @@
                     </div>
                 </div>
                 <span class="mdi mdi-magnify search-icon"></span>
+                <span @click="$actions.toggleDarkmode()" class="mdi dark-mode-toggle-icon" :class="$store.darkmode ? 'mdi-white-balance-sunny' : 'mdi-weather-night'"></span>
             </icon-group>
         </div>
         <div ref="dropdown" class="dropdown" style="display: none;">
@@ -116,8 +117,14 @@ export default Vue.extend({
                     translateY: [0, 0],
                     opacity: isMobile() ? [1, 1] : [0, 1],
                     easing: 'easeOutExpo',
+                    duration: 250
+                }).add({
+                    targets: '.dark-mode-toggle-icon',
+                    translateY: [0, 0],
+                    opacity: isMobile() ? [1, 1] : [0, 1],
+                    easing: 'easeOutExpo',
                     duration: 100
-                });
+                })
         }
     },
     data() {

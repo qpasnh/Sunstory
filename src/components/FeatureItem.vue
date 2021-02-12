@@ -29,7 +29,6 @@
         .feature-title {
             margin: 0 0 16px 0;
             font-size: 24px;
-            color: black;
         }
 
         .feature-text {

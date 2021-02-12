@@ -42,79 +42,79 @@
       }
     ],
     "links": [
-        "一共有两个站点，<a href='https://wiki.sotap.org'>主站</a>和",
-        "<a href='https://github.com/sotapmc/SotapWiki'>GitHub 项目</a>",
-        "<br>SoTap Wiki 常年招收长期/临时编写者，仅需拥有 GitHub 账号，没有很多的要求。",
-        "<br>有意可以立刻开始贡献~~"
+      "一共有两个站点，<a href='https://wiki.sotap.org'>主站</a>和",
+      "<a href='https://github.com/sotapmc/SotapWiki'>GitHub 项目</a>",
+      "<br>SoTap Wiki 常年招收长期/临时编写者，仅需拥有 GitHub 账号，没有很多的要求。",
+      "<br>有意可以立刻开始贡献~~"
     ]
   },
   {
-      "logo": "<span class='font-header'>G Point</span>",
-      "desc": [
-          "G Point（中文 <strong>G 点</strong>）是 SoTap 开放给玩家的线上交流平台，使用开源程序 <a href='https://flarum.org/' target='_blank'>Flarum</a> 搭建，",
-          "由管理组进行日常维护和停机修复等工作。「G 点」，意为「Gay Point」即 Gay 所聚集的地方。不过据笔者所知，",
-          "那里的 gay 也甚少，不妨去实地勘察一番？"
-      ],
-      "info": [
-          {
-              "icon": "mdi-clock-outline",
-              "text": "创建于 2019/08/05"
-          },
-          {
-              "icon": "mdi-shape",
-              "text": "一般类网页"
-          }
-      ],
-      "features": [
-          {
-              "icon": "mdi-language-markdown",
-              "text": "支持 Markdown 语法"
-          },
-          {
-              "icon": "mdi-forum",
-              "text": "中国法律范围内畅所欲言"
-          }
-      ],
-      "links": [
-          "分为很多个板块，可以根据需要在不同的板块里发言。已经加入内服的玩家可以申请 Verified 权限来进入专属板块（小黑屋）<br>",
-          "soon -> <a href='https://g.sotap.org' target='_blank'>https://g.sotap.org</a>"
-      ]
+    "logo": "<span class='font-header'>G Point</span>",
+    "desc": [
+      "G Point（中文 <strong>G 点</strong>）是 SoTap 开放给玩家的线上交流平台，使用开源程序 <a href='https://flarum.org/' target='_blank'>Flarum</a> 搭建，",
+      "由管理组进行日常维护和停机修复等工作。「G 点」，意为「Gay Point」即 Gay 所聚集的地方。不过据笔者所知，",
+      "那里的 gay 也甚少，不妨去实地勘察一番？"
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2019/08/05"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "一般类网页"
+      }
+    ],
+    "features": [
+      {
+        "icon": "mdi-language-markdown",
+        "text": "支持 Markdown 语法"
+      },
+      {
+        "icon": "mdi-forum",
+        "text": "中国法律范围内畅所欲言"
+      }
+    ],
+    "links": [
+      "分为很多个板块，可以根据需要在不同的板块里发言。已经加入内服的玩家可以申请 Verified 权限来进入专属板块（小黑屋）<br>",
+      "soon -> <a href='https://g.sotap.org' target='_blank'>https://g.sotap.org</a>"
+    ]
   },
   {
-      "logo": "<img src='https://sotapmc.oss-cn-beijing.aliyuncs.com/img/logo/monologue-text.svg' draggable='false'/>",
-      "desc": [
-          "更新日志是一个用于不定期更新 SoTap 各种事务，例如服务器的关闭、问题的修复、新内容的添加等的一个站点。更新日志基于由 SoTap 开发的 ",
-          "<a href='https://github.com/sotapmc/Monologue' target='_blank'>Monologue</a>。你可以在上面从上到下翻阅历次 SoTap 的更新内容，最早记录在 2020 年 3 月 18 日。"
-      ],
-      "info": [
-          {
-              "icon": "mdi-clock-outline",
-              "text": "创建于 2020/03/18"
-          },
-          {
-              "icon": "mdi-shape",
-              "text": "功能类网页"
-          }
-      ],
-      "features": [
-          {
-              "icon": "mdi-github",
-              "text": "GitHub 开源"
-          },
-          {
-              "icon": "mdi-calendar-clock",
-              "text": "持续更新"
-          },
-          {
-              "icon": "mdi-pencil-off",
-              "text": "非公开编辑"
-          }
-      ],
-      "links": [
-          "其实 Monologue 还有一个前身叫 <a href='https://github.com/sotapmc/Oasis' target='_blank'>Oasis</a>...",
-          "这个程序的开发只是一时起兴罢了，主要作者是 Subilan 和 WindSpirit。<br>",
-          "soon -> <a href='https://open.sotap.org' target='_blank'>https://open.sotap.org</a>"
-      ]
+    "logo": "<span class='font-header'>Monologue</span>",
+    "desc": [
+      "更新日志是一个用于不定期更新 SoTap 各种事务，例如服务器的关闭、问题的修复、新内容的添加等的一个站点。更新日志基于由 SoTap 开发的 ",
+      "<a href='https://github.com/sotapmc/Monologue' target='_blank'>Monologue</a>。你可以在上面从上到下翻阅历次 SoTap 的更新内容，最早记录在 2020 年 3 月 18 日。"
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2020/03/18"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "功能类网页"
+      }
+    ],
+    "features": [
+      {
+        "icon": "mdi-github",
+        "text": "GitHub 开源"
+      },
+      {
+        "icon": "mdi-calendar-clock",
+        "text": "持续更新"
+      },
+      {
+        "icon": "mdi-pencil-off",
+        "text": "非公开编辑"
+      }
+    ],
+    "links": [
+      "其实 Monologue 还有一个前身叫 <a href='https://github.com/sotapmc/Oasis' target='_blank'>Oasis</a>...",
+      "这个程序的开发只是一时起兴罢了，主要作者是 Subilan 和 WindSpirit。<br>",
+      "soon -> <a href='https://open.sotap.org' target='_blank'>https://open.sotap.org</a>"
+    ]
   },
   {
     "logo": "<span class='font-header'>Stats</span>",

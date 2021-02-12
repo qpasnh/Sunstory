@@ -1,0 +1,175 @@
+body.dark {
+  background: @darkbg;
+
+  .ecosystem {
+    h1,
+    h2,
+    h3 {
+      color: white;
+    }
+
+    .ecosystem-section {
+        p {
+            color: @textgrayl;
+
+            strong {
+                color: white;
+            }
+        }
+
+        .ecosystem-logo {
+            color: white;
+        }
+
+        .ecosystem-desc {
+            color: @textgrayl;
+        }
+
+        .ecosystem-info {
+            .column {
+                color: white;
+
+                .sotap-typo, .mdi {
+                    color: @textgrayl;
+                }
+            }
+        }
+    }
+  }
+
+  .gallery {
+    .description-title {
+      color: white;
+    }
+
+    .text-cols {
+      color: @textgrayl;
+
+      strong {
+        color: white;
+      }
+    }
+
+    .section-title {
+      color: white;
+
+      .section-description {
+        color: white;
+      }
+    }
+  }
+
+  .general {
+    .sidebar {
+      .sidebar-item-title {
+        color: white;
+      }
+
+      .sidebar-item:not(.catalogue) {
+        color: @textgrayl !important;
+      }
+
+      .sidebar-item.catalogue {
+        color: white;
+      }
+    }
+  }
+
+  .sotap-typo {
+    p,
+    a,
+    code,
+    ul,
+    ol {
+      color: @textgrayl;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+      color: white;
+
+      &::after {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  .about {
+    .people-description {
+      h1,
+      h2 {
+        color: black;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: white;
+    }
+
+    p {
+      color: @textgrayl !important;
+
+      strong {
+        color: white;
+      }
+
+      code {
+        background: #333333;
+        color: white;
+      }
+    }
+
+    .section-title {
+      color: white;
+
+      .section-description {
+        color: white;
+      }
+    }
+
+    .timeline {
+      .year,
+      .event {
+        color: white;
+      }
+    }
+  }
+
+  .home {
+    & > [class^="sotap-"]:not(.sotap-prefooter, .sotap-gallery) {
+      background: @darkbg;
+      color: white;
+    }
+
+    & > *:not(.sotap-prefooter, .main-banner) {
+      p {
+        color: @textgrayl;
+      }
+
+      /* force override */
+      .section-description {
+        color: white;
+      }
+    }
+
+    .sotap-gallery {
+      color: white;
+    }
+
+    .sotap-blog {
+      .blog-content {
+        background: #333333;
+      }
+    }
+  }
+}
+
+@darkbg: #212121;
