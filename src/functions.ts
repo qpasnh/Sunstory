@@ -122,6 +122,12 @@ export function swiperSlide(direction: 0 | 1, instance: SwiperSlideInstance) {
   }
 }
 
+/**
+ * 修复由于 Lazyload 所造成的 loop swiper 首尾 banner 显示不正常
+ * 
+ * @param inst Vue 实例，一般传入 this
+ * @param backgroundEl 包含背景图片的元素选择器（相对于 swiper slide）
+ */
 export function fixLoopSwiper(inst: Vue, backgroundEl: string) {
   inst.$Lazyload.$on("loaded", ({ el, src }) => {
     let parent: HTMLElement | null = el.closest(".swiper-slide");
@@ -134,4 +140,18 @@ export function fixLoopSwiper(inst: Vue, backgroundEl: string) {
     if (target === null || target === undefined) return;
     target.style.backgroundImage = "url(" + src + ")";
   });
+}
+
+/**
+ * 调用 `navigator.clipboard` 复制文字
+ * 
+ * @param text 要复制的文本
+ */
+export function copy(text: string) {
+  navigator.clipboard
+    .writeText(text)
+    .then((r) => {})
+    .catch((r) => {
+      console.warn("copy: something wrong happend: ", r);
+    });
 }

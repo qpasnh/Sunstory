@@ -77,3 +77,8 @@ interface SwiperSlideInstance {
     slideNext: () => void,
     slidePrev: () => void
 }
+
+interface EcosystemInfoItem {
+    icon: string,
+    text: string
+}

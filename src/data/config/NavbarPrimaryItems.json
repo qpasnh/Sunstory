@@ -14,5 +14,9 @@
   {
     "name": "Gallery",
     "to": "/gallery"
+  },
+  {
+    "name": "Ecosystem",
+    "to": "/ecosystem"
   }
 ]
