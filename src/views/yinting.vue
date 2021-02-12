@@ -1,7 +1,7 @@
 <template>
     <!-- WARNING: YINTING IS HERE. dont move and no bb -->
     <div class="yinting-container">
-        <div @click="$router.push('/')" class="go-back-button swiper-prev"><span
+        <div @click="go('/')" class="go-back-button swiper-prev"><span
                 class="mdi mdi-arrow-left"></span></div>
         <div class="control">
             <status :status="status" />
@@ -134,6 +134,9 @@ export default {
                     break;
                 }
             }
+        },
+        go(url) {
+            window.location.href = url;
         }
     },
     components: {

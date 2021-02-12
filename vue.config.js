@@ -9,12 +9,12 @@ module.exports = {
     appleMobileWebAppStatusBarStyle: "default",
     workboxPluginMode: "GenerateSW",
     iconPaths: {
-      faviconSVG: "./src/assets/logo.svg",
-      favicon32: "./src/assets/icons/logo-32x32.png",
-      favicon16: "./src/assets/icons/logo-16x16.png",
+      faviconSVG: null,
+      favicon32: "icons/logo-32x32.png",
+      favicon16: "icons/logo-16x16.png",
       appleTouchIcon: null,
       maskIcon: null,
-      msTileImage: "./src/assets/icons/logo-144x144.png",
+      msTileImage: "icons/logo-144x144.png",
     },
   },
   pluginOptions: {
