@@ -10,11 +10,11 @@ module.exports = {
     workboxPluginMode: "GenerateSW",
     iconPaths: {
       faviconSVG: null,
-      favicon32: "icons/logo-32x32.png",
-      favicon16: "icons/logo-16x16.png",
+      favicon32: "@/assets/icons/logo-32x32.png",
+      favicon16: "@/assets/icons/logo-16x16.png",
       appleTouchIcon: null,
       maskIcon: null,
-      msTileImage: "icons/logo-144x144.png",
+      msTileImage: "@/assets/icons/logo-144x144.png",
     },
   },
   pluginOptions: {
