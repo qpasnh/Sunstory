@@ -36,6 +36,16 @@ const routes: Array<RouteConfig> = [
     path: "/yinting",
     name: "yinting",
     component: () => import("@/views/yinting.vue")
+  },
+  {
+    path: "/ecosystem",
+    name: "ecosystem",
+    component: () => import("@/views/Ecosystem.vue")
+  },
+  {
+    path: "/join",
+    name: "join",
+    component: () => import("@/views/Join.vue")
   }
 ];
 

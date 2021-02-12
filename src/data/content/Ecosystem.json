@@ -1,0 +1,184 @@
+[
+  {
+    "logo": "<span class='sotap-wiki-logo-1'>SoTap</span><span class='sotap-wiki-logo-2'>Wiki</span>",
+    "badges": [
+      {
+        "background": "#2196F3",
+        "color": "white",
+        "text": "v2"
+      }
+    ],
+    "desc": [
+      "SoTap Wiki 与 SoTap 一同诞生，起初是为了统一解答玩家常问的一些问题所设立的一个简单的维基站点。",
+      "后来，我们引入了其它玩家的贡献，成为了所有人都可以访问、都可以修改的一本「SoTap 百科全书」。",
+      "Wiki 已经走过了它的<a href='https://github.com/sotapmc/SotapWiki/tree/v1' target='_blank'>第一个版本</a>，当前处于 <strong>v2</strong> 的初期编纂中，内容可能略有欠缺。"
+    ],
+    "features": [
+      {
+        "icon": "mdi-account-check",
+        "text": "支持非开发组编辑"
+      },
+      {
+        "icon": "mdi-github",
+        "text": "GitHub 开源"
+      },
+      {
+        "icon": "mdi-lightbulb-on-outline",
+        "text": "类开放式创作"
+      }
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2019/07/25"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "一般类网页"
+      },
+      {
+        "icon": "mdi-alert-decagram",
+        "text": "高权重"
+      }
+    ],
+    "links": [
+        "一共有两个站点，<a href='https://wiki.sotap.org'>主站</a>和",
+        "<a href='https://github.com/sotapmc/SotapWiki'>GitHub 项目</a>",
+        "<br>SoTap Wiki 常年招收长期/临时编写者，仅需拥有 GitHub 账号，没有很多的要求。",
+        "<br>有意可以立刻开始贡献~~"
+    ]
+  },
+  {
+      "logo": "<span class='font-header'>G Point</span>",
+      "desc": [
+          "G Point（中文 <strong>G 点</strong>）是 SoTap 开放给玩家的线上交流平台，使用开源程序 <a href='https://flarum.org/' target='_blank'>Flarum</a> 搭建，",
+          "由管理组进行日常维护和停机修复等工作。「G 点」，意为「Gay Point」即 Gay 所聚集的地方。不过据笔者所知，",
+          "那里的 gay 也甚少，不妨去实地勘察一番？"
+      ],
+      "info": [
+          {
+              "icon": "mdi-clock-outline",
+              "text": "创建于 2019/08/05"
+          },
+          {
+              "icon": "mdi-shape",
+              "text": "一般类网页"
+          }
+      ],
+      "features": [
+          {
+              "icon": "mdi-language-markdown",
+              "text": "支持 Markdown 语法"
+          },
+          {
+              "icon": "mdi-forum",
+              "text": "中国法律范围内畅所欲言"
+          }
+      ],
+      "links": [
+          "分为很多个板块，可以根据需要在不同的板块里发言。已经加入内服的玩家可以申请 Verified 权限来进入专属板块（小黑屋）<br>",
+          "soon -> <a href='https://g.sotap.org' target='_blank'>https://g.sotap.org</a>"
+      ]
+  },
+  {
+      "logo": "<img src='https://sotapmc.oss-cn-beijing.aliyuncs.com/img/logo/monologue-text.svg' draggable='false'/>",
+      "desc": [
+          "更新日志是一个用于不定期更新 SoTap 各种事务，例如服务器的关闭、问题的修复、新内容的添加等的一个站点。更新日志基于由 SoTap 开发的 ",
+          "<a href='https://github.com/sotapmc/Monologue' target='_blank'>Monologue</a>。你可以在上面从上到下翻阅历次 SoTap 的更新内容，最早记录在 2020 年 3 月 18 日。"
+      ],
+      "info": [
+          {
+              "icon": "mdi-clock-outline",
+              "text": "创建于 2020/03/18"
+          },
+          {
+              "icon": "mdi-shape",
+              "text": "功能类网页"
+          }
+      ],
+      "features": [
+          {
+              "icon": "mdi-github",
+              "text": "GitHub 开源"
+          },
+          {
+              "icon": "mdi-calendar-clock",
+              "text": "持续更新"
+          },
+          {
+              "icon": "mdi-pencil-off",
+              "text": "非公开编辑"
+          }
+      ],
+      "links": [
+          "其实 Monologue 还有一个前身叫 <a href='https://github.com/sotapmc/Oasis' target='_blank'>Oasis</a>...",
+          "这个程序的开发只是一时起兴罢了，主要作者是 Subilan 和 WindSpirit。<br>",
+          "soon -> <a href='https://open.sotap.org' target='_blank'>https://open.sotap.org</a>"
+      ]
+  },
+  {
+    "logo": "<span class='font-header'>Stats</span>",
+    "desc": [
+      "Stats 基于由 <a href='https://github.com/NyaaCat' target='_blank'>NyaaCat</a> 开发的 <a href='https://github.com/NyaaCat/NyaaStats target='_blank'>NyaaStats</a>",
+      "，用于显示当前服务器内最近在线的玩家及玩家的个人统计信息，比如你可以在这里看到你的游戏内成就完成进度、进入游戏的时间（精确到天）和挖矿积累量等。",
+      "设立的主要目的是方便玩家检索和参考，以及将服务器内部的玩家数据文件公开展示。"
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2020 年"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "功能类网页"
+      }
+    ],
+    "features": [
+      {
+        "icon": "mdi-github",
+        "text": "GitHub 开源"
+      },
+      {
+        "icon": "mdi-clock-check-outline",
+        "text": "自动更新"
+      },
+      {
+        "icon": "mdi-progress-clock",
+        "text": "每小时更新一次"
+      }
+    ],
+    "links": [
+      "Stats 原先是用来记录内服的相关信息的，现在因为内服 flop 外服又开了，所以改成了记录外服的信息。<br>",
+      "每个小时更新一次是指，每遇到一个整点更新一次~~<br>",
+      "soon -> <a href='https://stats.sotap.org' target='_blank'>https://stats.sotap.org</a>"
+    ]
+  },
+  {
+    "logo": "<span class='sotap-dev-logo-1'>SoTap</span><span class='sotap-dev-logo-2'>Dev</span>",
+    "desc": [
+      "SoTap Dev 是一个与 SoTap 官网（也就是本站）并列的站点，主要用于陈列一些有关开发和设计方面的资源并提供公开下载服务（腾讯云 COS）。例如你可以在上面下载到 SoTap 的 Logo 资源用于剪辑、友链等。其包含了 SoTap Static 和开发文档两个分支。",
+      "我们借助 sotap.dev 域名也可以很方便地增设用途相关的子站点。SoTap Dev 的源代码在 <a href='https://github.com/sotapmc/sotapmc.github.io' target='_blank'>GitHub 上开源</a>，",
+      "且使用 GitHub Pages 托管。"
+    ],
+    "features": [
+      {
+        "icon": "mdi-github",
+        "text": "GitHub 开源"
+      }
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2020 年"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "一般类网页"
+      }
+    ],
+    "links": [
+      "下载资源以及协议：<a href='https://sotap.dev' target='_blank'>主站</a><br>",
+      "查看 SoTap 所开发的插件的使用方法以及其它开发事宜：<a href='https://docs.sotap.dev' target='_blank'>开发文档</a><br>"
+    ]
+  }
+]
