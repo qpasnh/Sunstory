@@ -155,3 +155,17 @@ export function copy(text: string) {
       console.warn("copy: something wrong happend: ", r);
     });
 }
+
+/**
+ * 根据客户端的时间判断是否为夜晚
+ * 
+ * @param start 开始时间（前一天）
+ * @param end 结束时间（第二天）
+ */
+export function isNight(start: number = 19, end: number = 7) {
+  let date = new Date();
+  let hours = date.getHours();
+  if (hours > start || hours < end) {
+    return true;
+  } 
+}

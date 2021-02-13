@@ -14,6 +14,7 @@
 import Vue from 'vue';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
+import { isNight } from './functions';
 
 export default Vue.extend({
     data() {
@@ -45,9 +46,9 @@ export default Vue.extend({
         }
     },
     mounted() {
-        if (this.$cookies.get('darkmode_state') === 'true') {
+        if (this.$cookies.get('darkmode_state') === 'true' || isNight()) {
             this.$actions.setDarkmode(true);
-        } else if (this.$cookies.get('darkmode_state') === 'false') {
+        } else if (this.$cookies.get('darkmode_state') === 'false' || !isNight()) {
             this.$actions.setDarkmode(false);
         }
         let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
