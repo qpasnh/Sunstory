@@ -13,6 +13,11 @@ html {
 
 body {
   margin: 0;
+
+  *,
+  & {
+    transition: background 0.2s ease;
+  }
 }
 
 h1,
@@ -653,7 +658,7 @@ h6 {
   padding: 2px 6px;
   border-radius: 4px;
   box-shadow: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   .font-header;
   font-weight: 600;
 
@@ -665,11 +670,11 @@ h6 {
 .ecosystem {
   .ecosystem-logo {
     img {
-      height: 4.5rem
+      height: 4.5rem;
     }
 
     .font-header {
-      font-weight: 600
+      font-weight: 600;
     }
   }
 }
@@ -681,25 +686,36 @@ h6 {
 }
 
 .sotap-wiki-logo-2 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
 }
 
-.sotap-dev-logo-1, .sotap-dev-logo-2 {
+.sotap-dev-logo-1,
+.sotap-dev-logo-2 {
   .font-header;
 }
 
 .sotap-dev-logo-1 {
   font-weight: 600;
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 
 .sotap-dev-logo-2 {
   font-weight: lighter;
 }
 
+.sotap-blog-logo-1 {
+  .font-header;
+  margin-right: 0.25em;
+}
+
+.sotap-blog-logo-2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
 @primary: #fcd307;
-@primaryl: rgba(252, 211, 7, 0.21);
+@primaryl: #fcd30736;
 @textgray: rgba(0, 0, 0, 0.6);
 @textgrayl: rgb(167, 167, 167);
 @bggray: rgb(12, 12, 12);
