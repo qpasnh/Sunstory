@@ -17,7 +17,16 @@ import Footer from '@/components/Footer.vue';
 
 export default Vue.extend({
     data() {
-        return {};
+        return {
+            titleDict: {
+                home: "Waiting for You",
+                about: "关于我们",
+                rules: "服务器规则",
+                gallery: "图库",
+                ecosystem: "生态系统",
+                join: "加入我们"
+            } as Dictionary
+        };
     },
     components: {
         Navbar,
@@ -30,6 +39,9 @@ export default Vue.extend({
             } else {
                 document.body.classList.remove('dark');
             }
+        },
+        '$route'(v) {
+            document.title = "SoTap | " + this.titleDict[v.name];
         }
     },
     mounted() {
