@@ -1,0 +1,21 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://sotap.org</loc>
+  </url>
+  <url>
+    <loc>https://sotap.org/about</loc>
+  </url>
+  <url>
+    <loc>https://sotap.org/rules</loc>
+  </url>
+  <url>
+    <loc>https://sotap.org/gallery</loc>
+  </url>
+  <url>
+    <loc>https://sotap.org/ecosystem</loc>
+  </url>
+  <url>
+    <loc>https://sotap.org/join</loc>
+  </url>
+</urlset>
