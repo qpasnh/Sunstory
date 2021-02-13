@@ -180,5 +180,32 @@
       "下载资源以及协议：<a href='https://sotap.dev' target='_blank'>主站</a><br>",
       "查看 SoTap 所开发的插件的使用方法以及其它开发事宜：<a href='https://docs.sotap.dev' target='_blank'>开发文档</a><br>"
     ]
+  },
+  {
+    "logo": "<span class='sotap-blog-logo-1'>SoTap</span><span class='sotap-blog-logo-2'>Planet</span>",
+    "desc": [
+      "SoTap Blog 是 SoTap 编写博文的地方。博文的内容包含一些大型的服务器内改动、更新和游戏机制的改变等，同时也将记录一些服务器内的大事记。SoTap Blog 基于开源的 PHP 博客程序 <a href='https://typecho.org/' target='_blank'>Typecho</a>，主题使用<em>熊猫小 A</em> 制作的 <a href='https://github.com/AlanDecode/Typecho-Theme-VOID' target='_blank'>VOID</a>。",
+      "SoTap Blog 由管理组成员负责更新。"
+    ],
+    "features": [
+      {
+        "icon": "mdi-github",
+        "text": "GitHub 开源"
+      }
+    ],
+    "info": [
+      {
+        "icon": "mdi-clock-outline",
+        "text": "创建于 2019/12/19"
+      },
+      {
+        "icon": "mdi-shape",
+        "text": "一般类网页"
+      }
+    ],
+    "links": [
+      "SoTap Blog 其实也可以在本站<a href='/'>首页</a>的 Blog 部分中看到最新的几篇博文~<br>",
+      "soon -> <a href='https://blog.sotap.org' target='_blank'>https://blog.sotap.org</a>"
+    ]
   }
 ]
