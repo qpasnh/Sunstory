@@ -14,7 +14,6 @@
 import Vue from 'vue';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import { isNight } from './functions';
 
 export default Vue.extend({
     data() {
@@ -25,7 +24,8 @@ export default Vue.extend({
                 rules: "服务器规则",
                 gallery: "图库",
                 ecosystem: "生态系统",
-                join: "加入我们"
+                join: "加入我们",
+                premium: "付费项目"
             } as Dictionary
         };
     },
@@ -46,9 +46,9 @@ export default Vue.extend({
         }
     },
     mounted() {
-        if (this.$cookies.get('darkmode_state') === 'true' || isNight()) {
+        if (this.$cookies.get('darkmode_state') === 'true') {
             this.$actions.setDarkmode(true);
-        } else if (this.$cookies.get('darkmode_state') === 'false' || !isNight()) {
+        } else if (this.$cookies.get('darkmode_state') === 'false') {
             this.$actions.setDarkmode(false);
         }
         let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
