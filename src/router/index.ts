@@ -46,6 +46,11 @@ const routes: Array<RouteConfig> = [
     path: "/join",
     name: "join",
     component: () => import("@/views/Join.vue")
+  },
+  {
+    path: "/premium",
+    name: "premium",
+    component: () => import("@/views/Premium.vue")
   }
 ];
 

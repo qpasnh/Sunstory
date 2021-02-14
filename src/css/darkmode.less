@@ -1,6 +1,30 @@
 body.dark {
   background: @darkbg;
 
+  .premium {
+    color: white;
+
+    .premium-container .typo p {
+      color: @textgrayl;
+
+      strong {
+        color: white;
+      }
+    }
+
+    .premium {
+      .premium-item {
+        background: #333333;
+
+        .premium-item-description,
+        .￥,
+        .per {
+          color: @textgrayl;
+        }
+      }
+    }
+  }
+
   .ecosystem {
     h1,
     h2,
@@ -9,31 +33,32 @@ body.dark {
     }
 
     .ecosystem-section {
-        p {
+      p {
+        color: @textgrayl;
+
+        strong {
+          color: white;
+        }
+      }
+
+      .ecosystem-logo {
+        color: white;
+      }
+
+      .ecosystem-desc {
+        color: @textgrayl;
+      }
+
+      .ecosystem-info {
+        .column {
+          color: white;
+
+          .sotap-typo,
+          .mdi {
             color: @textgrayl;
-
-            strong {
-                color: white;
-            }
+          }
         }
-
-        .ecosystem-logo {
-            color: white;
-        }
-
-        .ecosystem-desc {
-            color: @textgrayl;
-        }
-
-        .ecosystem-info {
-            .column {
-                color: white;
-
-                .sotap-typo, .mdi {
-                    color: @textgrayl;
-                }
-            }
-        }
+      }
     }
   }
 

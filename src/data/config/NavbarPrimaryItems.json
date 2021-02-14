@@ -18,5 +18,9 @@
   {
     "name": "Eco",
     "to": "/ecosystem"
+  },
+  {
+    "name": "Premium",
+    "to": "/premium"
   }
 ]
