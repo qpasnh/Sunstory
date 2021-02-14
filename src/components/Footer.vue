@@ -20,7 +20,7 @@
                 </div>
                 <div class="secondary-bar">
                     <p>&copy; 2021 SoTap 管理组<br><small>SoTap 是一个由 Minecraft
-                            爱好者所组成的兴趣圈子</small></p>
+                            爱好者所组成的兴趣圈</small><br><small v-if="!isMobile()">网站代码由 SoTap 管理组编写并维护，Powered by <span class="font-vue" style="font-size: 14px">Vue.js</span></small></p>
                 </div>
             </div>
         </div>
@@ -32,6 +32,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { isMobile } from "@/functions";
+
 export default Vue.extend({
     data() {
         return {};
@@ -45,7 +47,8 @@ export default Vue.extend({
         },
         go(url: string) {
             window.open(url);
-        }
+        },
+        isMobile
     }
 });
 </script>
