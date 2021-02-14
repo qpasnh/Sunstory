@@ -7,11 +7,12 @@
         </static-banner>
         <div class="ecosystem-container">
             <div class="ecosystem-section">
-                <h1>服务器地址</h1>
-                <div class="ips-container" v-for="(x, i) in ips" :key="i">
+                <h1 style="opacity: 0" v-view.once="visEffect">服务器地址</h1>
+                <div style="opacity: 0" v-view.once="visEffect" class="ips-container"
+                    v-for="(x, i) in ips" :key="i">
                     <h2>{{ x.ip }}
-                        <smart-button v-if="!isMobile()" :onclick="[copyIP, x.ip]" class="copy-button"
-                            iconInactive="mdi mdi-clipboard-multiple-outline"
+                        <smart-button v-if="!isMobile()" :onclick="[copyIP, x.ip]"
+                            class="copy-button" iconInactive="mdi mdi-clipboard-multiple-outline"
                             iconActive="mdi mdi-check" textInactive="点击复制" textActive="复制成功"
                             colorInactive="" colorActive="white" backgroundInactive=""
                             backgroundActive="#4caf50" borderColorInactive=""
@@ -22,10 +23,11 @@
             </div>
             <div class="divider"></div>
             <div class="ecosystem-section">
-                <h1>站点</h1>
-                <ecosystem-item :style="i === 0 ? 'margin-top: 0' : ''" class="ecosystem-item-box" v-for="(x, i) in eco" :key="i"
-                    :logo="x.logo" :badges="x.badges" :desc="x.desc" :info="x.info"
-                    :features="x.features" :links="x.links" />
+                <h1 style="opacity: 0" v-view.once="visEffect">站点</h1>
+                <ecosystem-item style="opacity: 0" v-view.once="visEffect"
+                    :style="i === 0 ? 'margin-top: 0' : ''" class="ecosystem-item-box"
+                    v-for="(x, i) in eco" :key="i" :logo="x.logo" :badges="x.badges" :desc="x.desc"
+                    :info="x.info" :features="x.features" :links="x.links" />
             </div>
         </div>
     </div>
@@ -36,7 +38,7 @@ import Vue from 'vue';
 import StaticBanner from '@/components/StaticBanner.vue';
 import EcosystemItem from '@/components/EcosystemItem.vue';
 import Ecosystem from '@/data/content/Ecosystem.json';
-import { copy, isMobile } from '@/functions';
+import { copy, isMobile, visEffect } from '@/functions';
 import SmartButton from '@/components/SmartButton.vue';
 
 export default Vue.extend({
@@ -82,7 +84,8 @@ export default Vue.extend({
             this.clipboardBackground = '#4caf50';
             this.clipboardText = '复制成功';
         },
-        isMobile
+        isMobile,
+        visEffect
     }
 });
 </script>

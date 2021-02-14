@@ -7,19 +7,22 @@
         </static-banner>
         <div class="premium-container">
             <div class="description typo">
-                <h1>为什么会有付费服务？</h1>
-                <p>这也是在问「为什么 SoTap 是商业服」。实际上，SoTap
+                <h1 style="opacity: 0" v-view.once="visEffect">为什么会有付费服务？</h1>
+                <p style="opacity: 0" v-view.once="visEffect">这也是在问「为什么 SoTap 是商业服」。实际上，SoTap
                     运营初期曾有一段时间是完全免费的公益服，预想凭借玩家的<strong>自愿捐助</strong>来维持服务器的运行。但是后来发现效果并不显著，导致 SoTap
                     运营陷入危机。</p>
-                <p>后来，SoTap 转型为商业服，情况略为好转。因此，付费服务实际上是用于保证 SoTap 正常运行的一种手段。现阶段，我们保证所有玩家的付费金额都能 100%
+                <p style="opacity: 0" v-view.once="visEffect">后来，SoTap 转型为商业服，情况略为好转。因此，付费服务实际上是用于保证
+                    SoTap 正常运行的一种手段。现阶段，我们保证所有玩家的付费金额都能 100%
                     地用于服务器的维护和续费。目前服务器的月消耗约为 <span class="font-currency">￥600</span>。</p>
-                <p><strong>付款充值即代表已经阅读并知晓《简单付费须知》（见下方）。</strong></p>
+                <p style="opacity: 0" v-view.once="visEffect">
+                    <strong>付款充值即代表已经阅读并知晓《简单付费须知》（见下方）。</strong>
+                </p>
             </div>
             <div class="premium typo">
-                <h1>现有付费服务</h1>
-                <p>由于内服暂未开启，目前的付费服务类型较为单一，大致有以下四种。</p>
-                <div class="premium-row">
-                    <premium-item :price="30">
+                <h1 style="opacity: 0" v-view.once="visEffect">现有付费服务</h1>
+                <p style="opacity: 0" v-view.once="visEffect">由于内服暂未开启，目前的付费服务类型较为单一，大致有以下四种。</p>
+                <div class="premium-row" v-view.once="premiumItemEffect">
+                    <premium-item style="opacity: 0" :price="30">
                         <template #title>
                             10 个家权限
                         </template>
@@ -30,7 +33,7 @@
                             <span class="mdi mdi-home-plus-outline" />
                         </template>
                     </premium-item>
-                    <premium-item :price="25" per="月">
+                    <premium-item style="opacity: 0" :price="25" per="月">
                         <template #title>
                             传送免费
                         </template>
@@ -41,7 +44,7 @@
                             <span class="mdi mdi-currency-usd-off" />
                         </template>
                     </premium-item>
-                    <premium-item :price="15" per="月">
+                    <premium-item style="opacity: 0" :price="15" per="月">
                         <template #title>
                             拓展背包
                         </template>
@@ -52,7 +55,7 @@
                             <span class="mdi mdi-package-variant" />
                         </template>
                     </premium-item>
-                    <premium-item :price="5" per="月">
+                    <premium-item style="opacity: 0" :price="5" per="月">
                         <template #title>
                             彩色字
                         </template>
@@ -64,8 +67,8 @@
                         </template>
                     </premium-item>
                 </div>
-                <p class="sotap-typo">要获取指定的付费服务，你需要首先前往 <a href="https://sotap.mcrmb.com"
-                        target="_blank">MCRMB 页面</a>进行充值，将得到「宝石<span
+                <p style="opacity: 0" v-view.once="visEffect" class="sotap-typo">要获取指定的付费服务，你需要首先前往
+                    <a href="https://sotap.mcrmb.com" target="_blank">MCRMB 页面</a>进行充值，将得到「宝石<span
                         class="mdi mdi-diamond-stone"></span>」货币（<span class="font-currency">1×<span
                             class="mdi mdi-diamond-stone"></span> =
                         ￥1</span>）。在服务器内，你可以利用宝石货币<span
@@ -73,10 +76,10 @@
                 </p>
             </div>
             <div class="policy typo">
-                <h1>简单付费须知</h1>
-                <p>在购买前，请务必阅读简单付费须知。</p>
+                <h1 style="opacity: 0" v-view.once="visEffect">简单付费须知</h1>
+                <p style="opacity: 0" v-view.once="visEffect">在购买前，请务必阅读简单付费须知。</p>
                 <p>
-                <ul>
+                <ul style="opacity: 0" v-view.once="visEffect">
                     <li><strong>SoTap 不鼓励未成年人在服务器内消费。</strong>未成年人应当在父母明确允许的情况下在 SoTap
                         进行消费行为。未成年消费行为一旦发生，SoTap 将视为你已经经过了家长同意。</li>
                     <li class="sotap-typo"><strong>SoTap 希望你适度游戏充值。</strong>虽然充值对 SoTap
@@ -107,9 +110,26 @@
 import StaticBanner from '@/components/StaticBanner.vue';
 import PremiumItem from '@/components/PremiumItem.vue';
 import Vue from 'vue';
+import { visEffect } from '@/functions';
 
 export default Vue.extend({
-    components: { StaticBanner, PremiumItem }
+    components: { StaticBanner, PremiumItem },
+    methods: {
+        visEffect,
+        premiumItemEffect(ob: ViewObject) {
+            let targets: Array<HTMLDivElement> = Array.from(ob.target.element.children) as Array<HTMLDivElement>;
+            targets.forEach((k, i) => {
+                this.$anime({
+                    targets: k,
+                    loop: false,
+                    duration: 500,
+                    scale: [0.8, 1],
+                    opacity: [0, 1],
+                    delay: i * 100
+                });
+            });
+        }
+    }
 });
 </script>
 
@@ -154,7 +174,6 @@ export default Vue.extend({
             margin-top: 32px;
 
             > * {
-
                 @media screen and (max-width: 1200px) {
                     width: 100%;
                     margin: 16px 0;
