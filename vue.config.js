@@ -8,6 +8,9 @@ module.exports = {
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "default",
     workboxPluginMode: "GenerateSW",
+    workboxOptions: {
+      skipWaiting: true
+    },
     manifestOptions: {
       icons: [
         {
