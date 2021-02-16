@@ -1,8 +1,19 @@
 <template>
     <div class="main-banner">
         <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
-            <swiper-slide :class="i === 0 ? 'primary-slide' : ''" v-for="(x, i) in bannerList" :key="i">
-                <div class="swiper-item" v-lazy:background-image="x.bg">
+            <swiper-slide class="swiper-slide" :class="i === 0 ? 'primary-slide' : ''"
+                v-for="(x, i) in bannerList" :key="i"
+                :data-swiper-autoplay="(x.videoLength) || false">
+                <div class="swiper-item" v-lazy:background-image="x.bg" v-if="!x.video">
+                    <div class="banner-text-box">
+                        <h1 class="banner-title" v-html="x.title"></h1>
+                        <p class="banner-text">{{ x.text }}</p>
+                    </div>
+                </div>
+                <div class="swiper-item video" v-else>
+                    <video class="banner-video" muted autoplay loop>
+                        <source :src="x.video" type="video/mp4" />
+                    </video>
                     <div class="banner-text-box">
                         <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
@@ -36,7 +47,7 @@ export default Vue.extend({
     mounted() {
         Animation.ease('in', 'top', '.banner-title');
         Animation.ease('in', 'top', '.banner-text', undefined, 200);
-        fixLoopSwiper(this, ".swiper-item");
+        fixLoopSwiper(this, '.swiper-item');
     },
     methods: {
         swiperSlide
@@ -45,10 +56,13 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
-
 .main-banner {
     width: 100%;
     position: relative;
+}
+
+.swiper-slide {
+    overflow: hidden;
 }
 
 .banner-swiper {
@@ -85,7 +99,7 @@ export default Vue.extend({
     transform: translateY(50%);
     position: absolute;
     transition: all 0.2s ease;
-    opacity: .3;
+    opacity: 0.3;
 
     &:hover {
         opacity: 1;
@@ -111,5 +125,13 @@ export default Vue.extend({
     max-width: fit-content;
     padding: 0 8px 2px 8px;
     border-radius: 10px;
+}
+
+.banner-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
 }
 </style>
