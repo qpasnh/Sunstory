@@ -6,3 +6,14 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|mp4|xml|txt|xsl|js|css)$">
+  Header set Cache-Control "max-age=31536050"
+</FilesMatch>
+
+<FilesMatch "\.(html)$">
+  Header unset ETag
+  Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</FilesMatch>
