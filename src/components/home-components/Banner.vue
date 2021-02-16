@@ -10,8 +10,8 @@
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
                 </div>
-                <div class="swiper-item video" v-else>
-                    <video class="banner-video" muted autoplay loop>
+                <div class="swiper-item video" v-else v-lazy:background-image="x.firstFrame">
+                    <video class="banner-video" muted autoplay loop preload="none">
                         <source :src="x.video" type="video/mp4" />
                     </video>
                     <div class="banner-text-box">
