@@ -18,6 +18,8 @@
                         <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
+                    <a class="video-link hide-mobile" :href="x.link" target="_blank">前往
+                        <img src="@/assets/bilibili-text.svg" /> 观看高清视频</a>
                 </div>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
@@ -32,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Animation, fixLoopSwiper, swiperSlide } from '@/functions';
+import { Animation, fixLoopSwiper, swiperSlide, isMobile } from '@/functions';
 import Vue from 'vue';
 import HomeBannerList from '@/data/content/HomeBannerList.json';
 import HomeSwiperOptions from '@/data/config/HomeSwiperOptions.json';
@@ -50,7 +52,11 @@ export default Vue.extend({
         fixLoopSwiper(this, '.swiper-item');
     },
     methods: {
-        swiperSlide
+        swiperSlide,
+        isMobile,
+        isWidthLT(x: number) {
+            return window.innerWidth < x;
+        }
     }
 });
 </script>
@@ -129,9 +135,39 @@ export default Vue.extend({
 
 .banner-video {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 110%;
+    @media screen and (min-width: 690px) {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+    }
+
+    @media screen and (min-width: 1900px) {
+        height: 115% !important;
+    }
+
+    @media screen and (max-width: 690px) {
+        left: -50%;
+        right: -50%;
+        transform: translateX(-25%);
+    }
+}
+
+.video-link {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-shadow: @textshadow-1;
+    transform: scale(0.7);
+
+    img {
+        display: inline-block;
+        margin: 16px 0;
+        filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.5));
+    }
 }
 </style>
