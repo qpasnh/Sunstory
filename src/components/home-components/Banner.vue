@@ -1,17 +1,17 @@
 <template>
     <div class="main-banner">
         <swiper class="banner-swiper" ref="swiper" :options="swiperOptions">
-            <swiper-slide class="swiper-slide" :class="i === 0 ? 'primary-slide' : ''"
-                v-for="(x, i) in bannerList" :key="i"
-                :data-swiper-autoplay="(x.videoLength) || false">
+            <swiper-slide class="swiper-slide" :class="i === 0 ? 'primary-slide' : ''" v-for="(x, i) in bannerList"
+                :key="i" :data-swiper-autoplay="(x.videoLength) || false">
                 <div class="swiper-item" v-lazy:background-image="x.bg" v-if="!x.video">
                     <div class="banner-text-box">
                         <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
                 </div>
-                <div class="swiper-item video" v-else v-lazy:background-image="x.firstFrame">
-                    <video class="banner-video" muted autoplay loop preload="none">
+                <div class="swiper-item video" v-else v-lazy:background-image="x.firstFrame" :key="x.firstFrame">
+                    <video class="banner-video" muted autoplay loop preload="none" @play="showBg(false)"
+                        @pause="showBg(true)">
                         <source :src="x.video" type="video/mp4" />
                     </video>
                     <div class="banner-text-box">
@@ -43,7 +43,8 @@ export default Vue.extend({
     data() {
         return {
             swiperOptions: HomeSwiperOptions,
-            bannerList: HomeBannerList
+            bannerList: HomeBannerList,
+            bgImgTmp: ''
         };
     },
     mounted() {
@@ -56,6 +57,16 @@ export default Vue.extend({
         isMobile,
         isWidthLT(x: number) {
             return window.innerWidth < x;
+        },
+        showBg(isShow: boolean) {
+            if (isShow) {
+                this.bgImgTmp = this.bannerList[0].firstFrame as string;
+                this.bannerList[0].firstFrame = '';
+                if (Vue.$cookies.get('darkmode_state')) {
+                }
+            } else {
+                this.bannerList[0].firstFrame = this.bgImgTmp;
+            }
         }
     }
 });
