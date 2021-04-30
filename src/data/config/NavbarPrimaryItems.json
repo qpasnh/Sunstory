@@ -22,5 +22,9 @@
   {
     "name": "Premium",
     "to": "/premium"
+  },
+  {
+    "name": "Join",
+    "href": "https://join.sotap.org"
   }
 ]
