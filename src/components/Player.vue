@@ -1,5 +1,8 @@
 <template>
-    <div class="player">
+    <div class="player" @click="go()">
+        <span class="text" v-if="text">
+            {{ text }}
+        </span>
         <div class="avatar" v-lazy:background-image="avatar" />
         <span class="player-name">
             {{ name }}
@@ -15,13 +18,20 @@ export default Vue.extend({
     props: {
         name: {
             type: String
+        },
+        text: {
+            type: String
         }
     },
     methods: {
         getUUID() {
             axios.get('https://api.ashcon.app/mojang/v2/user/' + this.name).then((r) => {
-                this.avatar = 'https://crafatar.com/avatars/' + r.data.uuid.replaceAll('-', '');
+                this.uuid = r.data.uuid.replaceAll('-', '');
+                this.avatar = 'https://crafatar.com/avatars/' + this.uuid;
             });
+        },
+        go() {
+            window.open("https://stats.sotap.org/#/player/" + this.uuid);
         }
     },
     mounted() {
@@ -38,9 +48,11 @@ export default Vue.extend({
 
 <style lang="less" scoped>
 .player {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: white;
     margin: 0 .1em;
+    cursor: pointer;
 
     .avatar {
         margin-right: 4px;
@@ -53,11 +65,16 @@ export default Vue.extend({
         background-repeat: no-repeat;
         display: inline-block;
         vertical-align: middle;
+        margin-right: .3em;
     }
 
     .player-name {
         .font-header;
         font-weight: 600;
+    }
+
+    .text {
+        margin-right: .5em;
     }
 }
 </style>

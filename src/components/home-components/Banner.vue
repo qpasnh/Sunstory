@@ -8,6 +8,9 @@
                         <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
+                    <span class="banner-author" v-if="x.bgAuthor">
+                        <player text="背景作者" :name="x.bgAuthor"/>
+                    </span>
                 </div>
                 <div class="swiper-item video" v-else v-lazy:background-image="x.firstFrame" :key="x.firstFrame">
                     <video class="banner-video" muted autoplay loop preload="none" @play="showBg(false)"
@@ -38,8 +41,10 @@ import { Animation, fixLoopSwiper, swiperSlide, isMobile } from '@/functions';
 import Vue from 'vue';
 import HomeBannerList from '@/data/content/HomeBannerList.json';
 import HomeSwiperOptions from '@/data/config/HomeSwiperOptions.json';
+import Player from '../Player.vue';
 
 export default Vue.extend({
+  components: { Player },
     data() {
         return {
             swiperOptions: HomeSwiperOptions,
@@ -180,5 +185,13 @@ export default Vue.extend({
         margin: 16px 0;
         filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.5));
     }
+}
+
+.banner-author {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    color: white;
+    text-shadow: @textshadow-1;
 }
 </style>
