@@ -18,7 +18,7 @@
                             backgroundActive="#4caf50" borderColorInactive=""
                             borderColorActive="#4caf50" />
                     </h2>
-                    <p v-html="x.desc"></p>
+                    <p class="sotap-typo" v-html="x.desc"></p>
                 </div>
             </div>
             <div class="divider"></div>
