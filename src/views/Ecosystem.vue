@@ -52,9 +52,13 @@ export default Vue.extend({
             eco: Ecosystem,
             ips: [
                 {
+                    ip: "inside.sotap.org",
+                    desc: '<strong>内服通用地址，第一推荐，仅限内服玩家。</strong>无需特别指明端口。进入需要内服白名单。如果你没有，可以到<a href="https://join.sotap.org" target="_blank">这里</a>填写表单申请一个。'
+                },
+                {
                     ip: 'play.sotap.org',
                     desc:
-                        '<strong>通用地址，第一推荐。</strong>无需特别指明端口。其指向将会伴随着服务器的周目更替而变化，原则上保持最新。'
+                        '<strong>外服通用地址，第一推荐。</strong>无需特别指明端口。其指向将会伴随着服务器的周目更替而变化，原则上保持最新。'
                 },
                 {
                     ip: 'd2.toho.cloud:22003',
