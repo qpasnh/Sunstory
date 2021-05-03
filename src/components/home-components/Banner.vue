@@ -8,7 +8,7 @@
                         <h1 class="banner-title" v-html="x.title"></h1>
                         <p class="banner-text">{{ x.text }}</p>
                     </div>
-                    <span class="banner-author" v-if="x.bgAuthor">
+                    <span class="banner-author" v-if="x.bgAuthor && !isMobile()">
                         <player text="背景作者" :name="x.bgAuthor"/>
                     </span>
                 </div>
