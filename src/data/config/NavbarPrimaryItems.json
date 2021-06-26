@@ -25,6 +25,6 @@
   },
   {
     "name": "Join",
-    "href": "https://join.sotap.org"
+    "to": "/join"
   }
 ]
