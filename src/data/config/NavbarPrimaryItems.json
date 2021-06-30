@@ -20,10 +20,6 @@
     "to": "/ecosystem"
   },
   {
-    "name": "Premium",
-    "to": "/premium"
-  },
-  {
     "name": "Join",
     "to": "/join"
   }
