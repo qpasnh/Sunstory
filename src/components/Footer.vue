@@ -19,8 +19,8 @@
                     </div>
                 </div>
                 <div class="secondary-bar">
-                    <p>&copy; 2021 SoTap 运营团队<br><small>SoTap 是一个由 Minecraft
-                            爱好者所组成的兴趣圈</small><br><small v-if="!isMobile()">网站代码由 SoTap 运营团队编写并维护，Powered by <span class="font-vue" style="font-size: 14px">Vue.js</span></small><br><small>本网站所有文本和图片未经说明均归 SoTap 所有，任何第三方未经允许不得随意使用。</small></p>
+                    <p>&copy; 2021 SoTap 运营团队<br>SoTap 隶属于 SAME TEAM<br><small>SoTap 是一个由 Minecraft
+                            爱好者所组成的兴趣圈</small><br><small v-if="!isMobile()">网站代码由 SoTap 运营团队编写并维护，Powered by <span class="font-vue" style="font-size: 14px">Vue.js</span></small><br><small>任何第三方未经允许不得随意使用本站文本和图片，侵权必究。</small></p>
                 </div>
             </div>
         </div>
