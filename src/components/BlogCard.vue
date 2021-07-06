@@ -1,7 +1,7 @@
 <template>
     <div class="blog-card">
         <div class="card-background" :style="'background-image: url(' + bg + ')'" />
-        <div class="blog-content" @click="go(href)">
+        <div class="blog-content" @click="go(href)" :data-href="href">
             <h1 class="card-title">
                 <slot name="title" />
             </h1>
