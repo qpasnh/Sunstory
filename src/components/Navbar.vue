@@ -416,7 +416,7 @@ export default Vue.extend({
         background: rgba(0, 0, 0, 0.7);
         top: 100%;
         font-size: 16px;
-        min-width: 100px;
+        min-width: 132px;
         right: 0;
         /* to be continued */
         padding-top: 20px;
