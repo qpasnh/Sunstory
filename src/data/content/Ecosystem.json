@@ -148,37 +148,10 @@
       }
     ],
     "links": [
-      "Stats 原先是用来记录内服的相关信息的，现在因为内服 flop 外服又开了，所以改成了记录外服的信息。<br>",
+      "Stats 现在包含内服和外服的信息，位于不同的站点。<br>",
       "每个小时更新一次是指，每遇到一个整点更新一次~~<br>",
-      "soon -> <a href='https://stats.sotap.org' target='_blank'>https://stats.sotap.org</a>"
-    ]
-  },
-  {
-    "logo": "<span class='sotap-dev-logo-1'>SoTap</span><span class='sotap-dev-logo-2'>Dev</span>",
-    "desc": [
-      "SoTap Dev 是一个与 SoTap 官网（也就是本站）并列的站点，主要用于陈列一些有关开发和设计方面的资源并提供公开下载服务（腾讯云 COS）。例如你可以在上面下载到 SoTap 的 Logo 资源用于剪辑、友链等。其包含了 SoTap Static 和开发文档两个分支。",
-      "我们借助 sotap.dev 域名也可以很方便地增设用途相关的子站点。SoTap Dev 的源代码在 <a href='https://github.com/sotapmc/sotapmc.github.io' target='_blank'>GitHub 上开源</a>，",
-      "且使用 GitHub Pages 托管。"
-    ],
-    "features": [
-      {
-        "icon": "mdi-github",
-        "text": "GitHub 开源"
-      }
-    ],
-    "info": [
-      {
-        "icon": "mdi-clock-outline",
-        "text": "创建于 2020 年"
-      },
-      {
-        "icon": "mdi-shape",
-        "text": "一般类网页"
-      }
-    ],
-    "links": [
-      "下载资源以及协议：<a href='https://sotap.dev' target='_blank'>主站</a><br>",
-      "查看 SoTap 所开发的插件的使用方法以及其它开发事宜：<a href='https://docs.sotap.dev' target='_blank'>开发文档</a><br>"
+      "外服 -> <a href='https://stats.sotap.org' target='_blank'>https://stats.sotap.org</a><br>",
+      "内服 -> <a href='https://ins.sotap.org' target='_blank'>https://ins.sotap.org</a>"
     ]
   },
   {
