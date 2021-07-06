@@ -92,11 +92,11 @@
         </div>
         <div class="row no-margin">
             <divider :speedFactor="0.2" class="join-divider" :coverOpacity="0.3"
-                img="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/join1.jpg">
+                img="https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_6.png">
                 <h1>参与到这所有的瑰丽中</h1>
                 <p>SoTap 瑰丽而神秘的故事可以由你来谱写。只需要一台电脑，一个 Minecraft 国际正版账号，即可开启你的 SoTap
                     之旅。我们随时欢迎你的加入！<br><small>
-                        <player name="Marble_Gate" text="背景作者" />
+                        <player name="Takanashi__" text="背景作者" />
                     </small></p>
                 <div class="join-link">
                     <router-link class="ui-button backgrounded" to="/join">
