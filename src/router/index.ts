@@ -43,11 +43,6 @@ const routes: Array<RouteConfig> = [
     component: () => import("@/views/Ecosystem.vue")
   },
   {
-    path: "/join",
-    name: "join",
-    component: () => import("@/views/Join.vue")
-  },
-  {
     path: "/premium",
     name: "premium",
     component: () => import("@/views/Premium.vue")
