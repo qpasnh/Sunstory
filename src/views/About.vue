@@ -83,7 +83,7 @@
         <section-title>
             <template #subtitle>管理组介绍</template>
             <template #title>SoTaper</template>
-            <template #desc>这里，是目前在职的四名 SoTap 管理组成员<br><small>排名并列，不分先后，此处仅作视觉展示</small></template>
+            <template #desc>这里，是目前在职的三名 SoTap 管理组成员<br><small>排名并列，不分先后，此处仅作视觉展示</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="people-description background-primary">
