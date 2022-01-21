@@ -5,7 +5,7 @@
                 关于 SoTap
             </template>
             <template #text>
-                在这里你可以了解到 SoTap 自建立以来所发生的<em>大事记</em>。同时，欢迎认识我们的管理组！
+                在这里你可以了解到 SoTap 自建立以来所发生的<em>大事记</em>。同时，欢迎认识我们的运营团队！
             </template>
         </static-banner>
         <div class="row about-intro-container">
@@ -81,9 +81,9 @@
             </div>
         </div>
         <section-title>
-            <template #subtitle>管理组介绍</template>
+            <template #subtitle>运营团队介绍</template>
             <template #title>SoTaper</template>
-            <template #desc>这里，是目前在职的三名 SoTap 管理组成员<br><small>排名并列，不分先后，此处仅作视觉展示</small></template>
+            <template #desc>这里，是目前在职的 SoTap 运营团队成员<br><small>排名并列，不分先后，此处仅作视觉展示</small></template>
         </section-title>
         <div class="row no-margin-bottom">
             <div class="people-description background-primary">
@@ -104,7 +104,7 @@
             <divider :coverOpacity="0.2" class="join-divider"
                 img="https://sotap.oss-cn-qingdao.aliyuncs.com/8.png" :speedFactor="0.05">
                 <h1>编程设计，样样在行？</h1>
-                <p>SoTap 管理组欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的
+                <p>SoTap 运营团队欢迎你的加入！当然，即使你并不会编程，你仍然拥有加入的机会——只要你热爱 SoTap，并愿意为之付出努力！和我们一起建设一个更美丽、美好的
                     SoTap 吧！</p>
                 <div class="join-link">
                     <a class="ui-button backgrounded" href="https://wiki.sotap.org/#/about/management" target="_blank">
