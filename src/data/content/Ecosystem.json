@@ -81,42 +81,6 @@
     ]
   },
   {
-    "logo": "<span class='font-header'>Monologue</span>",
-    "desc": [
-      "更新日志是一个用于不定期更新 SoTap 各种事务，例如服务器的关闭、问题的修复、新内容的添加等的一个站点。更新日志基于由 SoTap 开发的 ",
-      "<a href='https://github.com/sotapmc/Monologue' target='_blank'>Monologue</a>。你可以在上面从上到下翻阅历次 SoTap 的更新内容，最早记录在 2020 年 3 月 18 日。"
-    ],
-    "info": [
-      {
-        "icon": "mdi-clock-outline",
-        "text": "创建于 2020/03/18"
-      },
-      {
-        "icon": "mdi-shape",
-        "text": "功能类网页"
-      }
-    ],
-    "features": [
-      {
-        "icon": "mdi-github",
-        "text": "GitHub 开源"
-      },
-      {
-        "icon": "mdi-calendar-clock",
-        "text": "持续更新"
-      },
-      {
-        "icon": "mdi-pencil-off",
-        "text": "非公开编辑"
-      }
-    ],
-    "links": [
-      "其实 Monologue 还有一个前身叫 <a href='https://github.com/sotapmc/Oasis' target='_blank'>Oasis</a>...",
-      "这个程序的开发只是一时起兴罢了，主要作者是 Subilan 和 WindSpirit。<br>",
-      "soon -> <a href='https://open.sotap.org' target='_blank'>https://open.sotap.org</a>"
-    ]
-  },
-  {
     "logo": "<span class='font-header'>Stats</span>",
     "desc": [
       "Stats 基于由 <a href='https://github.com/NyaaCat' target='_blank'>NyaaCat</a> 开发的 <a href='https://github.com/NyaaCat/NyaaStats target='_blank'>NyaaStats</a>",
