@@ -2,13 +2,25 @@
   {
     "name": "Cropenfe",
     "position": "Owner & Operator",
-    "desc": "SoTap 服务器服主，大学鸡一只，统筹服务器的各种开销和资金流管理，策划活动和编写文案，调配组织管理组完成服务器事项，同时也维护游戏内的秩序，辅助活动组织，处理玩家游戏内问题和监督玩家行为。",
+    "desc": "SoTap 服务器服主，大学鸡一只，统筹服务器的各种开销和资金流管理，策划活动和编写文案，调配组织管理组完成服务器事项。",
     "avatar": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/avatar/Cropenfe.jpg"
+  },
+  {
+    "name": "WindSpiritSR",
+    "position": "Operator & Developer",
+    "avatar": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/avatar/windspiritsr.jpg",
+    "desc": "计算机系扛把子，非典型技术宅，开源爱好者。负责综合管理服务器的运维和更新事项以及一切开发层面的策划。同时也负责管理服务器内的活动和组织。"
   },
   {
     "name": "Constant137",
     "position": "Operator & Developer",
-    "desc": "爱好物理的大学生，真·量子力学研究者，负责服务器和社区群组内的管理事务，协调问题和解决等。同时也是开发组的一员，负责开发新的插件和项目，丰富服务器内容。",
+    "desc": "爱好物理的大学生，真·量子力学研究者，负责服务器和社区群组内的管理事务，协调问题和解决等。同时也负责开发新的插件和项目，丰富服务器内容。",
     "avatar": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/avatar/constant-137.jpg"
+  },
+  {
+    "name": "123jk",
+    "position": "Operator & Architect",
+    "avatar": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/avatar/123jk.jpg",
+    "desc": "喜好气象的大学生，服务器（女装）吉祥物，负责服务器公共设施建设，社区内事务管理等。同时也维护服务器秩序、解答玩家疑惑、参与服务器宣传设计和辅助组织活动。"
   }
 ]
