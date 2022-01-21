@@ -25,9 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Set
-        run: mkdir ~/.ssh && touch ~/.ssh/id_rsa && touch ~/.ssh/id_rsa.pub && echo "${{ secrets.SSH_PRIVATE }}" > ~/.ssh/id_rsa && echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa && chmod 644 ~/.ssh/id_rsa.pub
-
       - name: Pull
         uses: appleboy/ssh-action@master
         with:
