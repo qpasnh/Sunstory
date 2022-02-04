@@ -68,4 +68,4 @@ SoTap 服务器的意识核心是心中有规则。因为任何量化的规则�
 
 # 更多问题
 
-其他一些和服务器设定有关的内容请参阅[常见问题（FAQ）](https://wiki.sotap.org/#/getting-started/faq)
+其他一些和服务器设定有关的内容请参阅[常见问题（FAQ）](https://wiki.sotap.org/help/faq)
