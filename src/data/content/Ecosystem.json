@@ -11,12 +11,12 @@
     "desc": [
       "SoTap Wiki 与 SoTap 一同诞生，起初是为了统一解答玩家常问的一些问题所设立的一个简单的维基站点。",
       "后来，我们引入了其它玩家的贡献，成为了所有人都可以访问、都可以修改的一本「SoTap 百科全书」。",
-      "Wiki 已经走过了它的<a href='https://github.com/sotapmc/SotapWiki/tree/v1' target='_blank'>第一个版本</a>，当前处于 <strong>v2</strong> 的初期编纂中，内容可能略有欠缺。"
+      "Wiki 已经走过了它的<a href='https://github.com/sotapmc/SotapWiki/tree/v1' target='_blank'>第一</a>和<a href='https://github.com/sotapmc/SotapWiki/tree/v2' target='_blank'>第二</a>个版本，当前处于 <strong>v3</strong> 的编纂中。"
     ],
     "features": [
       {
         "icon": "mdi-account-check",
-        "text": "支持非开发组编辑"
+        "text": "对所有人开放"
       },
       {
         "icon": "mdi-github",
@@ -24,7 +24,7 @@
       },
       {
         "icon": "mdi-lightbulb-on-outline",
-        "text": "类开放式创作"
+        "text": "自由创作"
       }
     ],
     "info": [
