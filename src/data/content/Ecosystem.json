@@ -3,9 +3,9 @@
     "logo": "<span class='sotap-wiki-logo-1'>SoTap</span><span class='sotap-wiki-logo-2'>Wiki</span>",
     "badges": [
       {
-        "background": "#2196F3",
+        "background": "#009688",
         "color": "white",
-        "text": "v2"
+        "text": "v3"
       }
     ],
     "desc": [
