@@ -50,7 +50,7 @@ export default Vue.extend({
     data() {
         return {
             gallery: [[], [], []] as Array<Array<GalleryItem>>,
-            galleryChosen: [0, 1, 7, 4, 5],
+            galleryChosen: [2, 5, 7, 1, 6],
             width: [
                 // percentage
                 [35, 65],

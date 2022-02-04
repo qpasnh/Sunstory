@@ -1,99 +1,72 @@
-[  {
-    "author": "123_jk",
-    "date": "2021/02/13",
-    "desc": "King",
-    "loc": "XLBX 家",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_11.jpg"
-  },
+[
   {
-    "author": "Takanashi__",
-    "date": "2021/01/24",
-    "desc": "新廊",
-    "loc": "新月",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_7.png"
-  },
-  {
-    "author": "Pars1fal",
-    "date": "2021/02/13",
-    "desc": "华灯初上",
-    "loc": "出生点",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_9.png"
-  },
-  {
-    "author": "123_jk",
-    "date": "2021/02/13",
-    "desc": "荣耀",
-    "loc": "出生点",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_12.jpg"
-  },
-  {
-    "author": "Pars1fal",
-    "date": "2021/01/24",
-    "desc": "海岸",
+    "author": "MnokraiDog_",
+    "date": "2022/02/04",
+    "desc": "Dawn",
     "loc": "野外",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_1.png"
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/1.png"
   },
   {
-    "author": "Rain_Tachibana",
-    "date": "2021/01/24",
-    "desc": "Tower",
-    "loc": "出生点",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_2.png"
+    "author": "MnokraiDog_",
+    "date": "2022/02/04",
+    "desc": "S.O.T.A.P",
+    "loc": "v3 出生点",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/2.png"
   },
   {
-    "author": "Takanashi__",
-    "date": "2021/01/24",
-    "desc": "阿拉巴斯坦",
-    "loc": "鸭头家",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_6.png"
+    "author": "MnokraiDog_",
+    "date": "2022/02/04",
+    "desc": "白昼",
+    "loc": "v3 出生点",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/3.png"
   },
   {
-    "author": "Pars1fal",
-    "date": "2021/02/13",
-    "desc": "丰草长林",
+    "author": "Subilan",
+    "date": "2022/02/01",
+    "desc": "挺水",
+    "loc": "仙人掌塔底",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/4.jpg"
+  },
+  {
+    "author": "Subilan",
+    "date": "2022/02/01",
+    "desc": "黄昏之船",
+    "loc": "奈尔的城堡附近",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/5.jpg"
+  },
+  {
+    "author": "Subilan",
+    "date": "2022/02/01",
+    "desc": "雨夜",
+    "loc": "v3 出生点",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/6.jpg"
+  },
+  {
+    "author": "Subilan",
+    "date": "2022/02/01",
+    "desc": "奈尔の城堡",
+    "loc": "奈尔的城堡",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/7.jpg"
+  },
+  {
+    "author": "3nibaLin",
+    "date": "2022/02/01",
+    "desc": "2022 新春合照",
+    "loc": "v3 出生点",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/8.jpg"
+  },
+  {
+    "author": "MnokraiDog_",
+    "date": "2022/02/04",
+    "desc": "登月",
     "loc": "野外",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_10.png"
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/9.png"
   },
   {
-    "author": "Rain_Tachibana",
-    "date": "2021/01/24",
-    "desc": "Ring",
-    "loc": "云杉林河畔",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_3.png"
-  },
-  {
-    "author": "Takanashi__",
-    "date": "2021/01/24",
-    "desc": "霜岭",
-    "loc": "野外",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_8.png"
-  },
-  {
-    "author": "Ales_7",
-    "date": "2021/02/05",
-    "desc": "心的彼岸",
-    "loc": "野外",
-    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/img/gallery/gallery_5.png"
-  },
-  {
-    "author": "Bingxiang_",
-    "date": "2020/03/19",
-    "desc": "加州机场",
-    "loc": "加州",
-    "bg": "https://sotap.oss-cn-qingdao.aliyuncs.com/7.png"
-  },
-  {
-    "author": "123_jk",
-    "date": "2020/03/19",
-    "desc": "城镇南月",
-    "loc": "南月",
-    "bg": "https://sotap.oss-cn-qingdao.aliyuncs.com/5.png"
-  },
-  {
-    "author": "123_jk",
-    "date": "2020/03/19",
-    "desc": "埃菲尔铁塔和商业街",
-    "loc": "巴黎商业街",
-    "bg": "https://sotap.oss-cn-qingdao.aliyuncs.com/0.png"
+    "author": "Subilan",
+    "date": "2022/02/01",
+    "desc": "闲暇之余",
+    "loc": "QiYue 家",
+    "bg": "https://sotapmc.oss-cn-beijing.aliyuncs.com/gallery/v2/10.jpg"
   }
 ]
