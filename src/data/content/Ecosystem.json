@@ -112,10 +112,9 @@
       }
     ],
     "links": [
-      "Stats 现在包含内服和外服的信息，位于不同的站点。<br>",
+      "Stats 包含服务器中玩家的各项统计信息。<br>",
       "每个小时更新一次是指，每遇到一个整点更新一次~~<br>",
-      "外服 -> <a href='https://stats.sotap.org' target='_blank'>https://stats.sotap.org</a><br>",
-      "内服 -> <a href='https://ins.sotap.org' target='_blank'>https://ins.sotap.org</a>"
+      "soon -> <a href='https://stats.sotap.org' target='_blank'>https://stats.sotap.org</a><br>"
     ]
   },
   {
